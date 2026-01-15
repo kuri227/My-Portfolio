@@ -3,222 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Kuri's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Kuri's Portfolio</h1>
+    
+    <header class="sticky-header">
+        <div class="logo">Kuri's Portfolio</div>
         <nav>
             <ul>
-                <li><a href="#about">自己紹介</a></li>
-                <li><a href="#career">経歴</a></li>
-                <li><a href="#skill">スキル</a></li>
-                <li><a href="#products">プロダクト</a></li>
-                <li><a href="#contact">連絡先</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#skill">Skill</a></li>
+                <li><a href="#products">Works</a></li>
+                <li><a href="#contact" class="nav-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Create with <span class="highlight">Passion</span>.</h1>
+            <p class="sub-hero">UnityとPythonで、「楽しい」を実装するエンジニア。</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn primary">作品を見る</a>
+                <a href="#about" class="btn secondary">私について</a>
+            </div>
+        </div>
+    </section>
     
-    <section id="about">
-        <h2>自己紹介</h2>
-        <ul>
-            <li>名前 : kuri(17歳)</li>
-            <li>所属 : 高専2年</li>
-            <li>部活動 : MAEDA部</li>
-        </ul>
-    </section>
-
-    <section id="career">
-        <h2>経歴</h2>
-        <div class="timeline">
-            <div class="event">
-                <div class="dot"></div>
-                <div class="date">2023年4月</div>
-                <div class="description">高専に入学、硬式テニス部に加入</div>
-            </div>
-            <div class="event">
-                <div class="dot"></div>
-                <div class="date">2023年12月</div>
-                <div class="description">MAEDA部に参加、Pythonの学習を始める</div>
-            </div>
-            <div class="event">
-                <div class="dot"></div>
-                <div class="date">2024年4月</div>
-                <div class="description">知能情報コースに進級</div>
-            </div>
-            <div class="event">
-                <div class="dot"></div>
-                <div class="date">2024年5月</div>
-                <div class="description">Unityを使用したシューティングゲームの共同開発を開始</div>
-            </div>
-            <div class="event">
-                <div class="dot"></div>
-                <div class="date">2024年7月</div>
-                <div class="description">Pythonを用いてクイズゲームを作成</div>
-            </div>
-            <div class="event">
-                <div class="dot"></div>
-                <div class="date">2024年11月</div>
-                <div class="description">高専祭に開発したシューティングゲームを展示</div>
-            </div>
-            <div class="event">
-                <div class="dot"></div>
-                <div class="date">2025年1月</div>
-                <div class="description">Pygameを用いた「ボールを撃ち落とすゲーム」の開発</div>
-            </div>
-            <div class="event">
-                <div class="dot"></div>
-                <div class="date">2025年2月</div>
-                <div class="description">PySideを用いた「画像ビューワー」の開発</div>
-            </div>
-            
-            <!-- 他の経歴も追加可能 -->
-        </div>
-    </section>
-
-    <section id="skill">
-        <h2>スキル</h2>
-        <h3>使用経験のある言語</h3>
-        <div class="container">
-            <div class="language" id="Python">
-                <img src="images/download/python.jpeg" alt="Python" id="python-image">
-                <p class="caption">Python</p>
-            </div>
-            <p>一番最初に触れたプログラミング言語で、プログラミング1の授業で学んでいます。
-                また、<a href="https://algo-method.com/">アルゴ式</a>で基礎を学習中です。<br>
-                これからも学習して、知識を深めていきたいと考えています。
-            </p>
-        </div>
-        <div class="container">
-            <div class="language" id="Arduino">
-                <img src="images/download/Arduino.jpeg" alt="Arduino">
-                <p class="caption">Arduino</p>
-            </div>
-            <p>高専の授業で使用しました。<br>
-                <a href="#shooting-game">シューティングゲーム</a>の開発時、マイコンのプログラムにこの言語を用いました。<br>
-                授業レベルの知識を保有しています。
-            </p>
-        </div>
-        <div class="container">
-            <div class="language" id="HTML">
-                <img src="images/download/HTML-and-CSS.jpg" alt="HTML/CSS" id="HTML-CSS-image">
-                <p class="caption">HTML/CSS</p>
-            </div>
-            <p>Pythonと同じく、プログラミング1の授業で学んでいます。<br>
-                現在、このポートフォリオ作成を通して学習しています。
-            </p>
-        </div>
-        <!-- さらに他の言語や技術について追加できます -->
-    </section>
-
-    <section id="products">
-        <h2>プロダクト</h2>
-            <div id="quizgame">
-                <h3>クイズゲーム</h3>
-                <p>Pythonを用いてクイズゲームを作成しました。<br>
-                    簡単なクイズを出題し、ユーザーの回答を評価する仕組みを実装しています。<br><a href="https://colab.research.google.com/drive/1coHaIhKgrtZ5fRi85KWdHDMBiaK9wUsA?usp=sharing">クイズゲーム</a>  実行はこちらから<br>
-                <img src="images/quiz_img/quiz.jpeg" alt="クイズゲーム実行例" id="quiz-image"><br></p>
-            </div>
-
-            <div id="shooting-game">
-                <h3>シューティングゲーム</h3>
-                <p>ジャイロ機能を搭載させた手作りのコントローラーを動かすことで、<br>
-                カーソルを動かすことができるシューティングゲームを友人たちと共同開発しました。<br>
-                ゲーム本体はUnityで作成しています。<br>
-                私はジャイロ機能のためのマイコンのプログラムを作成に携わりました。<br>
-                </p>
-    
-                <a href="https://github.com/create-alt/HackU_new.git">シューティングゲーム</a>  Unityのプログラムはこちらから<br>
-                <figure>    
-                    <img src="images/gun_img/unity_running.png" alt="ゲームプレイ画面" id="unity_running">
-                <figcaption>作成したゲームのプレイ画面</figcaption>
-                </figure>
-                私は、Arduino言語を使用して、コントローラに搭載するマイコンに、<br>
-                データの取得・成形・PCへのシリアル通信、およびBluetooth通信を行う機能を実装しました。<br>
-                また、100均で購入した水鉄砲を分解して、マイコンを搭載させることで、ゲームに使用するコントローラーを自作しました。<br>
-                <a href="https://github.com/kuri227/hackU.git">マイコンのプログラム</a>はこちらから</a></p>
-                <figure>
-                    <image src="images/gun_img/handmade_gun.png" alt="自作コントローラー" id="handmade_gun">
-                <figcaption>自作したコントローラの写真</figcaption>
-                </figure>
-            </div>
-
-            <div id="shooting_ball">
-                <h3>ボールを撃ち落とすゲーム</h3>
-                <p>Pythonのライブラリであるpygameを用いて、飛んでくるボールを弓矢で撃ち落とすゲームを作成しました。
-                    プレイヤーは地面上にある弓を左矢印キー、右矢印キーで左右に操作することができます。<br>
-                    また、スペースキーを押下することで矢を発射することができます。<br>
-                    <br>
-                    ゲームがスタートすると、一定間隔でボールが飛んできます。<br>
-                    プレイヤーにはHPが存在し、ボールに接触するとHPが減少します。HPが0になるとゲームオーバーです。<br>
-                    また、ボールにもHPが存在します。
-                    矢をボールに当てることでボールのHPを減らすことができ、ボールのHPを0にすることでボールを消すことができます。<br>
-                    ボールに矢を当てる、もしくはボールのHPを0にすることで一定数のスコアを獲得することができます。<br>
-                    出現したボールをすべて消し、かつ、60秒間生き残れば、ゲームクリアとなります。<br><br>
-                    <a href="https://github.com/kuri227/Shotting-Pygame.git">ボールを撃ち落とすゲーム</a>はこちらから</a></p>
-                </p>
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide"><img src="images/shooting_img/shooting_ball_start.png" alt="スタート画面"></div>
-                        <div class="slide"><img src="images/shooting_img/shooting_game_play.png" alt="プレイ画面"></div>
-                        <div class="slide"><img src="images/shooting_img/shooting_game_clear.png" alt="クリア画面"></div>
-                        <div class="slide"><img src="images/shooting_img/shooting_game_gameover.png" alt="ゲームオーバー画面"></div>
-                    </div>
-                    <button class="prev" onclick="moveSlide1(-1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide1(1)">&#10095;</button>
+    <main>
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="profile-card">
+                <div class="profile-info">
+                    <ul>
+                        <li><i class="fa-solid fa-user"></i> <strong>名前:</strong> kuri (18歳)</li>
+                        <li><i class="fa-solid fa-school"></i> <strong>所属:</strong> 高専3年 知能情報コース</li>
+                        <li><i class="fa-solid fa-users"></i> <strong>部活動:</strong> MAEDA部 / 硬式テニス部</li>
+                    </ul>
+                    <p class="bio">
+                        ものづくりが好きで、ソフトウェアからハードウェアまで幅広く興味を持っています。<br>
+                        現在はWeb開発とゲーム制作を中心にスキルを磨いています。
+                    </p>
                 </div>
-                <figcaption>「ボールを撃ち落とすゲーム」の実行例</figcaption>
-                
-                <script src="script.js"></script>
             </div>
-            
-            <div id="image_viewer">
-                <h3>画像ビューワー</h3>
-                <p>PySide6を用いて、画像ビューワーを作成しました。<br>
-                    このプログラムは、pythonのライブラリであるPySide6を使用して作成されたシンプルな画像ビューワーのアプリケーションです。
-                    ユーザーは画像を読み込み、拡大縮小、回転、保存することができます。<br>
-                    画像の回転は左回転と右回転どちらも可能で、保存時には回転後の画像を保存することができます。<br>
-                    GUIには画像表示エリア、拡大率スライダー、および各種操作ボタンが実装しています。<br>
-                    日本語のファイル名に対応するためのエラーチェックも実装しています。<br>
-                    制作時間: 10時間<br>
-                </p>
-                    <a href="https://github.com/kuri227/image-viewer.git">画像ビューワー</a>はこちらから</a></p>
+        </section>
 
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide"><img src="images/image-viewer_img/image-viewer01.png" alt="実行画面"></div>
-                        <div class="slide"><img src="images/image-viewer_img/image-viewer02.png" alt="画像を読み込み"></div>
-                        <div class="slide"><img src="images/image-viewer_img/image-viewer03.png" alt="画像の回転"></div>
-                    </div>
-                    <button class="prev" onclick="moveSlide2(-1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide2(1)">&#10095;</button>
+        <section id="career">
+            <h2 class="section-title">Career</h2>
+            <div class="timeline">
+                <div class="event">
+                    <div class="date">2023.04</div>
+                    <div class="description">高専に入学</div>
                 </div>
-                <figcaption>「画像ビューワー」の実行例</figcaption>
+                <div class="event">
+                    <div class="date">2023.12</div>
+                    <div class="description">Pythonの学習を開始</div>
+                </div>
+                <div class="event">
+                    <div class="date">2024.04</div>
+                    <div class="description">知能情報コース2年に進級</div>
+                </div>
+                <div class="event">
+                    <div class="date">2024.05</div>
+                    <div class="description">Unityを使用したシューティングゲームの共同開発を開始</div>
+                </div>
+                <div class="event">
+                    <div class="date">2024.07</div>
+                    <div class="description">Pythonを用いてクイズゲームを作成</div>
+                </div>
+                <div class="event">
+                    <div class="date">2024.11</div>
+                    <div class="description">高専祭2024にてシューティングゲームを展示</div>
+                </div>
+                <div class="event">
+                    <div class="date">2025.01</div>
+                    <div class="description">Pygameを用いた「ボールを撃ち落とすゲーム」の開発</div>
+                </div>
+                <div class="event">
+                    <div class="date">2025.02</div>
+                    <div class="description">PySideを用いた「画像ビューワー」の開発</div>
+                </div>
+                <div class="event">
+                    <div class="date">2025.04</div>
+                    <div class="description"><strong>高専3年生に進級</strong><br>より高度な開発技術の習得を目指す。</div>
+                    <div class="description"><strong>高専テクノゼミ 実践教育プログラム 2025Spring</strong><br>実社会のリアルなお題にチームで挑戦するイベントに参加し、企画・開発・発表まで行いました<br>ハム専ギルドというチームで参加し、大阪地下の複雑さを解決するプロダクトについて考案しました</div>
+                    
+                </div>
+                <div class="event new-event">
+                    <div class="date">2025.07</div>
+                    <div class="description"><strong>DeepLearning基礎講座 修了</strong><br>DL技術の基礎を習得しました</div>  
+                </div>
+                <div class="event">
+                    <div class="date">2025.08</div>
+                    <div class="description"><strong>高専テクノゼミ 実践教育プログラム 2025夏</strong><br>めだまウォークというチームで、2度目の参加となりました<br>脳波解析とアイトラッキング技術を活用し、すべての人が街歩きをできるようなサービスの提案を行いました</div>
+                </div>
+                <div class="event">
+                    <div class="date">2025.11</div>
+                    <div class="description"><strong>高専祭2025でゲーム展示</strong><br>疑似言語を自分たちで考案し、それを用いた暗号解読ゲームを制作しました</div>
+                </div>
+                <div class="event">
+                    <div class="date">2025.12</div>
+                    <div class="description"><strong>DeepLearningコンテストに挑戦</strong><br>DeepLearning技術を活用したコンテストに参加しました<br>現在2次審査中で、災害時に音を収集することで、要救助者の発見をサポートするシステムを考案しています</div>
+                </div>
+                <div class="event">
+                    <div class="date">2026.02</div>
+                    <div class="description">E資格2026#1に挑戦予定！</div>
+                </div>
 
-                <script src="script.js"></script>
+                <div class="event">
+                    <div class="date">2027.03</div>
+                    <div class="description">高専卒業見込み</div>
+                </div>
+        </section>
+
+        <section id="skill">
+            <h2 class="section-title">Skills</h2>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                    <h3>Python</h3>
+                    <p>授業および自主制作で使用。Pygame, PySide6などのライブラリ活用経験あり。<a href="https://algo-method.com/" target="_blank">アルゴ式</a>で基礎力強化中。</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Arduino (C++)</h3>
+                    <p>自作コントローラーの制御に使用。センサーデータの取得・シリアル通信・Bluetooth通信の実装が可能。</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h3>HTML / CSS</h3>
+                    <p>ポートフォリオ作成を通して学習中。レスポンシブデザインや基本的なレイアウト構築が可能。</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-brands fa-unity"></i></div>
+                    <h3>Unity (C#)</h3>
+                    <p>ゲーム開発で使用。オブジェクト指向に基づいたスクリプト作成や、物理演算の活用経験あり。</p>
+                </div>
             </div>
+        </section>
+
+        <section id="products">
+            <h2 class="section-title">Works</h2>
+            <div class="product-grid">
                 
-                
+                <article class="product-card" id="shooting-game">
+                    <figure class="card-image">
+                        <img src="images/gun_img/unity_running.png" alt="シューティングゲーム">
+                    </figure>
+                    <div class="card-content">
+                        <h3>シューティングゲーム (Unity/Arduino)</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">自作ハードウェア</span>
+                        </div>
+                        <p>ジャイロ機能搭載の自作コントローラーで遊ぶ体感型ゲーム。チーム開発作品。</p>
+                        <p class="detail-text">
+                            100均の水鉄砲を改造し、マイコン(M5StickCなど)を組み込んでコントローラーを自作。
+                            私はArduino言語によるセンサー制御とPCへの通信プログラムを担当しました。
+                        </p>
+                        <div class="card-links">
+                            <a href="https://github.com/create-alt/HackU_new.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Unity PG</a>
+                            <a href="https://github.com/kuri227/hackU.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Arduino PG</a>
+                        </div>
+                    </div>
+                </article>
 
+                <article class="product-card" id="shooting_ball">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slides">
+                                <div class="slide"><img src="images/shooting_img/shooting_ball_start.png" alt="スタート画面"></div>
+                                <div class="slide"><img src="images/shooting_img/shooting_game_play.png" alt="プレイ画面"></div>
+                                <div class="slide"><img src="images/shooting_img/shooting_game_clear.png" alt="クリア画面"></div>
+                                <div class="slide"><img src="images/shooting_img/shooting_game_gameover.png" alt="ゲームオーバー画面"></div>
+                            </div>
+                            <button class="prev" onclick="moveSlide1(-1)">&#10094;</button>
+                            <button class="next" onclick="moveSlide1(1)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>ボール撃ち落としゲーム</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pygame</span>
+                        </div>
+                        <p>飛来するボールを弓矢で迎撃するアクションゲーム。HP管理やスコアシステムを実装。</p>
+                        <div class="card-links">
+                            <a href="https://github.com/kuri227/Shotting-Pygame.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </article>
 
+                <article class="product-card" id="image_viewer">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slides">
+                                <div class="slide"><img src="images/image-viewer_img/image-viewer01.png" alt="実行画面"></div>
+                                <div class="slide"><img src="images/image-viewer_img/image-viewer02.png" alt="画像を読み込み"></div>
+                                <div class="slide"><img src="images/image-viewer_img/image-viewer03.png" alt="画像の回転"></div>
+                            </div>
+                            <button class="prev" onclick="moveSlide2(-1)">&#10094;</button>
+                            <button class="next" onclick="moveSlide2(1)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>画像ビューワー</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PySide6</span>
+                            <span class="tech-tag">GUI</span>
+                        </div>
+                        <p>シンプルで多機能な画像閲覧アプリ。拡大縮小、回転、保存機能をGUIで実装。</p>
+                        <div class="card-links">
+                            <a href="https://github.com/kuri227/image-viewer.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </article>
 
-    </section>
+                <article class="product-card" id="quizgame">
+                    <figure class="card-image">
+                        <img src="images/quiz_img/quiz.jpeg" alt="クイズゲーム">
+                    </figure>
+                    <div class="card-content">
+                        <h3>CLI クイズゲーム</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Google Colab</span>
+                        </div>
+                        <p>Python学習初期に作成した対話型クイズ。ユーザー入力の判定ロジックを実装。</p>
+                        <div class="card-links">
+                            <a href="https://colab.research.google.com/drive/1coHaIhKgrtZ5fRi85KWdHDMBiaK9wUsA?usp=sharing" target="_blank" class="text-link"><i class="fa-solid fa-play"></i> Play on Colab</a>
+                        </div>
+                    </div>
+                </article>
 
-    <section id="contact">
-        <h2>連絡先</h2>
-        <p>質問やフィードバックがある場合は、以下の連絡先までご連絡をお願いいたします。<br>
-            お手数ですが、ご連絡の際は☆マークを@マークに変更をお願いいたします。</p>
-        <ul>
-            <li>学校用メール: rg23136w☆st.omu.ac.jp</li>
-            <!-- 他の連絡方法も追加できます -->
-        </ul>
-    </section>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-box">
+                <p>制作物や活動に関するお問い合わせはこちらまでお願いいたします。</p>
+                <div class="mail-address">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>rg23136w☆st.omu.ac.jp</span>
+                    <small>※ ☆を@に変更してください</small>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p></p>
+        <p>&copy; 2025 Kuri's Portfolio</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
