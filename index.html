@@ -18,132 +18,225 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#career">Career</a></li>
-                <li><a href="#skill">Skill</a></li>
+                <li><a href="#skill">Skills</a></li>
                 <li><a href="#products">Works</a></li>
                 <li><a href="#contact" class="nav-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
+    <section id="hero-about">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1><span class="highlight">課題</span>を整理し、<span class="highlight">技術</span>で解決する。</h1>
-            <p class="sub-hero">SIer志望のエンジニアとして、要件理解から実装まで一貫して取り組んでいます。</p>
+            <h1 class="main-title">
+                <span class="highlight">課題</span>を整理し、<br>
+                <span class="highlight">技術</span>で解決する。
+            </h1>
+            <p class="hero-desc">
+                SIer志望のエンジニアとして、<br>
+                要件理解から実装まで一貫して取り組んでいます。
+            </p>
+            
+            <div class="profile-summary">
+                <div class="profile-item">
+                    <i class="fa-solid fa-user"></i>
+                    <div>
+                        <strong>Kuri</strong>
+                        <span>18 Years Old</span>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <i class="fa-solid fa-school"></i>
+                    <div>
+                        <strong>NIT (Kosen)</strong>
+                        <span>Intelligent Info. Course</span>
+                    </div>
+                </div>
+                <div class="profile-item">
+                    <i class="fa-solid fa-code"></i>
+                    <div>
+                        <strong>Interests</strong>
+                        <span>AI / Web / Hardware</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero-buttons">
-                <a href="#products" class="btn primary">作品を見る</a>
-                <a href="#about" class="btn secondary">私について</a>
+                <a href="#products" class="btn primary">View Works <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#career" class="btn secondary">My Career</a>
             </div>
         </div>
     </section>
-    
+
     <main>
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="profile-card">
-                <div class="profile-info">
-                    <ul>
-                        <li><i class="fa-solid fa-user"></i> <strong>名前:</strong> kuri (18歳)</li>
-                        <li><i class="fa-solid fa-school"></i> <strong>所属:</strong> 高専3年 知能情報コース</li>
-                        <li><i class="fa-solid fa-users"></i> <strong>部活動:</strong> MAEDA部 / 硬式テニス部</li>
-                    </ul>
-                    <p class="bio">
-                        ものづくりが好きで、ソフトウェアからハードウェアまで幅広く興味を持っています。<br>
-                        現在はWeb開発とゲーム制作を中心にスキルを磨いています。
-                    </p>
-                </div>
-            </div>
-        </section>
-
         <section id="career">
-            <h2 class="section-title">Career</h2>
+            <h2 class="section-title">Career History</h2>
             <div class="timeline">
-                <div class="event">
-                    <div class="date">2023.04</div>
-                    <div class="description">高専に入学</div>
-                </div>
-                <div class="event">
-                    <div class="date">2023.12</div>
-                    <div class="description">Pythonの学習を開始</div>
-                </div>
-                <div class="event">
-                    <div class="date">2024.04</div>
-                    <div class="description">知能情報コース2年に進級</div>
-                </div>
-                <div class="event">
-                    <div class="date">2024.05</div>
-                    <div class="description">Unityを使用したシューティングゲームの共同開発を開始</div>
-                </div>
-                <div class="event">
-                    <div class="date">2024.07</div>
-                    <div class="description">Pythonを用いてクイズゲームを作成</div>
-                </div>
-                <div class="event">
-                    <div class="date">2024.11</div>
-                    <div class="description">高専祭2024にてシューティングゲームを展示</div>
-                </div>
-                <div class="event">
-                    <div class="date">2025.01</div>
-                    <div class="description">Pygameを用いた「ボールを撃ち落とすゲーム」の開発</div>
-                </div>
-                <div class="event">
-                    <div class="date">2025.02</div>
-                    <div class="description">PySideを用いた「画像ビューワー」の開発</div>
-                </div>
-                <div class="event">
-                    <div class="date">2025.04</div>
-                    <div class="description"><strong>高専3年生に進級</strong><br></div>
-                    <div class="description"><strong>高専テクノゼミ 実践教育プログラム 2025Spring</strong><br>実社会のリアルなお題にチームで挑戦するイベントに参加し、企画・開発・発表まで行いました<br>ハム専ギルドというチームで参加し、大阪地下の複雑さを解決するプロダクトについて考案しました</div>
-                    
-                </div>
-                <div class="event">
-                    <div class="date">2025.07</div>
-                    <div class="description"><strong>DeepLearning基礎講座 修了</strong><br>DL技術の基礎を習得しました</div>  
-                </div>
-                <div class="event">
-                    <div class="date">2025.08</div>
-                    <div class="description"><strong>高専テクノゼミ 実践教育プログラム 2025夏</strong><br>めだまウォークというチームで、2度目の参加となりました<br>脳波解析とアイトラッキング技術を活用し、すべての人が街歩きをできるようなサービスの提案を行いました</div>
-                </div>
-                <div class="event">
-                    <div class="date">2025.11</div>
-                    <div class="description"><strong>高専祭2025でゲーム展示</strong><br>疑似言語を自分たちで考案し、それを用いた暗号解読ゲームを制作しました</div>
-                </div>
-                <div class="event new-event">
-                    <div class="date">2025.12</div>
-                    <div class="description"><strong>DeepLearningコンテストに挑戦</strong><br>DeepLearning技術を活用したコンテストに参加しました<br>現在2次審査中で、災害時に音を収集することで、要救助者の発見をサポートするシステムを考案しています</div>
-                </div>
-                <div class="event">
-                    <div class="date">2026.02</div>
-                    <div class="description">E資格2026#1に挑戦予定！</div>
+                
+                <div class="timeline-item future">
+                    <div class="timeline-date">2027.03</div>
+                    <div class="timeline-content">
+                        <h3>高専卒業見込み</h3>
+                    </div>
                 </div>
 
-                <div class="event">
-                    <div class="date">2027.03</div>
-                    <div class="description">高専卒業見込み</div>
+                <div class="timeline-item future">
+                    <div class="timeline-date">2026.02</div>
+                    <div class="timeline-content">
+                        <h3>E資格 2026#1 に挑戦予定</h3>
+                        <p>AIエンジニアとしての専門性を高めるため、資格取得に向けて学習中。</p>
+                    </div>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.12</div>
+                    <div class="timeline-content">
+                        <h3>DeepLearningコンテスト挑戦 (2次審査中)</h3>
+                        <p>災害時に音を収集し、要救助者の発見をサポートするシステムを考案。DL技術の実社会への応用に取り組む。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.11</div>
+                    <div class="timeline-content">
+                        <h3>高専祭2025 ゲーム展示 (Slate Quest)</h3>
+                        <p>独自の「疑似言語」を考案し、それを用いた暗号解読ゲームをチームで制作・展示。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.08</div>
+                    <div class="timeline-content">
+                        <h3>高専テクノゼミ 実践教育プログラム (夏)</h3>
+                        <p>チーム「めだまウォーク」で参加。脳波解析とアイトラッキング技術を活用し、すべての人が街歩きを楽しめるサービスを提案。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.07</div>
+                    <div class="timeline-content">
+                        <h3>DeepLearning基礎講座 修了</h3>
+                        <p>ニューラルネットワーク等のDL技術の基礎理論と実装スキルを習得。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.04</div>
+                    <div class="timeline-content">
+                        <h3>高専3年生に進級 / 高専テクノゼミ (Spring)</h3>
+                        <p>チーム「ハム専ギルド」で参加。大阪地下街の複雑さを解決するナビゲーションプロダクトを企画・開発・発表。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.02</div>
+                    <div class="timeline-content">
+                        <h3>画像ビューワー開発 (PySide)</h3>
+                        <p>デスクトップアプリ開発の学習として作成。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.01</div>
+                    <div class="timeline-content">
+                        <h3>ボール撃ち落としゲーム開発 (Pygame)</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.11</div>
+                    <div class="timeline-content">
+                        <h3>高専祭2024 ゲーム展示</h3>
+                        <p>Unityと自作ハードウェアを組み合わせたシューティングゲームを展示。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.07</div>
+                    <div class="timeline-content">
+                        <h3>クイズゲーム作成 (Python)</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.05</div>
+                    <div class="timeline-content">
+                        <h3>シューティングゲーム共同開発開始</h3>
+                        <p>Unityを使用した初めてのチーム開発経験。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.04</div>
+                    <div class="timeline-content">
+                        <h3>知能情報コース2年に進級</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023.12</div>
+                    <div class="timeline-content">
+                        <h3>Python学習開始</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023.04</div>
+                    <div class="timeline-content">
+                        <h3>高専 入学</h3>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <section id="skill">
             <h2 class="section-title">Skills</h2>
-            <div class="skill-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
-                    <h3>Python</h3>
-                    <p>授業および自主制作で使用。Pygame, PySide6などのライブラリ活用経験あり。<a href="https://algo-method.com/" target="_blank">アルゴ式</a>で基礎力強化中。</p>
+            
+            <div class="skill-category">
+                <h3>Frontend & Modern Web</h3>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+                        <h4>Next.js</h4>
+                        <p>Blogアプリ開発で使用。SSR/SSGの理解。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                        <h4>TypeScript</h4>
+                        <p>型安全な開発を意識して学習中。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+                        <h4>React</h4>
+                        <p>Hooksを活用したSPA開発。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                        <h4>HTML / CSS</h4>
+                        <p>レスポンシブデザインの実装。</p>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
-                    <h3>Arduino (C++)</h3>
-                    <p>自作コントローラーの制御に使用。センサーデータの取得・シリアル通信・Bluetooth通信の実装が可能。</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
-                    <h3>HTML / CSS</h3>
-                    <p>ポートフォリオ作成を通して学習中。レスポンシブデザインや基本的なレイアウト構築が可能。</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-brands fa-unity"></i></div>
-                    <h3>Unity (C#)</h3>
-                    <p>ゲーム開発で使用。オブジェクト指向に基づいたスクリプト作成や、物理演算の活用経験あり。</p>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend & Core</h3>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                        <h4>Python</h4>
+                        <p>Pygame, PySide6, DL基礎。競技プログラミング。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-solid fa-c"></i></div>
+                        <h4>C / C++ (Arduino)</h4>
+                        <p>ハードウェア制御、シリアル通信。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-brands fa-unity"></i></div>
+                        <h4>Unity (C#)</h4>
+                        <p>ゲームロジック、物理演算。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -152,26 +245,71 @@
             <h2 class="section-title">Works</h2>
             <div class="product-grid">
                 
+                <article class="product-card no-image">
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-blog"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Blog Application</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+                        <p>TypeScriptとNext.jsを組み合わせて構築したブログアプリ。</p>
+                        <div class="card-links">
+                            <a href="https://github.com/kuri227/next-blog-app" class="text-link"><i class="fa-brands fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card no-image">
+                    <div class="card-icon-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Slate Quest (高専祭2025)</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Team Dev</span>
+                            <span class="tech-tag">Game</span>
+                        </div>
+                        <p>独自の疑似言語を用いた暗号解読ゲーム。チーム開発作品。</p>
+                        <div class="card-links">
+                            <a href="https://github.com/misorange/slate_quest" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card no-image">
+                    <div class="card-icon-header" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); color: white;">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>React Todo App</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">2025.10</span>
+                        </div>
+                        <p>ReactのState管理学習のために作成したTodoアプリ。</p>
+                        <div class="card-links">
+                            <a href="https://github.com/kuri227/react-todo-app" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </article>
+
                 <article class="product-card" id="shooting-game">
                     <figure class="card-image">
                         <img src="images/gun_img/unity_running.png" alt="シューティングゲーム">
                     </figure>
                     <div class="card-content">
-                        <h3>シューティングゲーム (Unity/Arduino)</h3>
+                        <h3>シューティングゲーム</h3>
                         <div class="tech-stack">
                             <span class="tech-tag">Unity</span>
-                            <span class="tech-tag">C#</span>
                             <span class="tech-tag">Arduino</span>
-                            <span class="tech-tag">自作ハードウェア</span>
                         </div>
-                        <p>ジャイロ機能搭載の自作コントローラーで遊ぶ体感型ゲーム。チーム開発作品。</p>
-                        <p class="detail-text">
-                            100均の水鉄砲を改造し、マイコン(M5StickCなど)を組み込んでコントローラーを自作。
-                            私はArduino言語によるセンサー制御とPCへの通信プログラムを担当しました。
-                        </p>
+                        <p>自作コントローラーで遊ぶ体感型ゲーム。</p>
                         <div class="card-links">
-                            <a href="https://github.com/create-alt/HackU_new.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Unity PG</a>
-                            <a href="https://github.com/kuri227/hackU.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Arduino PG</a>
+                            <a href="https://github.com/create-alt/HackU_new.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Unity</a>
+                            <a href="https://github.com/kuri227/hackU.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Arduino</a>
                         </div>
                     </div>
                 </article>
@@ -180,10 +318,9 @@
                     <div class="slider-container">
                         <div class="slider">
                             <div class="slides">
-                                <div class="slide"><img src="images/shooting_img/shooting_ball_start.png" alt="スタート画面"></div>
-                                <div class="slide"><img src="images/shooting_img/shooting_game_play.png" alt="プレイ画面"></div>
-                                <div class="slide"><img src="images/shooting_img/shooting_game_clear.png" alt="クリア画面"></div>
-                                <div class="slide"><img src="images/shooting_img/shooting_game_gameover.png" alt="ゲームオーバー画面"></div>
+                                <div class="slide"><img src="images/shooting_img/shooting_ball_start.png" alt="Start"></div>
+                                <div class="slide"><img src="images/shooting_img/shooting_game_play.png" alt="Play"></div>
+                                <div class="slide"><img src="images/shooting_img/shooting_game_clear.png" alt="Clear"></div>
                             </div>
                             <button class="prev" onclick="moveSlide1(-1)">&#10094;</button>
                             <button class="next" onclick="moveSlide1(1)">&#10095;</button>
@@ -195,7 +332,7 @@
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Pygame</span>
                         </div>
-                        <p>飛来するボールを弓矢で迎撃するアクションゲーム。HP管理やスコアシステムを実装。</p>
+                        <p>弓矢でボールを迎撃するアクションゲーム。</p>
                         <div class="card-links">
                             <a href="https://github.com/kuri227/Shotting-Pygame.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Source Code</a>
                         </div>
@@ -206,9 +343,8 @@
                     <div class="slider-container">
                         <div class="slider">
                             <div class="slides">
-                                <div class="slide"><img src="images/image-viewer_img/image-viewer01.png" alt="実行画面"></div>
-                                <div class="slide"><img src="images/image-viewer_img/image-viewer02.png" alt="画像を読み込み"></div>
-                                <div class="slide"><img src="images/image-viewer_img/image-viewer03.png" alt="画像の回転"></div>
+                                <div class="slide"><img src="images/image-viewer_img/image-viewer01.png" alt="Viewer"></div>
+                                <div class="slide"><img src="images/image-viewer_img/image-viewer02.png" alt="Open"></div>
                             </div>
                             <button class="prev" onclick="moveSlide2(-1)">&#10094;</button>
                             <button class="next" onclick="moveSlide2(1)">&#10095;</button>
@@ -219,16 +355,15 @@
                         <div class="tech-stack">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">PySide6</span>
-                            <span class="tech-tag">GUI</span>
                         </div>
-                        <p>シンプルで多機能な画像閲覧アプリ。拡大縮小、回転、保存機能をGUIで実装。</p>
+                        <p>GUIによる多機能画像閲覧アプリ。</p>
                         <div class="card-links">
                             <a href="https://github.com/kuri227/image-viewer.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Source Code</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="product-card" id="quizgame">
+                <article class="product-card">
                     <figure class="card-image">
                         <img src="images/quiz_img/quiz.jpeg" alt="クイズゲーム">
                     </figure>
@@ -236,11 +371,10 @@
                         <h3>CLI クイズゲーム</h3>
                         <div class="tech-stack">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Google Colab</span>
                         </div>
-                        <p>Python学習初期に作成した対話型クイズ。ユーザー入力の判定ロジックを実装。</p>
+                        <p>対話型クイズアプリケーション。</p>
                         <div class="card-links">
-                            <a href="https://colab.research.google.com/drive/1coHaIhKgrtZ5fRi85KWdHDMBiaK9wUsA?usp=sharing" target="_blank" class="text-link"><i class="fa-solid fa-play"></i> Play on Colab</a>
+                            <a href="https://colab.research.google.com/drive/1coHaIhKgrtZ5fRi85KWdHDMBiaK9wUsA?usp=sharing" target="_blank" class="text-link"><i class="fa-solid fa-play"></i> Play</a>
                         </div>
                     </div>
                 </article>

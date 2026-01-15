@@ -1,28 +1,31 @@
-let slideIndex1 = 0;
-let slideIndex2 = 0;
+// スライダー制御用
+let slideIndices = {
+    'shooting_ball': 0,
+    'image_viewer': 0
+};
 
-function showSlides1(n) {
-    let slides = document.querySelectorAll("#shooting_ball .slides");
-    if (n >= slides[0].children.length) { slideIndex1 = 0 }
-    if (n < 0) { slideIndex1 = slides[0].children.length - 1 }
-    slides[0].style.transform = `translateX(${-slideIndex1 * 100}%)`;
+function showSlides(id, n) {
+    const container = document.querySelector(`#${id} .slides`);
+    if (!container) return; // 要素がない場合は何もしない
+
+    const slides = container.children;
+    const totalSlides = slides.length;
+
+    let index = slideIndices[id];
+    index += n;
+
+    if (index >= totalSlides) { index = 0; }
+    if (index < 0) { index = totalSlides - 1; }
+
+    slideIndices[id] = index;
+    container.style.transform = `translateX(${-index * 100}%)`;
 }
 
-function showSlides2(n) {
-    let slides = document.querySelectorAll("#image_viewer .slides");
-    if (n >= slides[0].children.length) { slideIndex2 = 0 }
-    if (n < 0) { slideIndex2 = slides[0].children.length - 1 }
-    slides[0].style.transform = `translateX(${-slideIndex2 * 100}%)`;
-}
+// グローバル関数として公開（HTMLのonclickから呼ぶため）
+window.moveSlide1 = function(n) {
+    showSlides('shooting_ball', n);
+};
 
-function moveSlide1(n) {
-    showSlides1(slideIndex1 += n);
-}
-
-function moveSlide2(n) {
-    showSlides2(slideIndex2 += n);
-}
-
-// 初期表示
-showSlides1(slideIndex1);
-showSlides2(slideIndex2);
+window.moveSlide2 = function(n) {
+    showSlides('image_viewer', n);
+};
