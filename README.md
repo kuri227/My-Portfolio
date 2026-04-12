@@ -35,6 +35,6 @@ AI、Webアプリケーション、ハードウェア領域を横断したこれ
 ## 著者 (Author)
 
 ### **Kuri**
-* **Affiliation:** 大阪公立大学工業高等専門学校 知能情報コース (2028年 卒業予定)
+* **Affiliation:** 高専4年 (2028年 卒業予定)
 * **GitHub:** [@kuri227](https://github.com/kuri227)
 * **Interests:** AI / Web Development / Hardware (Arduino)
