@@ -1,404 +1,751 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuri's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Kuri - Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
     
-    <header class="sticky-header">
-        <div class="logo">Kuri's Portfolio</div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#career">Career</a></li>
-                <li><a href="#skill">Skills</a></li>
-                <li><a href="#products">Works</a></li>
-                <li><a href="#contact" class="nav-btn">Contact</a></li>
-            </ul>
-        </nav>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#2563EB',
+                            dark: '#1D4ED8',
+                            light: '#EFF6FF'
+                        },
+                        dark: '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FAFAFA; color: #111827; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .overflow-hidden-mobile { overflow: hidden; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ==========================================
+         Header & Navigation
+         ========================================== -->
+    <header class="fixed w-full top-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-xl tracking-tight z-50">KURI.</a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8 text-sm font-medium text-gray-600">
+                    <li><a href="#about" class="hover:text-brand transition-colors">About</a></li>
+                    <li><a href="#career" class="hover:text-brand transition-colors">Career</a></li>
+                    <li><a href="#skills" class="hover:text-brand transition-colors">Skills</a></li>
+                    <li><a href="#works" class="hover:text-brand transition-colors">Projects</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-dark rounded-full hover:bg-gray-800 transition-colors">
+                Contact
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 z-50 p-2">
+                <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
     </header>
 
-    <section id="hero-about">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1 class="main-title">
-                <span class="highlight">課題</span>を整理し、<br>
-                <span class="highlight">技術</span>で解決する。
-            </h1>
-            <p class="hero-desc">
-                SIer志望のエンジニアとして、<br>
-                要件理解から実装まで一貫して取り組んでいます。
-            </p>
-            
-            <div class="profile-summary">
-                <div class="profile-item">
-                    <i class="fa-solid fa-user"></i>
-                    <div>
-                        <strong>Kuri</strong>
-                        <span>18 Years Old</span>
-                    </div>
-                </div>
-                <div class="profile-item">
-                    <i class="fa-solid fa-school"></i>
-                    <div>
-                        <strong>NIT (Kosen)</strong>
-                        <span>Intelligent Info. Course</span>
-                    </div>
-                </div>
-                <div class="profile-item">
-                    <i class="fa-solid fa-code"></i>
-                    <div>
-                        <strong>Interests</strong>
-                        <span>AI / Web / Hardware</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center md:hidden">
+        <ul class="flex flex-col space-y-8 text-2xl font-bold text-gray-800 text-center">
+            <li><a href="#about" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">About</a></li>
+            <li><a href="#career" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Career</a></li>
+            <li><a href="#skills" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Skills</a></li>
+            <li><a href="#works" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMobileMenu()" class="text-brand hover:text-brand-dark transition-colors block px-8 py-2 mt-4">Contact</a></li>
+        </ul>
+    </div>
 
-            <div class="hero-buttons">
-                <a href="#products" class="btn primary">View Works <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#career" class="btn secondary">My Career</a>
-            </div>
-        </div>
-    </section>
-
+    <!-- ==========================================
+         Main Content
+         ========================================== -->
     <main>
-        <section id="career">
-            <h2 class="section-title">Career History</h2>
-            <div class="timeline">
-                
-                <div class="timeline-item future">
-                    <div class="timeline-date">2027.03</div>
-                    <div class="timeline-content">
-                        <h3>高専卒業見込み</h3>
-                    </div>
+        <!-- About Section -->
+        <section id="about" class="relative min-h-screen flex flex-col justify-center items-center pt-20 pb-20 md:pt-24 md:pb-32 px-5 overflow-hidden bg-white border-b border-gray-100">
+            <!-- Background Decorations -->
+            <div class="absolute top-10 right-0 md:right-10 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-light/50 rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
+            <div class="absolute bottom-10 left-0 md:left-10 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gray-100/80 rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
+
+            <div class="max-w-4xl mx-auto w-full relative z-10 mt-8">
+                <div class="text-center mb-8 md:mb-10">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-brand-light text-brand text-xs font-bold tracking-widest uppercase mb-4">Portfolio & Profile</span>
+                    <h1 class="text-4xl md:text-6xl font-black text-dark tracking-tight mb-3 md:mb-4">Kuri</h1>
+                    <p class="text-base md:text-lg text-gray-500 font-medium">Engineering Student @ OMUCT</p>
                 </div>
 
-                <div class="timeline-item future">
-                    <div class="timeline-date">2026.02</div>
-                    <div class="timeline-content">
-                        <h3>E資格 2026#1 に挑戦予定</h3>
-                        <p>AIエンジニアとしての専門性を高めるため、資格取得に向けて学習中。</p>
+                <div class="bg-white rounded-3xl p-6 md:p-12 border border-gray-100 shadow-2xl shadow-gray-200/50 relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand to-brand-light rounded-t-3xl"></div>
+                    
+                    <div class="text-gray-600 leading-relaxed text-sm md:text-lg mb-8 md:mb-10 space-y-4 text-center max-w-2xl mx-auto">
+                        <p>大阪の工業高等専門学校（知能情報コース）の4年生です。</p>
+                        <p>Pythonを用いたAI/ディープラーニング実装をメインに、Webアプリケーション開発やArduinoによるハードウェア制御など、ソフトウェアとハードウェアの垣根を越えたモノづくりを探求しています。</p>
+                        <p>将来は、顧客の課題を汲み取り、適切な技術を選定・組み合わせて解決に導くSIerエンジニアを目指しています。</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-10">
+                        <div class="bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
+                            <i class="fa-regular fa-clock text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
+                            <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">Age</span>
+                            <span class="font-bold text-gray-800 text-lg md:text-xl">18</span>
+                        </div>
+                        <div class="bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
+                            <i class="fa-solid fa-graduation-cap text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
+                            <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">Education</span>
+                            <span class="font-bold text-gray-800 text-base md:text-lg">OMUCT</span>
+                            <span class="text-[10px] md:text-xs text-gray-500 mt-1 font-medium">知能情報コース (2028卒)</span>
+                        </div>
+                        <div class="bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
+                            <i class="fa-solid fa-code text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
+                            <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">Interests</span>
+                            <span class="font-bold text-gray-800 text-base md:text-lg">AI / Web / HW</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
+                        <a href="#works" class="w-full sm:w-auto px-8 py-3.5 bg-brand text-white text-center font-medium rounded-full hover:bg-brand-dark transition-all transform hover:-translate-y-1 shadow-lg shadow-brand/30">
+                            View Works
+                        </a>
+                        <a href="#career" class="w-full sm:w-auto px-8 py-3.5 bg-white text-dark text-center font-medium border border-gray-200 rounded-full hover:border-gray-400 hover:bg-gray-50 transition-all">
+                            Career History
+                        </a>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2025.12</div>
-                    <div class="timeline-content">
-                        <h3>DeepLearningコンテスト挑戦 (2次審査中)</h3>
-                        <p>災害時に音を収集し、要救助者の発見をサポートするシステムを考案。DL技術の実社会への応用に取り組む。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2025.11</div>
-                    <div class="timeline-content">
-                        <h3>高専祭2025 ゲーム展示 (Slate Quest)</h3>
-                        <p>独自の「疑似言語」を考案し、それを用いた暗号解読ゲームをチームで制作・展示。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2025.08</div>
-                    <div class="timeline-content">
-                        <h3>高専テクノゼミ 実践教育プログラム (夏)</h3>
-                        <p>チーム「めだまウォーク」で参加。脳波解析とアイトラッキング技術を活用し、すべての人が街歩きを楽しめるサービスを提案。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2025.07</div>
-                    <div class="timeline-content">
-                        <h3>DeepLearning基礎講座 修了</h3>
-                        <p>ニューラルネットワーク等のDL技術の基礎理論と実装スキルを習得。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2025.04</div>
-                    <div class="timeline-content">
-                        <h3>高専3年生に進級 / 高専テクノゼミ (Spring)</h3>
-                        <p>チーム「ハム専ギルド」で参加。大阪地下街の複雑さを解決するナビゲーションプロダクトを企画・開発・発表。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2025.02</div>
-                    <div class="timeline-content">
-                        <h3>画像ビューワー開発 (PySide)</h3>
-                        <p>デスクトップアプリ開発の学習として作成。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2025.01</div>
-                    <div class="timeline-content">
-                        <h3>ボール撃ち落としゲーム開発 (Pygame)</h3>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2024.11</div>
-                    <div class="timeline-content">
-                        <h3>高専祭2024 ゲーム展示</h3>
-                        <p>Unityと自作ハードウェアを組み合わせたシューティングゲームを展示。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2024.07</div>
-                    <div class="timeline-content">
-                        <h3>クイズゲーム作成 (Python)</h3>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2024.05</div>
-                    <div class="timeline-content">
-                        <h3>シューティングゲーム共同開発開始</h3>
-                        <p>Unityを使用した初めてのチーム開発経験。</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2024.04</div>
-                    <div class="timeline-content">
-                        <h3>知能情報コース2年に進級</h3>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2023.12</div>
-                    <div class="timeline-content">
-                        <h3>Python学習開始</h3>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2023.04</div>
-                    <div class="timeline-content">
-                        <h3>高専 入学</h3>
-                    </div>
-                </div>
-
             </div>
-        </section>
-
-        <section id="skill">
-            <h2 class="section-title">Skills</h2>
             
-            <div class="skill-category">
-                <h3>Frontend & Modern Web</h3>
-                <div class="skill-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
-                        <h4>Next.js</h4>
-                        <p>Blogアプリ開発で使用。SSR/SSGの理解。</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
-                        <h4>TypeScript</h4>
-                        <p>型安全な開発を意識して学習中。</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
-                        <h4>React</h4>
-                        <p>Hooksを活用したSPA開発。</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
-                        <h4>HTML / CSS</h4>
-                        <p>レスポンシブデザインの実装。</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Backend & Core</h3>
-                <div class="skill-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
-                        <h4>Python</h4>
-                        <p>Pygame, PySide6, DL基礎。競技プログラミング。</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-c"></i></div>
-                        <h4>C / C++ (Arduino)</h4>
-                        <p>ハードウェア制御、シリアル通信。</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-brands fa-unity"></i></div>
-                        <h4>Unity (C#)</h4>
-                        <p>ゲームロジック、物理演算。</p>
-                    </div>
-                </div>
+            <div class="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-400">
+                <span class="text-[9px] md:text-[10px] uppercase tracking-widest mb-1.5 md:mb-2 font-medium">Scroll</span>
+                <i class="fa-solid fa-arrow-down animate-bounce text-xs md:text-sm"></i>
             </div>
         </section>
 
-        <section id="products">
-            <h2 class="section-title">Works</h2>
-            <div class="product-grid">
+        <!-- Career Section -->
+        <section id="career" class="py-16 md:py-24 px-5">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-8 md:mb-12">
+                    <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Career & Experience</h2>
+                    <h3 class="text-2xl md:text-3xl font-bold">Timeline</h3>
+                </div>
                 
-                <article class="product-card no-image">
-                    <div class="card-icon-header">
-                        <i class="fa-solid fa-blog"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Blog Application</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">TypeScript</span>
-                        </div>
-                        <p>TypeScriptとNext.jsを組み合わせて構築したブログアプリ。</p>
-                        <div class="card-links">
-                            <a href="https://github.com/kuri227/next-blog-app" class="text-link"><i class="fa-brands fa-github"></i> View Code</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card no-image">
-                    <div class="card-icon-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                        <i class="fa-solid fa-gamepad"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Slate Quest (高専祭2025)</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Team Dev</span>
-                            <span class="tech-tag">Game</span>
-                        </div>
-                        <p>独自の疑似言語を用いた暗号解読ゲーム。チーム開発作品。</p>
-                        <div class="card-links">
-                            <a href="https://github.com/misorange/slate_quest" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> View Code</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card no-image">
-                    <div class="card-icon-header" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); color: white;">
-                        <i class="fa-solid fa-list-check"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>React Todo App</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">2025.10</span>
-                        </div>
-                        <p>ReactのState管理学習のために作成したTodoアプリ。</p>
-                        <div class="card-links">
-                            <a href="https://github.com/kuri227/react-todo-app" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> View Code</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card" id="shooting-game">
-                    <figure class="card-image">
-                        <img src="images/gun_img/unity_running.png" alt="シューティングゲーム">
-                    </figure>
-                    <div class="card-content">
-                        <h3>シューティングゲーム</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Unity</span>
-                            <span class="tech-tag">Arduino</span>
-                        </div>
-                        <p>自作コントローラーで遊ぶ体感型ゲーム。</p>
-                        <div class="card-links">
-                            <a href="https://github.com/create-alt/HackU_new.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Unity</a>
-                            <a href="https://github.com/kuri227/hackU.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Arduino</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card" id="shooting_ball">
-                    <div class="slider-container">
-                        <div class="slider">
-                            <div class="slides">
-                                <div class="slide"><img src="images/shooting_img/shooting_ball_start.png" alt="Start"></div>
-                                <div class="slide"><img src="images/shooting_img/shooting_game_play.png" alt="Play"></div>
-                                <div class="slide"><img src="images/shooting_img/shooting_game_clear.png" alt="Clear"></div>
-                            </div>
-                            <button class="prev" onclick="moveSlide1(-1)">&#10094;</button>
-                            <button class="next" onclick="moveSlide1(1)">&#10095;</button>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>ボール撃ち落としゲーム</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pygame</span>
-                        </div>
-                        <p>弓矢でボールを迎撃するアクションゲーム。</p>
-                        <div class="card-links">
-                            <a href="https://github.com/kuri227/Shotting-Pygame.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card" id="image_viewer">
-                    <div class="slider-container">
-                        <div class="slider">
-                            <div class="slides">
-                                <div class="slide"><img src="images/image-viewer_img/image-viewer01.png" alt="Viewer"></div>
-                                <div class="slide"><img src="images/image-viewer_img/image-viewer02.png" alt="Open"></div>
-                            </div>
-                            <button class="prev" onclick="moveSlide2(-1)">&#10094;</button>
-                            <button class="next" onclick="moveSlide2(1)">&#10095;</button>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>画像ビューワー</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PySide6</span>
-                        </div>
-                        <p>GUIによる多機能画像閲覧アプリ。</p>
-                        <div class="card-links">
-                            <a href="https://github.com/kuri227/image-viewer.git" target="_blank" class="text-link"><i class="fa-brands fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <figure class="card-image">
-                        <img src="images/quiz_img/quiz.jpeg" alt="クイズゲーム">
-                    </figure>
-                    <div class="card-content">
-                        <h3>CLI クイズゲーム</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <p>対話型クイズアプリケーション。</p>
-                        <div class="card-links">
-                            <a href="https://colab.research.google.com/drive/1coHaIhKgrtZ5fRi85KWdHDMBiaK9wUsA?usp=sharing" target="_blank" class="text-link"><i class="fa-solid fa-play"></i> Play</a>
-                        </div>
-                    </div>
-                </article>
-
+                <!-- Timeline Container (Rendered by JS) -->
+                <div id="timeline-container" class="space-y-12 md:space-y-16"></div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-box">
-                <p>制作物や活動に関するお問い合わせはこちらまでお願いいたします。</p>
-                <div class="mail-address">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>rg23136w☆st.omu.ac.jp</span>
-                    <small>※ ☆を@に変更してください</small>
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 px-5 bg-gray-50 border-y border-gray-200">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2 text-center">Tech Stack</h2>
+                <h3 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Skills</h3>
+                
+                <!-- Skills Container (Rendered by JS) -->
+                <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"></div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="py-16 md:py-24 px-5">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 md:mb-12 gap-4">
+                    <div>
+                        <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Projects</h2>
+                        <h3 class="text-2xl md:text-3xl font-bold">Selected Works</h3>
+                    </div>
+                </div>
+
+                <!-- Works Container (Rendered by JS) -->
+                <div id="works-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 px-5 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-4 md:mb-6">Contact</h2>
+                <p class="text-gray-600 text-sm md:text-lg mb-8 md:mb-12 max-w-xl mx-auto leading-relaxed">
+                    制作物や活動に関するお問い合わせ、カジュアルな面談など、お気軽にご連絡ください。<br class="hidden md:block" />新しいチャレンジや出会いをいつでも歓迎しています。
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
+                    <div class="w-full sm:w-auto flex flex-col items-center bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-gray-600">
+                            <i class="fa-solid fa-envelope text-lg md:text-xl"></i>
+                        </div>
+                        <span class="text-[9px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Email</span>
+                        <div class="font-mono text-base md:text-lg tracking-wider text-dark select-all font-semibold">
+                            rg23136w@st.omu.ac.jp
+                        </div>
+                    </div>
+                    
+                    <a href="https://github.com/kuri227" target="_blank" class="w-full sm:w-auto flex flex-col items-center bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow group">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-gray-600 group-hover:bg-dark group-hover:text-white transition-colors">
+                            <i class="fa-brands fa-github text-lg md:text-xl"></i>
+                        </div>
+                        <span class="text-[9px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">GitHub</span>
+                        <div class="font-mono text-base md:text-lg tracking-wider text-dark font-semibold group-hover:text-brand transition-colors">
+                            @kuri227
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Kuri's Portfolio</p>
+    <footer class="bg-gray-900 py-6 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-xs md:text-sm">&copy; 2026 Kuri. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+
+    <!-- ==========================================
+         Project Detail Modal (Empty Container)
+         ========================================== -->
+    <div id="project-modal" class="fixed inset-0 z-[100] bg-white hidden flex-col overflow-y-auto opacity-0 transition-opacity duration-300">
+        <div class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 md:px-5 py-3 md:py-4 z-10 flex items-center justify-between">
+            <button onclick="closeProjectModal()" class="flex items-center gap-2 text-gray-600 hover:text-brand font-semibold transition-colors group px-2 py-1 text-sm md:text-base">
+                <i class="fa-solid fa-arrow-left transform group-hover:-translate-x-1 transition-transform"></i> 
+                Back<span class="hidden sm:inline"> to Works</span>
+            </button>
+            <span id="modal-header-title" class="font-bold text-gray-800 text-sm hidden md:block"></span>
+            <div class="w-20 md:w-24"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto w-full px-5 py-6 md:py-10 flex-grow">
+            <div class="rounded-2xl overflow-hidden bg-gray-50 mb-6 md:mb-10 border border-gray-200 shadow-sm flex items-center justify-center min-h-[200px] md:min-h-[300px]">
+                <img id="modal-image" src="" alt="" class="w-full h-auto max-h-[40vh] md:max-h-[60vh] object-contain">
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-start mb-6 md:mb-8 gap-4 md:gap-6">
+                <div>
+                    <h2 id="modal-title" class="text-2xl sm:text-3xl md:text-4xl font-black text-dark mb-2 md:mb-3"></h2>
+                    <span id="modal-date" class="text-[10px] md:text-xs font-bold text-gray-500 bg-gray-100 px-2 md:px-3 py-1 md:py-1.5 rounded-md inline-block tracking-wider"></span>
+                </div>
+                <div id="modal-links" class="flex flex-col sm:flex-row flex-wrap gap-2 md:gap-3 w-full md:w-auto"></div>
+            </div>
+
+            <div id="modal-tags" class="mb-8 md:mb-12 space-y-3 md:space-y-4 py-4 md:py-6 border-y border-gray-100"></div>
+
+            <div class="max-w-3xl pb-10">
+                <h3 class="text-base md:text-lg font-bold text-dark flex items-center gap-2 mb-4 md:mb-6">
+                    <i class="fa-solid fa-align-left text-brand"></i> About the Project
+                </h3>
+                <p id="modal-desc" class="text-sm md:text-base text-gray-600 leading-relaxed md:leading-loose whitespace-pre-line"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         JavaScript: Data & Rendering Logic
+         ========================================== -->
+    <script>
+        // ---------------------------------------------------------------------
+        // ⚙️ PORTFOLIO DATA (ここを編集するだけでサイト全体が更新されます)
+        // ---------------------------------------------------------------------
+        const PORTFOLIO_DATA = {
+            
+            // --- 1. Career (Timeline) Data ---
+            timeline: [
+                {
+                    year: "2028",
+                    events: [
+                        { month: "03月", title: "高専卒業見込み", desc: "高専卒業後は就職を予定しています。<br>誰にも負けないようなスキルを磨いていきたいと考えています。", buttons: [], externalLinks: [] }
+                    ]
+                },
+                {
+                    year: "2026",
+                    events: [
+                        { 
+                            month: "05月", title: "Deep Learningコンテスト（DCON）2026 特別展示", 
+                            desc: "災害時に音を収集し、要救助者の発見をサポートするシステムを考案。<br>主機能となるDL部分を実装し、本選会場でポスター展示。<br>思いついた技術を単純に組み合わせて実装するのではなく、ビジネス面から見ても価値のあるプロダクトを作ることの難しさと面白さを実感した経験でした。",
+                            buttons: [], 
+                            externalLinks: [{ text: "DCON 公式サイト", url: "https://dcon.ai/" }]
+                        },
+                        { 
+                            month: "04月", title: "高専4年生に進級", desc: "", 
+                            buttons: [], externalLinks: [] 
+                        },
+
+                        { month: "02月", title: "E資格 2026#1 合格", desc: "DeepLearningの基礎を理解し、実装能力を習得。 Deep Learningコンテストでの実装に活用。", buttons: [], 
+                        externalLinks: [{ text: "E資格 公式サイト", url: "https://www.jdla.org/certificate/engineer/" }] },
+                        { month: "01月", title: "TechFeed 開発 (Next.js + TypeScript)", desc: "Next.jsとTypeScriptを使用して、エンジニアやプログラミング学習者を対象とした技術知識共有プラットフォームを作成しました。<br>vercelでホスティングしており、現在も運用を続けています。", 
+                            buttons: [{ text: "詳細 (TechFeed)", targetId: "blog" }], externalLinks: [] 
+                        },
+                        { month: "01月", title: "アレルギー情報自動取得プログラム 開発", desc: "Google検索を使用することによって、企業のアレルギー情報を記載したPDFを自動取得するプログラムを作成。<br>PDFを自動解析し、アレルギー情報を抽出するプログラムと共に使用し、アレルギー情報検索アプリを作成。", buttons: [{ text: "詳細 (アレルギー情報自動取得)", targetId: "allergy-info" }], externalLinks: [] }
+                    ]
+                },
+                {
+                    year: "2025",
+                    events: [
+                        { 
+                            month: "11月", title: "高専祭2025 ゲーム展示", 
+                            desc: "独自の「疑似言語」を考案し、それを用いた暗号解読ゲームをチームで制作・展示。",
+                            buttons: [{ text: "詳細 (Slate Quest)", targetId: "slate-quest" }], 
+                            externalLinks: []
+                        },
+                        { month: "10月", title: "Todoアプリ 開発", desc: "大きなタスクを小さなタスクに分割して管理できるTodoアプリを作成。<br>タスクの階層構造を視覚的に表現するUIを実装し、タスクに着手することを促す工夫を盛り込みました。", 
+                            buttons: [{ text: "詳細 (Todoアプリ)", targetId: "todo" }], externalLinks: []
+                        },
+                        { 
+                            month: "09月", title: "高専テクノゼミ 実践教育プログラム（夏）", 
+                            desc: "チーム「めだまウォーク」で参加。<br>脳波解析とアイトラッキング技術を活用し、すべての人が街歩きを楽しめるサービスを提案。",
+                            buttons: [], 
+                            externalLinks: [{ text: "めだまウォーク アイデア概要", url: "https://portal.techno-semi.com/practice/team/s46EuO2p" }]
+                        },
+                        { 
+                            month: "08月", title: "企業様との共同研究を開始", desc: "学校教員であるM先生主導の元で、企業様との共同研究を行っています。<br>研究は2026/04/13現在まで継続しています。", 
+                            buttons: [], externalLinks: [] 
+                        },
+                        { month: "07月", title: "Deep Learning 基礎講座 2025 Spring 修了", desc: "ニューラルネットワーク等のDL技術の基礎理論と実装スキルを習得。<br>Deep Learningへの興味を深めることができました。", buttons: [], externalLinks: [{ text: "DL基礎講座 公式サイト", url: "https://weblab.t.u-tokyo.ac.jp/lecture/deep-learning/" }] },
+                        { month: "04月", title: "高専3年生に進級", desc: "", buttons: [], externalLinks: [] },
+                        { month: "03月", title: "高専テクノゼミ 実践教育プログラム（春）", desc: "チーム「ハム専ギルド」で参加。<br>梅田の地下街を複数回歩いて調査し、取得した情報を定量的な数値に変換することで、浮かび上がった問題点に対して地図アプリケーションの企画を提案。", 
+                            externalLinks: [{ text: "ハム専ギルド アイデア概要", url: "https://portal.techno-semi.com/practice/team/_2h_nTGt" }], buttons: []
+                        },
+                        { 
+                            month: "02月", title: "画像ビューワー開発 (PySide)", desc: "pyqt5の後継であるPySideを使用して、シンプルな画像ビューワーを作成。<br>PythonでGUIアプリケーションを開発する経験を積むことができました。", 
+                            buttons: [{ text: "詳細 (画像ビューワー)", targetId: "image-viewer" }], externalLinks: [] 
+                        },
+                        { 
+                            month: "01月", title: "ボール撃ち落としゲーム開発 (Pygame)", desc: "PythonのPygameを使用して、マウス操作でボールを撃ち落とすゲームを作成。", 
+                            buttons: [{ text: "詳細 (Shooting Ball)", targetId: "shooting-ball" }], externalLinks: [] 
+                        },
+                        { month: "01月", title: "Hack U 大阪公大高専 2024", desc: "Unityとセンサを搭載した自作ハードウェアを組み合わせたシューティングゲームを展示。<br>社員さんからのフィードバックもいただき、実践的な知識を身に着けることができました。", buttons: [{ text: "詳細 (体感型シューティング)", targetId: "shooting" }], externalLinks: [{ text: "Hack U 大阪公大高専 2024", url: "https://hacku.yahoo.co.jp/omuct2024/" }]}
+                    ]
+                },
+                {
+                    year: "2024",
+                    events: [
+                        { 
+                            month: "11月", title: "高専祭2024 体感型シューティング展示", 
+                            desc: "Hack U 大阪公大高専 2024のために作成していた体感型シューティングのプロトタイプを高専祭で展示しました。",
+                            buttons: [], 
+                            externalLinks: []},
+
+                        { 
+                            month: "07月", title: "クイズゲーム作成 (Python)", desc: "対話型で遊べるコマンドラインベースのアプリ。", 
+                            buttons: [{ text: "詳細 (CLI Quiz)", targetId: "cli-quiz" }], externalLinks: [] 
+                        },
+                        { month: "04月", title: "知能情報コース2年に進級", desc: "Pythonの学習がきっかけで、知能情報コースを選択し、進級しました。", buttons: [], externalLinks: [] }
+                    ]
+                },
+                {
+                    year: "2023",
+                    events: [
+                        { month: "12月", title: "Python学習開始", desc: "このころからプログラミングに興味を持ち始め、Pythonを学び始めました。", buttons: [], externalLinks: [] },
+                        { month: "04月", title: "高専 入学", desc: "4つ上の兄が高専に通っていたことがきっかけで、高専に興味を持ちはじめ、入学に至りました。", buttons: [], externalLinks: [] }
+                    ]
+                }
+            ],
+
+            // --- 2. Skills Data ---
+            skills: [
+                {
+                    category: "Frontend & Web",
+                    icon: "fa-solid fa-laptop-code",
+                    items: [
+                        { name: "JavaScript", iconHtml: '<i class="fa-brands fa-js text-2xl md:text-3xl text-yellow-400 mb-2"></i>', note: "" },
+                        { name: "Next.js / React", iconHtml: '<i class="fa-brands fa-react text-2xl md:text-3xl text-blue-400 mb-2"></i>', note: "" },
+                        { name: "TypeScript", iconHtml: '<div class="text-2xl md:text-3xl text-blue-600 font-black mb-2 rounded bg-blue-100 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center text-xs md:text-sm">TS</div>', note: "" },
+                        { name: "HTML / CSS", iconHtml: '<i class="fa-brands fa-html5 text-2xl md:text-3xl text-orange-500 mb-2"></i>', note: "" }
+                    ]
+                },
+                {
+                    category: "Backend & Core",
+                    icon: "fa-solid fa-microchip",
+                    items: [
+                        { name: "Python", iconHtml: '<i class="fa-brands fa-python text-2xl md:text-3xl text-yellow-500 mb-2"></i>', note: "Pygame, PySide, DL" },
+                        { name: "C / C++", iconHtml: '<i class="fa-solid fa-c text-2xl md:text-3xl text-blue-700 mb-2"></i>', note: "Arduino" },
+                        { name: "Unity (C#)", iconHtml: '<i class="fa-brands fa-unity text-2xl md:text-3xl text-gray-800 mb-2"></i>', note: "" }
+                    ]
+                },
+                {
+                    category: "Tools & Infra",
+                    icon: "fa-solid fa-toolbox",
+                    items: [
+                        { name: "Git / GitHub", iconHtml: '<i class="fa-brands fa-github text-2xl md:text-3xl text-gray-800 mb-2"></i>', note: "バージョン管理", span: 1 },
+                        { name: "Docker", iconHtml: '<i class="fa-brands fa-docker text-2xl md:text-3xl text-blue-500 mb-2"></i>', note: "環境構築", span: 1 },
+                        { name: "Linux", iconHtml: '<i class="fa-brands fa-linux text-2xl md:text-3xl text-gray-700 mb-2"></i>', note: "基本的なコマンド操作", span: 2 }
+                    ]
+                }
+            ],
+
+            // --- 3. Works (Projects) Data ---
+            works: [
+                {
+                    id: "blog",
+                    title: "TechFeed - 技術知識共有プラットフォーム",
+                    date: "2026.01",
+                    thumbnail: "img/works/blog-app.png", // 拡張しやすいようimg/worksディレクトリに統一
+                    shortDesc: "TypeScriptとNext.jsを組み合わせて構築したブログアプリ。",
+                    tags: [
+                        { label: "Type", items: ["Solo Dev"] },
+                        { label: "Tech", items: ["Next.js", "TS"] }
+                    ],
+                    repoUrl: "https://github.com/kuri227/next-blog-app",
+                    longDesc: "TypeScriptとNext.jsを用いて構築されたモダンなブログアプリケーションです。\n\n静的サイト生成(SSG)やサーバーサイドレンダリング(SSR)などの仕組みを活用し、高速なページロードとSEO最適化を意識して実装しました。マークダウン形式での記事執筆機能や、タグによる記事の絞り込み機能など、実際の技術ブログ運用に求められる基本機能を取り揃えています。\n\nモダンなフロントエンドの技術スタック（Reactエコシステム）への理解を深め、コンポーネント設計の基礎を身につけるための重要なプロジェクトとなりました。",
+                    links: [
+                        { text: "View Code", url: "https://github.com/kuri227/next-blog-app", icon: "fa-brands fa-github" }
+                    ]
+                },
+                {
+                    id: "allergy-info",
+                    title: "アレルギー情報自動取得プログラム",
+                    date: "2026.01",
+                    thumbnail: "img/works/allergy-scraper.png",
+                    shortDesc: "企業のアレルギー情報を自動で取得するJavaScriptプログラム。",
+                    tags: [
+                        { label: "Type", items: ["Solo Dev"] },
+                        { label: "Tech", items: ["JavaScript"] }
+                    ],
+                    repoUrl: "https://github.com/kuri227/search_allergy",
+                    longDesc: "Google検索を使用して、企業のアレルギー情報を記載したPDFを自動取得するJavaScriptプログラムです。PDFを自動解析し、アレルギー情報を抽出するプログラムと組み合わせることで、アレルギー情報自動取得するアプリケーションを実現できます。\n\nこのプログラムは、特定の企業名を入力すると、その企業に関連するアレルギー情報が記載されたPDFファイルをウェブ上から検索し、自動的にダウンロードします。\n\nこのプロジェクトを通じて、ウェブスクレイピングやPDF解析などの実践的なスキルを身につけることができました。また、ユーザーが必要とする情報を効率的に収集・提供することの重要性と難しさも実感しました。",
+                    links: [{ text: "View Code", url: "https://github.com/kuri227/search_allergy", icon: "fa-brands fa-github" }],
+                },
+                {
+                    id: "slate-quest",
+                    title: "Slate Quest",
+                    date: "2025.11",
+                    thumbnail: "img/works/slate-quest.png",
+                    shortDesc: "独自の疑似言語を用いた暗号解読ゲーム。高専祭にてチームで制作・展示。",
+                    tags: [
+                        { label: "Type", items: ["Team Dev"] },
+                        { label: "Event", items: ["School Festival"] }
+                    ],
+                    repoUrl: "https://github.com/misorange/slate_quest",
+                    longDesc: "独自の「疑似言語」を考案し、それを解読しながら進む新感覚の謎解きゲームです。高専祭2025での展示に向けて、チームで企画・開発を行いました。\n\nプログラミングの基礎である「ルールを見つけ出し、適用する」という楽しさを、プログラミング未経験の一般参加者にも直感的に体験してもらえるよう、UI/UXや難易度カーブを工夫しています。\n\nこのプロジェクトを通して、チーム開発におけるバージョン管理（Git/GitHub）の運用ルールや、タスク分割・スケジュール管理の難しさと重要性を実践的に学びました。大変思い入れの深い作品です。",
+                    links: [
+                        { text: "View Code", url: "https://github.com/misorange/slate_quest", icon: "fa-brands fa-github" }
+                    ]
+                },
+                {
+                    id: "todo",
+                    title: "Todo App",
+                    date: "2025.10",
+                    thumbnail: "img/works/react-todo.png",
+                    shortDesc: "ReactのState管理学習のために作成したTodoアプリケーション。",
+                    tags: [
+                        { label: "Type", items: ["Solo Dev"] },
+                        { label: "Tech", items: ["React"] }
+                    ],
+                    repoUrl: "https://github.com/kuri227/react-todo-app",
+                    longDesc: "Reactの基礎的な概念（コンポーネント指向）や、状態管理（Hooks）の理解を深めるために作成したTodoアプリケーションです。\n\n機能としてはタスクの追加・完了・削除・フィルタリングといった基本的なものですが、大きなタスクをいくつかのタスクに分解することができる機能を持っており、1つのタスクを小さくしていくことで、ユーザーの着手のハードルを下げることを狙っています。コンポーネントの適切な分割や、Propsによるデータの受け渡し、 useEffect を用いたローカルストレージへのデータ永続化など、実践的なフロントエンド開発の基礎をこのプロジェクトでしっかりと習得しました。\n\nユーザーが迷わず操作できるよう、シンプルながらも直感的なUIデザインを心がけました。",
+                    links: [
+                        { text: "View Code", url: "https://github.com/kuri227/react-todo-app", icon: "fa-brands fa-github" }
+                    ]
+                },
+                {
+                    id: "shooting",
+                    title: "体感型シューティング",
+                    date: "2025.01",
+                    thumbnail: "img/works/shooting-game.png",
+                    shortDesc: "自作コントローラー（Arduino）とUnityを連携させた、高専祭展示用ゲーム作品。",
+                    tags: [
+                        { label: "Type", items: ["Team Dev"] },
+                        { label: "Tech", items: ["Unity", "Arduino"] },
+                        { label: "Event", items: ["Hack U", "School Festival"] }
+                    ],
+                    repoUrl: "https://github.com/create-alt/HackU_new.git", // main repo
+                    longDesc: "Arduinoを用いて加速度センサーやボタンを組み込んだ「銃型コントローラー」を自作し、Unity上のゲームとシリアル通信で連携させた体感型シューティングゲームです。\n\nHack Uおよび高専祭2024で展示し、多くの来場者に実際にプレイしていただきました。\n\nハードウェア（センサーからのアナログ値取得とノイズ除去）の信号処理から、ソフトウェア（Unityでの弾の描画と当たり判定）のロジック構築まで、全く異なる技術レイヤーを跨いだ開発を行いました。ハードとソフトを繋ぎ合わせて1つのプロダクトを作り上げる面白さを実感した意欲作です。",
+                    links: [
+                        { text: "Unity Code", url: "https://github.com/create-alt/HackU_new.git", icon: "fa-brands fa-unity" },
+                        { text: "Arduino Code", url: "https://github.com/kuri227/hackU.git", icon: "fa-brands fa-github" }
+                    ]
+                },
+                {
+                    id: "shooting-ball",
+                    title: "ボール撃ち落としゲーム",
+                    date: "2025.01",
+                    thumbnail: "img/works/shooting-ball.png",
+                    shortDesc: "弓矢でボールを迎撃するアクションゲーム。",
+                    tags: [
+                        { label: "Type", items: ["Solo Dev"] },
+                        { label: "Tech", items: ["Python", "Pygame"] }
+                    ],
+                    repoUrl: "https://github.com/kuri227/Shotting-Pygame.git",
+                    longDesc: "PythonとPygameライブラリを使用して開発した2Dアクションゲームです。\n\n上空から迫りくるボールの軌道を予測し、弓矢で迎撃するというシンプルなルールですが、内部では重力や速度ベクトルを用いた物理演算の基礎的な実装を行っています。\n\nまた、オブジェクト指向プログラミングにおけるクラス設計（プレイヤー、敵、弾などの要素を個別のクラスとして分割・管理する手法）の概念を、実際のゲーム制作を通して実践的に学ぶために制作した、プログラミング学習初期の重要なステップとなった作品です。",
+                    links: [
+                        { text: "View Code", url: "https://github.com/kuri227/Shotting-Pygame.git", icon: "fa-brands fa-github" }
+                    ]
+                },
+                {
+                    id: "image-viewer",
+                    title: "画像ビューワー",
+                    date: "2025.02",
+                    thumbnail: "img/works/image-viewer.png",
+                    shortDesc: "GUIによる多機能画像閲覧デスクトップアプリ。",
+                    tags: [
+                        { label: "Type", items: ["Solo Dev"] },
+                        { label: "Tech", items: ["Python", "PySide6"] }
+                    ],
+                    repoUrl: "https://github.com/kuri227/image-viewer.git",
+                    longDesc: "PythonのGUIフレームワークであるPySide6を利用して開発した、デスクトップアプリケーション（画像ビューワー）です。\n\n大量の画像ファイルを効率的に閲覧できるよう、ディレクトリツリーによるフォルダナビゲーション、サムネイルの一覧表示、そしてキーボードショートカットによるスムーズな画像切り替え機能を実装しています。\n\nWebアプリケーションだけでなく、OSのネイティブ環境で動作するデスクトップアプリ開発の基礎プロセスや、イベント駆動型プログラミング（GUI操作に対するアクションの紐付け）について深く学ぶことができました。",
+                    links: [
+                        { text: "View Code", url: "https://github.com/kuri227/image-viewer.git", icon: "fa-brands fa-github" }
+                    ]
+                },
+                {
+                    id: "cli-quiz",
+                    title: "CLI クイズゲーム",
+                    date: "2024.07",
+                    thumbnail: "img/works/cli-quiz.jpeg",
+                    shortDesc: "対話型で遊べるコマンドラインベースのクイズアプリケーション。",
+                    tags: [
+                        { label: "Type", items: ["Solo Dev"] },
+                        { label: "Tech", items: ["Python"] }
+                    ],
+                    repoUrl: null, // Play link is used instead
+                    longDesc: "プログラミング学習の最も初期の段階で作成した、コマンドライン（ターミナル）上で動作する対話型のクイズゲームです。環境構築不要で誰でもすぐに遊べるよう、Google Colaboratory上で公開しています。\n\n変数、条件分岐、ループ処理、標準入出力（print / input）といったプログラミング言語の基本要素のみを用いて構成されています。\n\nまた、ユーザーが予期せぬ文字を入力した際にプログラムがクラッシュしないよう、ユーザビリティを考慮したエラーハンドリングも実装しており、ここから私のソフトウェア開発の道がスタートしました。",
+                    links: [
+                        { text: "Play on Colab", url: "https://colab.research.google.com/drive/1coHaIhKgrtZ5fRi85KWdHDMBiaK9wUsA?usp=sharing", icon: "fa-solid fa-play" }
+                    ]
+                }
+            ]
+        };
+
+        // 画像が見つからない場合のフォールバック（SVG文字列）
+        const PLACEHOLDER_IMG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmM2Y0ZjYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM5Y2EzYWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBQbGFjZWhvbGRlcjwvdGV4dD48L3N2Zz4=";
+
+        // ---------------------------------------------------------------------
+        // 🔄 RENDERING LOGIC (データをHTMLに変換して描画する関数群)
+        // ---------------------------------------------------------------------
+
+        function renderTimeline() {
+            const container = document.getElementById('timeline-container');
+            let html = '';
+
+            PORTFOLIO_DATA.timeline.forEach(yearData => {
+                let eventsHtml = yearData.events.map(ev => {
+                    // 説明文
+                    let descHtml = ev.desc ? `<p class="text-xs md:text-sm text-gray-600 leading-relaxed ${ev.buttons.length || ev.externalLinks.length ? 'mb-3' : ''}">${ev.desc}</p>` : '';
+                    
+                    // ボタン類（モーダルを開くボタン ＆ 外部リンク）
+                    let actionsHtml = '';
+                    if (ev.buttons.length > 0 || ev.externalLinks.length > 0) {
+                        actionsHtml = '<div class="flex flex-wrap gap-2">';
+                        ev.buttons.forEach(btn => {
+                            actionsHtml += `<button onclick="openProjectModal('${btn.targetId}')" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand bg-brand-light/50 border border-brand/20 px-3 py-1.5 rounded-full hover:bg-brand hover:text-white transition-all"><i class="fa-regular fa-window-restore"></i> ${btn.text}</button>`;
+                        });
+                        ev.externalLinks.forEach(link => {
+                            actionsHtml += `<a href="${link.url}" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-600 bg-white border border-gray-200 px-3 py-1.5 rounded-full hover:border-gray-400 hover:text-dark transition-all shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square opacity-70"></i> ${link.text}</a>`;
+                        });
+                        actionsHtml += '</div>';
+                    }
+
+                    return `
+                        <div class="py-5 md:py-6 flex flex-col md:flex-row gap-1 md:gap-6 hover:bg-gray-50 transition-colors -mx-4 px-4 rounded-xl group">
+                            <div class="md:w-16 shrink-0 pt-0.5">
+                                <span class="text-sm font-bold text-${ev.title.includes('卒業') ? 'brand' : 'gray-500'} tracking-wider">${ev.month}</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="text-base md:text-lg font-bold text-dark ${ev.desc || actionsHtml ? 'mb-1' : ''} group-hover:text-brand transition-colors">${ev.title}</h4>
+                                ${descHtml}
+                                ${actionsHtml}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                html += `
+                    <div class="flex flex-col md:flex-row gap-1 md:gap-8">
+                        <div class="md:w-32 shrink-0">
+                            <div class="text-4xl md:text-6xl font-black text-gray-200 tracking-tighter md:sticky md:top-24">${yearData.year}</div>
+                        </div>
+                        <div class="flex-grow divide-y divide-gray-100 border-t-2 border-gray-200 pt-2 mt-1 md:mt-0">
+                            ${eventsHtml}
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderSkills() {
+            const container = document.getElementById('skills-container');
+            let html = '';
+
+            PORTFOLIO_DATA.skills.forEach(category => {
+                let itemsHtml = category.items.map(item => `
+                    <div class="bg-white p-3 md:p-4 rounded-lg border border-gray-100 shadow-sm flex flex-col items-center text-center ${item.span === 2 ? 'col-span-2' : ''}">
+                        ${item.iconHtml}
+                        <span class="font-semibold text-xs md:text-sm">${item.name}</span>
+                        ${item.note ? `<span class="text-[10px] md:text-xs text-gray-500 mt-1">${item.note}</span>` : ''}
+                    </div>
+                `).join('');
+
+                html += `
+                    <div>
+                        <h4 class="text-base md:text-lg font-semibold border-b border-gray-200 pb-2 mb-4 md:mb-6 flex items-center gap-2">
+                            <i class="${category.icon} text-gray-400"></i> ${category.category}
+                        </h4>
+                        <div class="grid grid-cols-2 gap-3 md:gap-4">
+                            ${itemsHtml}
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderWorks() {
+            const container = document.getElementById('works-container');
+            let html = '';
+
+            PORTFOLIO_DATA.works.forEach(work => {
+                // タグの生成
+                let tagsHtml = work.tags.map(tagGroup => `
+                    <div class="flex items-start gap-2">
+                        <span class="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest w-10 md:w-12 shrink-0 pt-0.5">${tagGroup.label}</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            ${tagGroup.items.map(item => `<span class="px-2 py-0.5 border border-gray-200 bg-gray-50 text-gray-600 text-[9px] md:text-[10px] font-bold rounded">${item}</span>`).join('')}
+                        </div>
+                    </div>
+                `).join('');
+
+                // 右下のメインリンク（GitHub等）
+                let repoLinkHtml = '';
+                if (work.repoUrl) {
+                    repoLinkHtml = `<a href="${work.repoUrl}" target="_blank" class="text-gray-400 hover:text-dark transition-colors" title="Repository"><i class="fa-brands fa-github text-lg md:text-xl"></i></a>`;
+                } else if(work.links && work.links.length > 0) {
+                     repoLinkHtml = `<a href="${work.links[0].url}" target="_blank" class="text-gray-400 hover:text-dark transition-colors" title="Link"><i class="${work.links[0].icon} text-lg md:text-xl"></i></a>`;
+                }
+
+                html += `
+                    <article class="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col scroll-mt-24">
+                        <div class="h-40 md:h-48 w-full bg-gray-100 relative overflow-hidden border-b border-gray-100 cursor-pointer" onclick="openProjectModal('${work.id}')">
+                            <img src="${work.thumbnail}" alt="${work.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='${PLACEHOLDER_IMG}'">
+                        </div>
+                        <div class="p-5 md:p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-4 gap-2">
+                                <h4 class="font-bold text-lg md:text-xl text-dark leading-tight">${work.title}</h4>
+                                <span class="text-[10px] md:text-[11px] font-bold text-gray-400 bg-gray-100 px-2 py-1 rounded shrink-0 mt-0.5">${work.date}</span>
+                            </div>
+                            <p class="text-gray-600 text-xs md:text-sm mb-6 flex-grow">${work.shortDesc}</p>
+                            <div class="mb-5 space-y-2.5 pt-4 border-t border-gray-100/80">
+                                ${tagsHtml}
+                            </div>
+                            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                                <a href="#" onclick="openProjectModal('${work.id}'); return false;" class="text-xs md:text-sm font-semibold text-gray-800 hover:text-brand transition-colors">Details <i class="fa-solid fa-arrow-right text-[10px] md:text-xs ml-1"></i></a>
+                                <div class="flex gap-3">
+                                    ${repoLinkHtml}
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // ==========================================
+        // Interaction Logic
+        // ==========================================
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTimeline();
+            renderSkills();
+            renderWorks();
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+                icon.classList.replace('fa-bars', 'fa-xmark');
+                document.body.classList.add('overflow-hidden-mobile');
+            } else {
+                menu.classList.add('translate-x-full');
+                icon.classList.replace('fa-xmark', 'fa-bars');
+                document.body.classList.remove('overflow-hidden-mobile');
+            }
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 64;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Modal Logic
+        function openProjectModal(id) {
+            const work = PORTFOLIO_DATA.works.find(w => w.id === id);
+            if(!work) return;
+
+            document.getElementById('modal-title').textContent = work.title;
+            document.getElementById('modal-header-title').textContent = work.title;
+            document.getElementById('modal-date').textContent = work.date;
+            document.getElementById('modal-desc').textContent = work.longDesc;
+            
+            const imgEl = document.getElementById('modal-image');
+            imgEl.src = work.thumbnail;
+            imgEl.alt = work.title;
+            imgEl.onerror = function() { this.src = PLACEHOLDER_IMG; };
+
+            document.getElementById('modal-tags').innerHTML = work.tags.map(tagGroup => `
+                <div class="flex items-start gap-3 md:gap-4">
+                    <span class="text-[9px] md:text-[10.5px] font-bold text-gray-400 uppercase tracking-widest w-10 md:w-12 shrink-0 pt-1">${tagGroup.label}</span>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2">
+                        ${tagGroup.items.map(item => `<span class="px-2 md:px-3 py-1 border border-gray-200 bg-gray-50 text-gray-700 text-[10px] md:text-xs font-bold rounded-md">${item}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('modal-links').innerHTML = work.links.map(link => `
+                <a href="${link.url}" target="_blank" class="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-dark text-white text-xs md:text-sm font-semibold rounded-full hover:bg-brand transition-colors shadow-lg shadow-gray-200">
+                    <i class="${link.icon} text-base md:text-lg"></i> ${link.text}
+                </a>
+            `).join('');
+
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden-mobile');
+            modal.scrollTop = 0;
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden-mobile');
+            }, 300);
+        }
+    </script>
 </body>
 </html>
