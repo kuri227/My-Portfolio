@@ -32,14 +32,7 @@
             }
         }
     </script>
-    <style>
-        body { background-color: #FAFAFA; color: #111827; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        .overflow-hidden-mobile { overflow: hidden; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="antialiased">
 
@@ -82,8 +75,8 @@
     </div>
 
     <!-- ==========================================
-         Main Content
-         ========================================== -->
+        Main Content
+        ========================================== -->
     <main>
         <!-- About Section -->
         <section id="about" class="relative min-h-screen flex flex-col justify-center items-center pt-20 pb-20 md:pt-24 md:pb-32 px-5 overflow-hidden bg-white border-b border-gray-100">
@@ -102,9 +95,9 @@
                     <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand to-brand-light rounded-t-3xl"></div>
                     
                     <div class="text-gray-600 leading-relaxed text-sm md:text-lg mb-8 md:mb-10 space-y-4 text-center max-w-2xl mx-auto">
-                        <p>大阪の工業高等専門学校（知能情報コース）の4年生です。</p>
-                        <p>Pythonを用いたAI/ディープラーニング実装をメインに、Webアプリケーション開発やArduinoによるハードウェア制御など、ソフトウェアとハードウェアの垣根を越えたモノづくりを探求しています。</p>
-                        <p>将来は、顧客の課題を汲み取り、適切な技術を選定・組み合わせて解決に導くSIerエンジニアを目指しています。</p>
+                        <p>大阪公立大学工業高等専門学校 知能情報コースの4年生です。</p>
+                        <p>Pythonを用いたデータ分析やAI・機械学習の実装をはじめ、Next.jsやReactを用いたWebアプリケーション開発、Unityによるゲーム制作、Arduinoを活用したハードウェア制御など、ソフトウェアとハードウェアの両面から幅広い技術に挑戦しています。</p>
+                        <p>将来は、磨き続けた技術力を生かして、誰かが抱える課題や不便を解決し、人の役に立てるエンジニアを目指しています。</p>
                     </div>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-10">
@@ -278,15 +271,33 @@
                 {
                     year: "2026",
                     events: [
+                        {
+                            month: "9月", title: "サマーインターン2社参加予定",
+                            desc: "SIer企業2社に5dayでのインターンシップの参加予定。<br>実務経験を通して、エンジニアとしてのスキルを磨くこと、上流工程の経験を積むことを目的としています。",
+                        },
+                        {
+                            month: "07月", title: "2026年 大規模言語モデル講座 1 受講中",
+                            desc: "大規模言語モデル（LLM）の仕組みと最新動向を学ぶ講座を受講中。<br>LLMの基礎理論を理解し、実装スキルを習得することを目的としています。",
+                            externalLinks: [{ text: "大規模言語モデル1 公式サイト", url: "https://weblab.t.u-tokyo.ac.jp/lecture/course-list/large-language-model/" }]
+                        },
+                        {
+                            month: "06月", title: "アノテーションツールを作成", desc: "DeepLearningコンテストの開発時に、データセットを自作する際に最も時間がかかったアノテーション作業を効率化するために、アノテーションツールを自作しました。", buttons: [{ text: "詳細(アノテーションツール）", targetId: "annotator" }], externalLinks: []
+                        },             
                         { 
                             month: "05月", title: "Deep Learningコンテスト（DCON）2026 特別展示", 
-                            desc: "災害時に音を収集し、要救助者の発見をサポートするシステムを考案。<br>主機能となるDL部分を実装し、本選会場でポスター展示。<br>思いついた技術を単純に組み合わせて実装するのではなく、ビジネス面から見ても価値のあるプロダクトを作ることの難しさと面白さを実感した経験でした。",
+                            desc: "災害時に音を収集し、要救助者の発見をサポートするシステムを考案。<br>主機能となるDL部分を実装し、本選会場でポスター展示。<br>ビジネス面から見ても価値のあるプロダクトを作ることの難しさと面白さを実感した経験でした。",
                             buttons: [], 
                             externalLinks: [{ text: "DCON 公式サイト", url: "https://dcon.ai/" }]
                         },
+                        {
+                            month: "04月", title: "M5stack Japan Tour 2026 Spring Osaka", 
+                            desc: "高専2年生の時に開発した体感型シューティングを改良し、M5製品を使用した作品を展示するイベントに出展しました。たくさんの方に体験していただき、貴重なフィードバックをいただくことができました。", 
+                            buttons: [{ text: "詳細 (体感型シューティング)", targetId: "shooting" }], 
+                            externalLinks: [{ text: "M5stack Japan Tour 2026 Spring Osaka", url: "https://peatix.com/event/4889367" }]
+                        },
                         { 
                             month: "04月", title: "高専4年生に進級", desc: "", 
-                            buttons: [], externalLinks: [] 
+                            buttons: [], externalLinks: []
                         },
 
                         { month: "02月", title: "E資格 2026#1 合格", desc: "DeepLearningの基礎を理解し、実装能力を習得。 Deep Learningコンテストでの実装に活用。", buttons: [], 
@@ -395,6 +406,22 @@
             // --- 3. Works (Projects) Data ---
             works: [
                 {
+                    id:"annotator",
+                    title: "分類タスクアノテーションツール",
+                    date: "2026.06",
+                    thumbnail: "img/works/annotator.png",
+                    shortDesc: "データセット作成のための分類タスクアノテーションツール。Python + PySideで開発。",
+                    tags: [
+                        { label: "Type", items: ["Solo Dev"] },
+                        { label: "Tech", items: ["Python", "PySide"] }
+                    ],
+                    repoUrl: "https://github.com/kuri227/Annotator",
+                    longDesc: "DeepLearningコンテストの開発時に、データセット作成におけるボトルネックになっていたアノテーション作業を効率化するために、分類タスク向けの専用ツールとして開発しました。\n\nPySide6/Qt をベースにしたデスクトップ GUI として実装し、画像や音声などのデータを一覧しながら分類できるようにしました。さらに、音声データに対しては波形を確認しながら判断しやすいような表示構成を意識し、作業者が視覚的に判断しやすいUIを目指しました。\n\nファイルの読み込み・進捗の把握・分類結果の管理が一つの操作フローで完結するように設計し、データセット構築の効率を高めることを重視しました。",
+                    links: [
+                        { text: "View Code", url: "https://github.com/kuri227/Annotator", icon: "fa-brands fa-github" }
+                    ]
+                },
+                {
                     id: "blog",
                     title: "TechFeed - 技術知識共有プラットフォーム",
                     date: "2026.01",
@@ -405,7 +432,7 @@
                         { label: "Tech", items: ["Next.js", "TS"] }
                     ],
                     repoUrl: "https://github.com/kuri227/next-blog-app",
-                    longDesc: "TypeScriptとNext.jsを用いて構築されたモダンなブログアプリケーションです。\n\n静的サイト生成(SSG)やサーバーサイドレンダリング(SSR)などの仕組みを活用し、高速なページロードとSEO最適化を意識して実装しました。マークダウン形式での記事執筆機能や、タグによる記事の絞り込み機能など、実際の技術ブログ運用に求められる基本機能を取り揃えています。\n\nモダンなフロントエンドの技術スタック（Reactエコシステム）への理解を深め、コンポーネント設計の基礎を身につけるための重要なプロジェクトとなりました。",
+                    longDesc: "Next.js App Router を中心に構成した、技術知識を共有するためのブログプラットフォームです。記事の表示・投稿・管理画面・認証・画像アップロード・OGP 取得などを一つのアプリとして実装し、実運用に近い形で開発しました。\n\nSupabase Auth と Prisma を用いて投稿データとユーザー状態を管理し、Markdown で記事を記述できるようにしています。さらに、Mermaid 記法の埋め込みにも対応し、技術記事の説明を視覚的に伝えられるようにしています。\n\nフロントエンドだけでなく、データベース・認証・ストレージを含めたフルスタックな構成を一から試せる点が、このプロジェクトの大きな学びでした。",
                     links: [
                         { text: "View Code", url: "https://github.com/kuri227/next-blog-app", icon: "fa-brands fa-github" }
                     ]
@@ -421,7 +448,7 @@
                         { label: "Tech", items: ["JavaScript"] }
                     ],
                     repoUrl: "https://github.com/kuri227/search_allergy",
-                    longDesc: "Google検索を使用して、企業のアレルギー情報を記載したPDFを自動取得するJavaScriptプログラムです。PDFを自動解析し、アレルギー情報を抽出するプログラムと組み合わせることで、アレルギー情報自動取得するアプリケーションを実現できます。\n\nこのプログラムは、特定の企業名を入力すると、その企業に関連するアレルギー情報が記載されたPDFファイルをウェブ上から検索し、自動的にダウンロードします。\n\nこのプロジェクトを通じて、ウェブスクレイピングやPDF解析などの実践的なスキルを身につけることができました。また、ユーザーが必要とする情報を効率的に収集・提供することの重要性と難しさも実感しました。",
+                    longDesc: "Google Custom Search API を使って、企業名から公式サイトを探索し、そのサイト内でアレルギー情報が記載された PDF を自動で見つける流れを実装した JavaScript プログラムです。検索結果のキャッシュ管理や PDF 情報の保存を行うことで、同じ処理を繰り返すコストを減らし、再利用しやすい構造にしています。\n\n入力された企業名に対して、まず公式サイトを特定し、その後にサイト内検索で PDF を絞り込むという2段階の検索設計にしており、検索の精度と自動化のしやすさを両立させています。\n\nまた、見つかった PDF をローカルに保存できるようにしており、実際の業務でもそのまま活用できるような実践的なスクリプトとして仕上げました。",
                     links: [{ text: "View Code", url: "https://github.com/kuri227/search_allergy", icon: "fa-brands fa-github" }],
                 },
                 {
@@ -435,7 +462,7 @@
                         { label: "Event", items: ["School Festival"] }
                     ],
                     repoUrl: "https://github.com/misorange/slate_quest",
-                    longDesc: "独自の「疑似言語」を考案し、それを解読しながら進む新感覚の謎解きゲームです。高専祭2025での展示に向けて、チームで企画・開発を行いました。\n\nプログラミングの基礎である「ルールを見つけ出し、適用する」という楽しさを、プログラミング未経験の一般参加者にも直感的に体験してもらえるよう、UI/UXや難易度カーブを工夫しています。\n\nこのプロジェクトを通して、チーム開発におけるバージョン管理（Git/GitHub）の運用ルールや、タスク分割・スケジュール管理の難しさと重要性を実践的に学びました。大変思い入れの深い作品です。",
+                    longDesc: "独自に考案した「疑似言語」のルールを、謎解きの仕組みとして組み込んだゲームです。高専祭2025 の展示に向けて、チームで企画・開発・演出を進めながら、ゲームとして成立するかどうかを何度も試す形で制作しました。\n\n参加者が自然にルールを発見できるように、ヒントの配置や難易度の段階設計に配慮し、プログラミング未経験者でも楽しめる導線を意識しています。\n\nこのプロジェクトでは、アイデアを形にするための企画力だけでなく、チーム内で役割を分けて進める協働の方法や、Git/GitHub を用いた開発の進め方も実践的に学びました。",
                     links: [
                         { text: "View Code", url: "https://github.com/misorange/slate_quest", icon: "fa-brands fa-github" }
                     ]
@@ -451,7 +478,7 @@
                         { label: "Tech", items: ["React"] }
                     ],
                     repoUrl: "https://github.com/kuri227/react-todo-app",
-                    longDesc: "Reactの基礎的な概念（コンポーネント指向）や、状態管理（Hooks）の理解を深めるために作成したTodoアプリケーションです。\n\n機能としてはタスクの追加・完了・削除・フィルタリングといった基本的なものですが、大きなタスクをいくつかのタスクに分解することができる機能を持っており、1つのタスクを小さくしていくことで、ユーザーの着手のハードルを下げることを狙っています。コンポーネントの適切な分割や、Propsによるデータの受け渡し、 useEffect を用いたローカルストレージへのデータ永続化など、実践的なフロントエンド開発の基礎をこのプロジェクトでしっかりと習得しました。\n\nユーザーが迷わず操作できるよう、シンプルながらも直感的なUIデザインを心がけました。",
+                    longDesc: "React + TypeScript + Vite + Tailwind CSS を用いて構築した、親タスクとサブタスクを階層的に管理できる Todo アプリです。ドラッグ＆ドロップで並べ替えできるようにし、期限切れタスクの強調表示や参考リンクの添付など、実際に使う際の体験を意識した機能を盛り込みました。\n\n状態の管理には React の Hook を用い、ローカルストレージとの連携により、ページを閉じてもデータが維持されるようにしています。コンポーネントの責務分離や、props を通じたデータの受け渡しも意識しており、React の基本的な実装パターンを学ぶための題材としても効果的でした。",
                     links: [
                         { text: "View Code", url: "https://github.com/kuri227/react-todo-app", icon: "fa-brands fa-github" }
                     ]
@@ -459,19 +486,19 @@
                 {
                     id: "shooting",
                     title: "体感型シューティング",
-                    date: "2025.01",
+                    date: "2026.04",
                     thumbnail: "img/works/shooting-game.png",
-                    shortDesc: "自作コントローラー（Arduino）とUnityを連携させた、高専祭展示用ゲーム作品。",
+                    shortDesc: "自作コントローラー（M5StickC）とUnityを連携させた、幅広い世代に楽しんでもらうことを意識したゲーム作品。",
                     tags: [
                         { label: "Type", items: ["Team Dev"] },
-                        { label: "Tech", items: ["Unity", "Arduino"] },
-                        { label: "Event", items: ["Hack U", "School Festival"] }
+                        { label: "Tech", items: ["Unity", "M5StickC"] },
+                        { label: "Event", items: ["Hack U", "School Festival", "M5stack Japan Tour"] }
                     ],
                     repoUrl: "https://github.com/create-alt/HackU_new.git", // main repo
-                    longDesc: "Arduinoを用いて加速度センサーやボタンを組み込んだ「銃型コントローラー」を自作し、Unity上のゲームとシリアル通信で連携させた体感型シューティングゲームです。\n\nHack Uおよび高専祭2024で展示し、多くの来場者に実際にプレイしていただきました。\n\nハードウェア（センサーからのアナログ値取得とノイズ除去）の信号処理から、ソフトウェア（Unityでの弾の描画と当たり判定）のロジック構築まで、全く異なる技術レイヤーを跨いだ開発を行いました。ハードとソフトを繋ぎ合わせて1つのプロダクトを作り上げる面白さを実感した意欲作です。",
+                    longDesc: "M5StickC Plus2 に搭載された加速度センサーやボタン入力を用い、それを自作の銃型コントローラーに接続してゲーム入力に変換する構成で実装した体感型シューティングです。Unity 側のゲームとマイコンをシリアル通信で接続し、ハードウェアから受け取った生データを処理してゲームの動作に反映させる部分を中心に開発しました。\n\n展示を重ねる中で、来場者がすぐに遊べるように操作感を調整したり、体験しやすい導線を整えたりすることに重点を置きました。ハードとソフトをつなぐ実装の難しさや、実際のユーザー体験を見ながら改善していく楽しさを学べた作品です。",
                     links: [
                         { text: "Unity Code", url: "https://github.com/create-alt/HackU_new.git", icon: "fa-brands fa-unity" },
-                        { text: "Arduino Code", url: "https://github.com/kuri227/hackU.git", icon: "fa-brands fa-github" }
+                        { text: "M5StickC Code", url: "https://github.com/kuri227/hackU.git", icon: "fa-brands fa-github" }
                     ]
                 },
                 {
@@ -485,7 +512,7 @@
                         { label: "Tech", items: ["Python", "Pygame"] }
                     ],
                     repoUrl: "https://github.com/kuri227/Shotting-Pygame.git",
-                    longDesc: "PythonとPygameライブラリを使用して開発した2Dアクションゲームです。\n\n上空から迫りくるボールの軌道を予測し、弓矢で迎撃するというシンプルなルールですが、内部では重力や速度ベクトルを用いた物理演算の基礎的な実装を行っています。\n\nまた、オブジェクト指向プログラミングにおけるクラス設計（プレイヤー、敵、弾などの要素を個別のクラスとして分割・管理する手法）の概念を、実際のゲーム制作を通して実践的に学ぶために制作した、プログラミング学習初期の重要なステップとなった作品です。",
+                    longDesc: "Python と Pygame を用いて制作した 2D アクションゲームです。上空から落下してくるボールを弓矢で迎撃するシンプルなルールを持ちながら、重力や速度ベクトルを意識した挙動の実装や、画面上のオブジェクトの更新ロジックを組み立てています。\n\nゲーム開発を通じて、プレイヤー・敵・弾などの要素をクラスとして分けて管理するオブジェクト指向的な設計の考え方を自然に身につけられるようにしています。Python でのゲーム制作を通じて、制御ロジックと描画処理を分けて考える基礎を学んだ作品です。",
                     links: [
                         { text: "View Code", url: "https://github.com/kuri227/Shotting-Pygame.git", icon: "fa-brands fa-github" }
                     ]
@@ -501,7 +528,7 @@
                         { label: "Tech", items: ["Python", "PySide6"] }
                     ],
                     repoUrl: "https://github.com/kuri227/image-viewer.git",
-                    longDesc: "PythonのGUIフレームワークであるPySide6を利用して開発した、デスクトップアプリケーション（画像ビューワー）です。\n\n大量の画像ファイルを効率的に閲覧できるよう、ディレクトリツリーによるフォルダナビゲーション、サムネイルの一覧表示、そしてキーボードショートカットによるスムーズな画像切り替え機能を実装しています。\n\nWebアプリケーションだけでなく、OSのネイティブ環境で動作するデスクトップアプリ開発の基礎プロセスや、イベント駆動型プログラミング（GUI操作に対するアクションの紐付け）について深く学ぶことができました。",
+                    longDesc: "PySide6 を利用して作成したデスクトップ向けの画像ビューワーです。フォルダ内の画像を一覧で確認できるようにし、サムネイル表示とキーボード操作による切り替えを実装することで、実際の利用感に近い操作性を意識しました。\n\nGUI アプリでは、ボタンやリスト、入力イベントに応じて画面の状態を更新するイベント駆動型の設計が重要になります。このプロジェクトでは、レイアウト構成やユーザー操作に対する反応の切り分けを学びながら、Python でのデスクトップ開発の基礎を実践しました。",
                     links: [
                         { text: "View Code", url: "https://github.com/kuri227/image-viewer.git", icon: "fa-brands fa-github" }
                     ]
@@ -517,7 +544,7 @@
                         { label: "Tech", items: ["Python"] }
                     ],
                     repoUrl: null, // Play link is used instead
-                    longDesc: "プログラミング学習の最も初期の段階で作成した、コマンドライン（ターミナル）上で動作する対話型のクイズゲームです。環境構築不要で誰でもすぐに遊べるよう、Google Colaboratory上で公開しています。\n\n変数、条件分岐、ループ処理、標準入出力（print / input）といったプログラミング言語の基本要素のみを用いて構成されています。\n\nまた、ユーザーが予期せぬ文字を入力した際にプログラムがクラッシュしないよう、ユーザビリティを考慮したエラーハンドリングも実装しており、ここから私のソフトウェア開発の道がスタートしました。",
+                    longDesc: "プログラミング学習の最も初期の段階で作成した、コマンドライン上で動作する対話型のクイズゲームです。Google Colaboratory 上で公開できるようにしており、環境構築の手間なく試せる構成にしています。\n\n変数・条件分岐・ループ・標準入出力といった、Python の基本要素だけで構成しながら、ユーザー入力に応じて進行を制御する流れを実装しました。\n\n予期しない入力に対してはエラーハンドリングを入れており、初めてプログラミングに触れる人でも安心して動かせるように配慮しました。ここから、ソフトウェアを作る楽しさと考え方の基礎を学んだ作品です。",
                     links: [
                         { text: "Play on Colab", url: "https://colab.research.google.com/drive/1coHaIhKgrtZ5fRi85KWdHDMBiaK9wUsA?usp=sharing", icon: "fa-solid fa-play" }
                     ]
@@ -538,18 +565,21 @@
 
             PORTFOLIO_DATA.timeline.forEach(yearData => {
                 let eventsHtml = yearData.events.map(ev => {
+                    const buttons = Array.isArray(ev.buttons) ? ev.buttons : [];
+                    const externalLinks = Array.isArray(ev.externalLinks) ? ev.externalLinks : [];
+
                     // 説明文
-                    let descHtml = ev.desc ? `<p class="text-xs md:text-sm text-gray-600 leading-relaxed ${ev.buttons.length || ev.externalLinks.length ? 'mb-3' : ''}">${ev.desc}</p>` : '';
+                    let descHtml = ev.desc ? `<p class="text-xs md:text-sm text-gray-600 leading-relaxed ${buttons.length || externalLinks.length ? 'mb-3' : ''}">${ev.desc}</p>` : '';
                     
                     // ボタン類（モーダルを開くボタン ＆ 外部リンク）
                     let actionsHtml = '';
-                    if (ev.buttons.length > 0 || ev.externalLinks.length > 0) {
+                    if (buttons.length > 0 || externalLinks.length > 0) {
                         actionsHtml = '<div class="flex flex-wrap gap-2">';
-                        ev.buttons.forEach(btn => {
-                            actionsHtml += `<button onclick="openProjectModal('${btn.targetId}')" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand bg-brand-light/50 border border-brand/20 px-3 py-1.5 rounded-full hover:bg-brand hover:text-white transition-all"><i class="fa-regular fa-window-restore"></i> ${btn.text}</button>`;
+                        buttons.forEach(btn => {
+                            actionsHtml += `<button onclick="openProjectModal('${btn.targetId}')" class="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-semibold text-brand bg-brand-light/70 border border-brand/20 px-3 py-1.5 rounded-full hover:bg-brand hover:text-white transition-all shadow-sm"><i class="fa-regular fa-window-restore"></i> ${btn.text.replace('詳細', '詳細を見る')}</button>`;
                         });
-                        ev.externalLinks.forEach(link => {
-                            actionsHtml += `<a href="${link.url}" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-gray-600 bg-white border border-gray-200 px-3 py-1.5 rounded-full hover:border-gray-400 hover:text-dark transition-all shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square opacity-70"></i> ${link.text}</a>`;
+                        externalLinks.forEach(link => {
+                            actionsHtml += `<a href="${link.url}" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-semibold text-gray-700 bg-white border border-gray-200 px-3 py-1.5 rounded-full hover:border-gray-400 hover:text-dark transition-all shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square opacity-70"></i> ${link.text}</a>`;
                         });
                         actionsHtml += '</div>';
                     }
@@ -647,7 +677,10 @@
                                 ${tagsHtml}
                             </div>
                             <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
-                                <a href="#" onclick="openProjectModal('${work.id}'); return false;" class="text-xs md:text-sm font-semibold text-gray-800 hover:text-brand transition-colors">Details <i class="fa-solid fa-arrow-right text-[10px] md:text-xs ml-1"></i></a>
+                                <a href="#" onclick="openProjectModal('${work.id}'); return false;" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-gray-800 hover:text-brand transition-colors">
+                                    <span>詳細を見る</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px] md:text-xs"></i>
+                                </a>
                                 <div class="flex gap-3">
                                     ${repoLinkHtml}
                                 </div>
@@ -714,16 +747,17 @@
             imgEl.alt = work.title;
             imgEl.onerror = function() { this.src = PLACEHOLDER_IMG; };
 
-            document.getElementById('modal-tags').innerHTML = work.tags.map(tagGroup => `
+            document.getElementById('modal-tags').innerHTML = (work.tags || []).map(tagGroup => `
                 <div class="flex items-start gap-3 md:gap-4">
                     <span class="text-[9px] md:text-[10.5px] font-bold text-gray-400 uppercase tracking-widest w-10 md:w-12 shrink-0 pt-1">${tagGroup.label}</span>
                     <div class="flex flex-wrap gap-1.5 md:gap-2">
-                        ${tagGroup.items.map(item => `<span class="px-2 md:px-3 py-1 border border-gray-200 bg-gray-50 text-gray-700 text-[10px] md:text-xs font-bold rounded-md">${item}</span>`).join('')}
+                        ${(tagGroup.items || []).map(item => `<span class="px-2 md:px-3 py-1 border border-gray-200 bg-gray-50 text-gray-700 text-[10px] md:text-xs font-bold rounded-md">${item}</span>`).join('')}
                     </div>
                 </div>
             `).join('');
 
-            document.getElementById('modal-links').innerHTML = work.links.map(link => `
+            const links = Array.isArray(work.links) ? work.links : [];
+            document.getElementById('modal-links').innerHTML = links.map(link => `
                 <a href="${link.url}" target="_blank" class="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-dark text-white text-xs md:text-sm font-semibold rounded-full hover:bg-brand transition-colors shadow-lg shadow-gray-200">
                     <i class="${link.icon} text-base md:text-lg"></i> ${link.text}
                 </a>
