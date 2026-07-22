@@ -279,12 +279,6 @@
             // --- 1. Career (Timeline) Data ---
             timeline: [
                 {
-                    year: "2028",
-                    events: [
-                        { month: "03月", title: "高専卒業見込み", desc: "高専卒業後は就職を予定しています。<br>誰にも負けないようなスキルを磨いていきたいと考えています。", buttons: [], externalLinks: [] }
-                    ]
-                },
-                {
                     year: "2026",
                     events: [
                         {
@@ -346,7 +340,7 @@
                             month: "09月", title: "高専テクノゼミ 実践教育プログラム（夏）", 
                             desc: "チーム「めだまウォーク」で参加。<br>脳波解析とアイトラッキング技術を活用し、すべての人が街歩きを楽しめるサービスを提案。",
                             buttons: [], 
-                            externalLinks: [{ text: "めだまウォーク アイデア概要", url: "https://portal.techno-semi.com/practice/team/s46EuO2p" }]
+                            externalLinks: [{ text: "めだまウォーク アイデア概要", url: "https://practice.portal.techno-semi.com/works/medama-walk" }]
                         },
                         { 
                             month: "08月", title: "企業様との共同研究を開始", desc: "学校教員の主導のもと、企業との共同研究に参加しています。公開可能な範囲で研究開発に取り組んでいます。",
@@ -355,7 +349,7 @@
                         { month: "07月", title: "Deep Learning 基礎講座 2025 Spring 修了", desc: "ニューラルネットワーク等のDL技術の基礎理論と実装スキルを習得。<br>Deep Learningへの興味を深めることができました。", buttons: [], externalLinks: [{ text: "DL基礎講座 公式サイト", url: "https://weblab.t.u-tokyo.ac.jp/lecture/deep-learning/" }] },
                         { month: "04月", title: "高専3年生に進級", desc: "", buttons: [], externalLinks: [] },
                         { month: "03月", title: "高専テクノゼミ 実践教育プログラム（春）", desc: "チーム「ハム専ギルド」で参加。<br>梅田の地下街を複数回歩いて調査し、取得した情報を定量的な数値に変換することで、浮かび上がった問題点に対して地図アプリケーションの企画を提案。", 
-                            externalLinks: [{ text: "ハム専ギルド アイデア概要", url: "https://portal.techno-semi.com/practice/team/_2h_nTGt" }], buttons: []
+                            externalLinks: [{ text: "ハム専ギルド アイデア概要", url: "https://practice.portal.techno-semi.com/works/hamsen-guild" }], buttons: []
                         },
                         { 
                             month: "02月", title: "画像ビューワー開発 (PySide)", desc: "pyqt5の後継であるPySideを使用して、シンプルな画像ビューワーを作成。<br>PythonでGUIアプリケーションを開発する経験を積むことができました。", 
@@ -533,7 +527,7 @@
                     id: "slate-quest",
                     title: "Slate Quest",
                     date: "2025.11",
-                    thumbnail: null,
+                    thumbnail: "img/works/slate-quest-title.png",
                     shortDesc: "独自の疑似言語を用いた暗号解読ゲーム。高専祭にてチームで制作・展示。",
                     tags: [
                         { label: "Type", items: ["Team Dev"] },
@@ -541,6 +535,13 @@
                     ],
                     repoUrl: "https://github.com/misorange/slate_quest",
                     longDesc: "独自に考案した「疑似言語」のルールを、謎解きの仕組みとして組み込んだゲームです。高専祭2025 の展示に向けて、チームで企画・開発・演出を進めながら、ゲームとして成立するかどうかを何度も試す形で制作しました。\n\n参加者が自然にルールを発見できるように、ヒントの配置や難易度の段階設計に配慮し、プログラミング未経験者でも楽しめる導線を意識しています。\n\nこのプロジェクトでは、アイデアを形にするための企画力だけでなく、チーム内で役割を分けて進める協働の方法や、Git/GitHub を用いた開発の進め方も実践的に学びました。",
+                    gallery: [
+                        {
+                            src: "img/works/slate-quest-puzzle.png",
+                            alt: "Slate Questの疑似言語解読画面と暗号入力画面",
+                            caption: "疑似言語で書かれた石板を読み解き、導いた暗号を入力するゲーム画面"
+                        }
+                    ],
                     links: [
                         { text: "View Code", url: "https://github.com/misorange/slate_quest", icon: "fa-brands fa-github" }
                     ]
