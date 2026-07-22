@@ -3,6 +3,11 @@ body {
     color: #111827;
 }
 
+::selection {
+    color: #111827;
+    background: #DBEAFE;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -22,4 +27,57 @@ body {
 
 .overflow-hidden-mobile {
     overflow: hidden;
+}
+
+.skill-evidence {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    border-radius: 999px;
+    background: #EFF6FF;
+    color: #2563EB;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: background-color 180ms ease, color 180ms ease;
+}
+
+.skill-evidence:hover {
+    background: #2563EB;
+    color: white;
+}
+
+.skill-evidence i {
+    font-size: 0.55rem;
+}
+
+.project-copy p {
+    margin: 0;
+}
+
+.project-copy section:last-child {
+    margin-bottom: 0;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #93C5FD;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }

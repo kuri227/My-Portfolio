@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuri - Portfolio</title>
+    <title>Kuri | AI × Software × Hardware Portfolio</title>
+    <meta name="description" content="大阪公立大学工業高等専門学校・知能情報コース Kuri のポートフォリオ。AI、Web、ハードウェアを横断し、現場の課題を動くプロトタイプにします。">
+    <meta name="theme-color" content="#2563EB">
+    <meta property="og:title" content="Kuri | AI × Software × Hardware Portfolio">
+    <meta property="og:description" content="AI、Web、ハードウェアを横断し、現場の課題を動くプロトタイプにする高専生エンジニア。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kuri227.github.io/My-Portfolio/">
+    <meta name="twitter:card" content="summary">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts -->
@@ -47,9 +54,10 @@
             <nav class="hidden md:block">
                 <ul class="flex space-x-8 text-sm font-medium text-gray-600">
                     <li><a href="#about" class="hover:text-brand transition-colors">About</a></li>
-                    <li><a href="#career" class="hover:text-brand transition-colors">Career</a></li>
+                    <li><a href="#works" class="hover:text-brand transition-colors">Featured</a></li>
                     <li><a href="#skills" class="hover:text-brand transition-colors">Skills</a></li>
-                    <li><a href="#works" class="hover:text-brand transition-colors">Projects</a></li>
+                    <li><a href="#career" class="hover:text-brand transition-colors">Career</a></li>
+                    <li><a href="#archive" class="hover:text-brand transition-colors">All Works</a></li>
                 </ul>
             </nav>
             <a href="#contact" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-dark rounded-full hover:bg-gray-800 transition-colors">
@@ -57,7 +65,7 @@
             </a>
 
             <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 z-50 p-2">
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 z-50 p-2" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
                 <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
@@ -67,9 +75,10 @@
     <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center md:hidden">
         <ul class="flex flex-col space-y-8 text-2xl font-bold text-gray-800 text-center">
             <li><a href="#about" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">About</a></li>
-            <li><a href="#career" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Career</a></li>
+            <li><a href="#works" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Featured</a></li>
             <li><a href="#skills" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Skills</a></li>
-            <li><a href="#works" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Projects</a></li>
+            <li><a href="#career" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Career</a></li>
+            <li><a href="#archive" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">All Works</a></li>
             <li><a href="#contact" onclick="toggleMobileMenu()" class="text-brand hover:text-brand-dark transition-colors block px-8 py-2 mt-4">Contact</a></li>
         </ul>
     </div>
@@ -93,18 +102,16 @@
 
                 <div class="bg-white rounded-3xl p-6 md:p-12 border border-gray-100 shadow-2xl shadow-gray-200/50 relative">
                     <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand to-brand-light rounded-t-3xl"></div>
-                    
                     <div class="text-gray-600 leading-relaxed text-sm md:text-lg mb-8 md:mb-10 space-y-4 text-center max-w-2xl mx-auto">
                         <p>大阪公立大学工業高等専門学校 知能情報コースの4年生です。</p>
-                        <p>Pythonを用いたデータ分析やAI・機械学習の実装をはじめ、Next.jsやReactを用いたWebアプリケーション開発、Unityによるゲーム制作、Arduinoを活用したハードウェア制御など、ソフトウェアとハードウェアの両面から幅広い技術に挑戦しています。</p>
-                        <p>将来は、磨き続けた技術力を生かして、誰かが抱える課題や不便を解決し、人の役に立てるエンジニアを目指しています。</p>
+                        <p>AIによる音声解析、Next.jsを用いたWebアプリケーション、Unityとセンサーを組み合わせた体験型作品など、ソフトウェアとハードウェアを横断して開発しています。</p>
+                        <p>技術を学ぶだけでなく、現場の課題を見つけ、実際に動くプロトタイプとして検証できるエンジニアを目指しています。</p>
                     </div>
-                    
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-10">
                         <div class="bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
-                            <i class="fa-regular fa-clock text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
-                            <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">Age</span>
-                            <span class="font-bold text-gray-800 text-lg md:text-xl">18</span>
+                            <i class="fa-solid fa-certificate text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
+                            <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">Certification</span>
+                            <span class="font-bold text-gray-800 text-base md:text-lg">E資格 2026#1</span>
                         </div>
                         <div class="bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
                             <i class="fa-solid fa-graduation-cap text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
@@ -118,14 +125,9 @@
                             <span class="font-bold text-gray-800 text-base md:text-lg">AI / Web / HW</span>
                         </div>
                     </div>
-
                     <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
-                        <a href="#works" class="w-full sm:w-auto px-8 py-3.5 bg-brand text-white text-center font-medium rounded-full hover:bg-brand-dark transition-all transform hover:-translate-y-1 shadow-lg shadow-brand/30">
-                            View Works
-                        </a>
-                        <a href="#career" class="w-full sm:w-auto px-8 py-3.5 bg-white text-dark text-center font-medium border border-gray-200 rounded-full hover:border-gray-400 hover:bg-gray-50 transition-all">
-                            Career History
-                        </a>
+                        <a href="#works" class="w-full sm:w-auto px-8 py-3.5 bg-brand text-white text-center font-medium rounded-full hover:bg-brand-dark transition-all transform hover:-translate-y-1 shadow-lg shadow-brand/30">Featured Works</a>
+                        <a href="#career" class="w-full sm:w-auto px-8 py-3.5 bg-white text-dark text-center font-medium border border-gray-200 rounded-full hover:border-gray-400 hover:bg-gray-50 transition-all">Career History</a>
                     </div>
                 </div>
             </div>
@@ -133,6 +135,29 @@
             <div class="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-400">
                 <span class="text-[9px] md:text-[10px] uppercase tracking-widest mb-1.5 md:mb-2 font-medium">Scroll</span>
                 <i class="fa-solid fa-arrow-down animate-bounce text-xs md:text-sm"></i>
+            </div>
+        </section>
+
+        <!-- Featured Works Section -->
+        <section id="works" class="py-16 md:py-24 px-5 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-8 md:mb-12">
+                    <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Featured Projects</h2>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3">代表作品</h3>
+                </div>
+                <div id="featured-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 px-5 bg-gray-50 border-y border-gray-200">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Tech Stack</h2>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3">Skills</h3>
+                    <p class="text-sm text-gray-600">技術を使用した作品もあわせて確認できます。</p>
+                </div>
+                <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"></div>
             </div>
         </section>
 
@@ -149,24 +174,13 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-16 md:py-24 px-5 bg-gray-50 border-y border-gray-200">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2 text-center">Tech Stack</h2>
-                <h3 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Skills</h3>
-                
-                <!-- Skills Container (Rendered by JS) -->
-                <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"></div>
-            </div>
-        </section>
-
-        <!-- Works Section -->
-        <section id="works" class="py-16 md:py-24 px-5">
+        <!-- All Works Section -->
+        <section id="archive" class="py-16 md:py-24 px-5 bg-white border-t border-gray-200">
             <div class="max-w-6xl mx-auto">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 md:mb-12 gap-4">
                     <div>
-                        <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Projects</h2>
-                        <h3 class="text-2xl md:text-3xl font-bold">Selected Works</h3>
+                        <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Project Archive</h2>
+                        <h3 class="text-2xl md:text-3xl font-bold">そのほかの制作物</h3>
                     </div>
                 </div>
 
@@ -194,7 +208,7 @@
                         </div>
                     </div>
                     
-                    <a href="https://github.com/kuri227" target="_blank" class="w-full sm:w-auto flex flex-col items-center bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow group">
+                    <a href="https://github.com/kuri227" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex flex-col items-center bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow group">
                         <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-gray-600 group-hover:bg-dark group-hover:text-white transition-colors">
                             <i class="fa-brands fa-github text-lg md:text-xl"></i>
                         </div>
@@ -216,9 +230,9 @@
     <!-- ==========================================
          Project Detail Modal (Empty Container)
          ========================================== -->
-    <div id="project-modal" class="fixed inset-0 z-[100] bg-white hidden flex-col overflow-y-auto opacity-0 transition-opacity duration-300">
+    <div id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[100] bg-white hidden flex-col overflow-y-auto opacity-0 transition-opacity duration-300">
         <div class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 md:px-5 py-3 md:py-4 z-10 flex items-center justify-between">
-            <button onclick="closeProjectModal()" class="flex items-center gap-2 text-gray-600 hover:text-brand font-semibold transition-colors group px-2 py-1 text-sm md:text-base">
+            <button onclick="closeProjectModal()" class="flex items-center gap-2 text-gray-600 hover:text-brand font-semibold transition-colors group px-2 py-1 text-sm md:text-base" aria-label="作品一覧に戻る">
                 <i class="fa-solid fa-arrow-left transform group-hover:-translate-x-1 transition-transform"></i> 
                 Back<span class="hidden sm:inline"> to Works</span>
             </button>
@@ -239,14 +253,16 @@
                 <div id="modal-links" class="flex flex-col sm:flex-row flex-wrap gap-2 md:gap-3 w-full md:w-auto"></div>
             </div>
 
-            <div id="modal-tags" class="mb-8 md:mb-12 space-y-3 md:space-y-4 py-4 md:py-6 border-y border-gray-100"></div>
+            <div id="modal-metrics" class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 md:mb-8"></div>
+            <div id="modal-tags" class="mb-8 md:mb-12 space-y-3 md:space-y-4 py-4 md:py-6 border-y border-gray-200"></div>
 
             <div class="max-w-3xl pb-10">
                 <h3 class="text-base md:text-lg font-bold text-dark flex items-center gap-2 mb-4 md:mb-6">
                     <i class="fa-solid fa-align-left text-brand"></i> About the Project
                 </h3>
-                <p id="modal-desc" class="text-sm md:text-base text-gray-600 leading-relaxed md:leading-loose whitespace-pre-line"></p>
+                <div id="modal-desc" class="project-copy text-sm md:text-base text-gray-600 leading-relaxed md:leading-loose"></div>
             </div>
+            <div id="modal-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-5 pb-14"></div>
         </div>
     </div>
 
@@ -281,13 +297,19 @@
                             externalLinks: [{ text: "大規模言語モデル1 公式サイト", url: "https://weblab.t.u-tokyo.ac.jp/lecture/course-list/large-language-model/" }]
                         },
                         {
-                            month: "06月", title: "アノテーションツールを作成", desc: "DeepLearningコンテストの開発時に、データセットを自作する際に最も時間がかかったアノテーション作業を効率化するために、アノテーションツールを自作しました。", buttons: [{ text: "詳細(アノテーションツール）", targetId: "annotator" }], externalLinks: []
+                            month: "07月", title: "課題整理ツールを開発",
+                            desc: "学校で用いられている様々な授業管理ツールから、API等を用いて課題情報を自動取得し、整理して表示するツールを開発しました。<br>授業管理ツールのAPI仕様を調査し、Next.jsでWebアプリケーションとして実装しました。",
+                            buttons: [{ text: "詳細 (課題整理ツール)", targetId: "task-manager" }],
+                            externalLinks: []
+                        },
+                        {
+                            month: "06月", title: "アノテーションツールを開発", desc: "DeepLearningコンテストの開発時に、データセットを自作する際に最も時間がかかったアノテーション作業を効率化するために、アノテーションツールを自作しました。", buttons: [{ text: "詳細(アノテーションツール）", targetId: "annotator" }], externalLinks: []
                         },             
                         { 
                             month: "05月", title: "Deep Learningコンテスト（DCON）2026 特別展示", 
-                            desc: "災害時に音を収集し、要救助者の発見をサポートするシステムを考案。<br>主機能となるDL部分を実装し、本選会場でポスター展示。<br>ビジネス面から見ても価値のあるプロダクトを作ることの難しさと面白さを実感した経験でした。",
-                            buttons: [], 
-                            externalLinks: [{ text: "DCON 公式サイト", url: "https://dcon.ai/" }]
+                            desc: "倒壊建物内のノック音をAIで検知する災害救助支援システム「Acous」を開発。約90チーム中30チームに選出され、本選会場で約100人へ説明しました。",
+                            buttons: [{ text: "詳細 (Acous)", targetId: "dcon" }],
+                            externalLinks: [{ text: "AI開発アーカイブ", url: "https://github.com/kuri227/venv_DCON2026" }]
                         },
                         {
                             month: "04月", title: "M5stack Japan Tour 2026 Spring Osaka", 
@@ -327,7 +349,7 @@
                             externalLinks: [{ text: "めだまウォーク アイデア概要", url: "https://portal.techno-semi.com/practice/team/s46EuO2p" }]
                         },
                         { 
-                            month: "08月", title: "企業様との共同研究を開始", desc: "学校教員であるM先生主導の元で、企業様との共同研究を行っています。<br>研究は2026/04/13現在まで継続しています。", 
+                            month: "08月", title: "企業様との共同研究を開始", desc: "学校教員の主導のもと、企業との共同研究に参加しています。公開可能な範囲で研究開発に取り組んでいます。",
                             buttons: [], externalLinks: [] 
                         },
                         { month: "07月", title: "Deep Learning 基礎講座 2025 Spring 修了", desc: "ニューラルネットワーク等のDL技術の基礎理論と実装スキルを習得。<br>Deep Learningへの興味を深めることができました。", buttons: [], externalLinks: [{ text: "DL基礎講座 公式サイト", url: "https://weblab.t.u-tokyo.ac.jp/lecture/deep-learning/" }] },
@@ -374,31 +396,30 @@
             // --- 2. Skills Data ---
             skills: [
                 {
-                    category: "Frontend & Web",
-                    icon: "fa-solid fa-laptop-code",
+                    category: "AI & Data",
+                    icon: "fa-solid fa-wave-square",
                     items: [
-                        { name: "JavaScript", iconHtml: '<i class="fa-brands fa-js text-2xl md:text-3xl text-yellow-400 mb-2"></i>', note: "" },
-                        { name: "Next.js / React", iconHtml: '<i class="fa-brands fa-react text-2xl md:text-3xl text-blue-400 mb-2"></i>', note: "" },
-                        { name: "TypeScript", iconHtml: '<div class="text-2xl md:text-3xl text-blue-600 font-black mb-2 rounded bg-blue-100 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center text-xs md:text-sm">TS</div>', note: "" },
-                        { name: "HTML / CSS", iconHtml: '<i class="fa-brands fa-html5 text-2xl md:text-3xl text-orange-500 mb-2"></i>', note: "" }
+                        { name: "Python / PyTorch", note: "Attention CRNNの設計、音声前処理、実機推論まで実装。", workIds: ["dcon", "annotator"] },
+                        { name: "Audio ML", note: "log-mel特徴量、マルチラベル分類、データ拡張と評価。", workIds: ["dcon"] },
+                        { name: "PySide6", note: "データセット作成を支えるGUIツールを開発。", workIds: ["annotator", "image-viewer"] }
                     ]
                 },
                 {
-                    category: "Backend & Core",
+                    category: "Web & Software",
+                    icon: "fa-solid fa-code",
+                    items: [
+                        { name: "Next.js / React / TypeScript", note: "API連携、認証、DBを含むWebアプリを構築。", workIds: ["task-manager", "blog", "todo"] },
+                        { name: "JavaScript", note: "外部APIを用いた情報取得とデータ処理を実装。", workIds: ["allergy-info"] },
+                        { name: "Git / GitHub", note: "個人・チーム開発でのバージョン管理と成果公開。", workIds: ["dcon", "shooting", "slate-quest"] }
+                    ]
+                },
+                {
+                    category: "Hardware & Experience",
                     icon: "fa-solid fa-microchip",
                     items: [
-                        { name: "Python", iconHtml: '<i class="fa-brands fa-python text-2xl md:text-3xl text-yellow-500 mb-2"></i>', note: "Pygame, PySide, DL" },
-                        { name: "C / C++", iconHtml: '<i class="fa-solid fa-c text-2xl md:text-3xl text-blue-700 mb-2"></i>', note: "Arduino" },
-                        { name: "Unity (C#)", iconHtml: '<i class="fa-brands fa-unity text-2xl md:text-3xl text-gray-800 mb-2"></i>', note: "" }
-                    ]
-                },
-                {
-                    category: "Tools & Infra",
-                    icon: "fa-solid fa-toolbox",
-                    items: [
-                        { name: "Git / GitHub", iconHtml: '<i class="fa-brands fa-github text-2xl md:text-3xl text-gray-800 mb-2"></i>', note: "バージョン管理", span: 1 },
-                        { name: "Docker", iconHtml: '<i class="fa-brands fa-docker text-2xl md:text-3xl text-blue-500 mb-2"></i>', note: "環境構築", span: 1 },
-                        { name: "Linux", iconHtml: '<i class="fa-brands fa-linux text-2xl md:text-3xl text-gray-700 mb-2"></i>', note: "基本的なコマンド操作", span: 2 }
+                        { name: "Unity / C#", note: "センサー入力を遊びへ変換する体感型ゲームを制作。", workIds: ["shooting"] },
+                        { name: "M5StickC / Arduino", note: "加速度・ボタン入力とUnityをシリアル通信で接続。", workIds: ["shooting"] },
+                        { name: "Raspberry Pi / Edge AI", note: "16kHz音声の前処理・推論・通知を実機へ統合。", workIds: ["dcon"] }
                     ]
                 }
             ],
@@ -406,7 +427,59 @@
             // --- 3. Works (Projects) Data ---
             works: [
                 {
+                    id: "dcon",
+                    featuredRank: 1,
+                    title: "Acous — 災害救助支援システム",
+                    date: "2026.05",
+                    thumbnail: "img/works/acous-prototype.png",
+                    shortDesc: "倒壊建物内のノック音をAIで検知し、救助本部へ遠隔通知するDCON2026出展作品。",
+                    tags: [
+                        { label: "Role", items: ["AI Lead", "Team Dev"] },
+                        { label: "Tech", items: ["PyTorch", "Attention CRNN", "Raspberry Pi"] },
+                        { label: "Event", items: ["DCON2026"] }
+                    ],
+                    metrics: [
+                        { value: "30 / 約90", label: "本選会場選出" },
+                        { value: "F1 ≈ 0.90", label: "開発内テスト" },
+                        { value: "約100人", label: "会場で説明" }
+                    ],
+                    repoUrl: "https://github.com/kuri227/venv_DCON2026",
+                    sections: [
+                        { title: "課題と構想", body: "地震などで建物が倒壊した際、内部に取り残された人の位置や生存状況を外部から把握することは困難です。Acousは、声を出せない要救助者が壁や床をたたくノック音をAIで検知し、LTE経由で救助本部へ通知する探索支援システムです。AIだけで救助判断を行うのではなく、現場の判断材料を増やすセンサーとして設計しました。" },
+                        { title: "担当範囲", body: "モデル構成の検討と実装、音声データの収集・切り出し・加工・ミキシング、マルチラベルのアノテーション、学習処理の調整、学習後の検証まで、AI部分をほぼ一貫して担当しました。Raspberry Pi 4への搭載はチームメンバー1名と協力して進めました。" },
+                        { title: "モデル設計", body: "16kHz・1.5秒の音声を100〜4,000Hzでフィルタリングし、64次元log-melスペクトログラムへ変換。3段のCNNで局所特徴を抽出し、双方向GRUで時間変化を解析、Attention Poolingで短時間に現れるノック音へ重みを付けます。victim・environment・rescuerの3クラスを同時に扱うマルチラベル分類としました。" },
+                        { title: "データ作成の工夫", body: "実際の倒壊現場を網羅した音声を用意できないことが最大の課題でした。材質や強さを変えたノック音、工事音などの環境音を収集し、音量比を変えて合成。生成データは自動採用せず、実際に聞いて採否を判断しました。ピッチ・速度変更、ノイズ付加、クラス重み付けも行い、限られたデータから条件の違いを増やしました。" },
+                        { title: "成果と評価条件", body: "約90チームから本選会場へ進む30チームに選出され、ポスター展示で約100人へ説明しました。学習条件に比較的近いテストデータではF1スコア約0.90を記録しています。ただし、未知の災害現場や第三者による独立評価を示す値ではありません。消防での実演では必要性への評価を得た一方、誤検知も発生し、実用化には収音範囲・実環境データ・通信信頼性の検証が必要だと分かりました。" }
+                    ],
+                    gallery: [
+                        { src: "img/works/acous-ai-flow.png", alt: "AcousのAI音声解析フロー", caption: "前処理、CNN、GRU、クラス別確率出力までの処理フロー（チームvenv DCON2026説明資料）" },
+                        { src: "img/works/acous-hardware.png", alt: "Acous収音部の三本足構造とサイズ", caption: "不安定な場所への設置を想定した約10cm四方・116gの収音部（チームvenv DCON2026説明資料）" }
+                    ],
+                    links: [
+                        { text: "AI開発アーカイブ", url: "https://github.com/kuri227/venv_DCON2026", icon: "fa-brands fa-github" },
+                        { text: "DCON公式サイト", url: "https://dcon.ai/", icon: "fa-solid fa-arrow-up-right-from-square" }
+                    ]
+                },
+                {
+                    id: "task-manager",
+                    title: "課題整理ツール",
+                    date: "2026.07",
+                    thumbnail: "img/works/task-manager.png",
+                    shortDesc: "学校の授業管理ツールから課題情報を自動取得し、整理して表示するWebアプリ。",
+                    tags: [
+                        { label: "Type", items: ["Solo Dev"] },
+                        { label: "Tech", items: ["Next.js", "TS"] }
+                    ],
+                    repoUrl: "https://github.com/kuri227/assignment-dashboard",
+                    longDesc: "学校で用いられている様々な授業管理ツールから、API等を用いて課題情報を自動取得し、整理して表示するWebアプリです。\n\nNext.jsとTypeScriptを使用してフロントエンドを構築し、授業管理ツールのAPI仕様を調査してデータ取得の仕組みを実装しました。取得した課題情報は、ユーザーが一目で把握できるように整理され、進捗状況や締め切りの確認が容易になるように設計されています。\n\nこのプロジェクトの開始時では、GoogleClassroomとMicrosoft Teams、Moodleの3つの授業管理ツールからAPIでデータを取得する予定でしたが、学校側が設定しているAPIの制限により、現段階ではGoogle Classroomの課題情報のみ収集することができています。\n\nこのプロジェクトを通じて、API連携やデータの可視化に関するスキルを向上させることができました。",
+                    links: [
+                        { text: "View Code", url: "https://github.com/kuri227/assignment-dashboard", icon: "fa-brands fa-github" }
+                    ]
+                },
+
+                {
                     id:"annotator",
+                    featuredRank: 3,
                     title: "分類タスクアノテーションツール",
                     date: "2026.06",
                     thumbnail: "img/works/annotator.png",
@@ -414,6 +487,11 @@
                     tags: [
                         { label: "Type", items: ["Solo Dev"] },
                         { label: "Tech", items: ["Python", "PySide"] }
+                    ],
+                    metrics: [
+                        { value: "Solo Dev", label: "企画・設計・実装" },
+                        { value: "PySide6", label: "Desktop GUI" },
+                        { value: "Audio / Image", label: "複数データ形式" }
                     ],
                     repoUrl: "https://github.com/kuri227/Annotator",
                     longDesc: "DeepLearningコンテストの開発時に、データセット作成におけるボトルネックになっていたアノテーション作業を効率化するために、分類タスク向けの専用ツールとして開発しました。\n\nPySide6/Qt をベースにしたデスクトップ GUI として実装し、画像や音声などのデータを一覧しながら分類できるようにしました。さらに、音声データに対しては波形を確認しながら判断しやすいような表示構成を意識し、作業者が視覚的に判断しやすいUIを目指しました。\n\nファイルの読み込み・進捗の把握・分類結果の管理が一つの操作フローで完結するように設計し、データセット構築の効率を高めることを重視しました。",
@@ -455,7 +533,7 @@
                     id: "slate-quest",
                     title: "Slate Quest",
                     date: "2025.11",
-                    thumbnail: "img/works/slate-quest.png",
+                    thumbnail: null,
                     shortDesc: "独自の疑似言語を用いた暗号解読ゲーム。高専祭にてチームで制作・展示。",
                     tags: [
                         { label: "Type", items: ["Team Dev"] },
@@ -485,6 +563,7 @@
                 },
                 {
                     id: "shooting",
+                    featuredRank: 2,
                     title: "体感型シューティング",
                     date: "2026.04",
                     thumbnail: "img/works/shooting-game.png",
@@ -493,6 +572,11 @@
                         { label: "Type", items: ["Team Dev"] },
                         { label: "Tech", items: ["Unity", "M5StickC"] },
                         { label: "Event", items: ["Hack U", "School Festival", "M5stack Japan Tour"] }
+                    ],
+                    metrics: [
+                        { value: "3 Events", label: "展示・体験改善" },
+                        { value: "Unity", label: "ゲーム実装" },
+                        { value: "M5StickC", label: "自作入力デバイス" }
                     ],
                     repoUrl: "https://github.com/create-alt/HackU_new.git", // main repo
                     longDesc: "M5StickC Plus2 に搭載された加速度センサーやボタン入力を用い、それを自作の銃型コントローラーに接続してゲーム入力に変換する構成で実装した体感型シューティングです。Unity 側のゲームとマイコンをシリアル通信で接続し、ハードウェアから受け取った生データを処理してゲームの動作に反映させる部分を中心に開発しました。\n\n展示を重ねる中で、来場者がすぐに遊べるように操作感を調整したり、体験しやすい導線を整えたりすることに重点を置きました。ハードとソフトをつなぐ実装の難しさや、実際のユーザー体験を見ながら改善していく楽しさを学べた作品です。",
@@ -579,7 +663,7 @@
                             actionsHtml += `<button onclick="openProjectModal('${btn.targetId}')" class="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-semibold text-brand bg-brand-light/70 border border-brand/20 px-3 py-1.5 rounded-full hover:bg-brand hover:text-white transition-all shadow-sm"><i class="fa-regular fa-window-restore"></i> ${btn.text.replace('詳細', '詳細を見る')}</button>`;
                         });
                         externalLinks.forEach(link => {
-                            actionsHtml += `<a href="${link.url}" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-semibold text-gray-700 bg-white border border-gray-200 px-3 py-1.5 rounded-full hover:border-gray-400 hover:text-dark transition-all shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square opacity-70"></i> ${link.text}</a>`;
+                            actionsHtml += `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-semibold text-gray-700 bg-white border border-gray-200 px-3 py-1.5 rounded-full hover:border-gray-400 hover:text-dark transition-all shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square opacity-70"></i> ${link.text}</a>`;
                         });
                         actionsHtml += '</div>';
                     }
@@ -614,36 +698,56 @@
 
         function renderSkills() {
             const container = document.getElementById('skills-container');
-            let html = '';
-
-            PORTFOLIO_DATA.skills.forEach(category => {
-                let itemsHtml = category.items.map(item => `
-                    <div class="bg-white p-3 md:p-4 rounded-lg border border-gray-100 shadow-sm flex flex-col items-center text-center ${item.span === 2 ? 'col-span-2' : ''}">
-                        ${item.iconHtml}
-                        <span class="font-semibold text-xs md:text-sm">${item.name}</span>
-                        ${item.note ? `<span class="text-[10px] md:text-xs text-gray-500 mt-1">${item.note}</span>` : ''}
-                    </div>
-                `).join('');
-
-                html += `
-                    <div>
-                        <h4 class="text-base md:text-lg font-semibold border-b border-gray-200 pb-2 mb-4 md:mb-6 flex items-center gap-2">
-                            <i class="${category.icon} text-gray-400"></i> ${category.category}
-                        </h4>
-                        <div class="grid grid-cols-2 gap-3 md:gap-4">
-                            ${itemsHtml}
-                        </div>
-                    </div>
+            container.innerHTML = PORTFOLIO_DATA.skills.map(category => {
+                const itemsHtml = category.items.map(item => {
+                    const evidence = (item.workIds || []).map(id => {
+                        const work = PORTFOLIO_DATA.works.find(candidate => candidate.id === id);
+                        return work ? `<button onclick="openProjectModal('${id}')" class="skill-evidence">${work.title}<i class="fa-solid fa-arrow-up-right-from-square"></i></button>` : '';
+                    }).join('');
+                    return `
+                        <li class="py-4 border-t border-gray-100 first:border-t-0 first:pt-0 last:pb-0">
+                            <h5 class="font-semibold text-sm text-dark mb-1">${item.name}</h5>
+                            <p class="text-xs text-gray-500 leading-relaxed mb-2.5">${item.note}</p>
+                            <div class="flex flex-wrap gap-2">${evidence}</div>
+                        </li>
+                    `;
+                }).join('');
+                return `
+                    <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 shadow-sm">
+                        <h3 class="text-base md:text-lg font-semibold border-b border-gray-200 pb-3 mb-5 flex items-center gap-2"><i class="${category.icon} text-gray-400"></i>${category.category}</h3>
+                        <ul>${itemsHtml}</ul>
+                    </article>
                 `;
-            });
-            container.innerHTML = html;
+            }).join('');
+        }
+
+        function renderFeaturedWorks() {
+            const container = document.getElementById('featured-container');
+            const featured = PORTFOLIO_DATA.works.filter(work => work.featuredRank).sort((a, b) => a.featuredRank - b.featuredRank);
+            container.innerHTML = featured.map(work => {
+                const metrics = (work.metrics || []).map(metric => `<div class="text-center"><strong class="block text-sm md:text-base text-dark">${metric.value}</strong><span class="text-[9px] md:text-[10px] text-gray-500">${metric.label}</span></div>`).join('');
+                return `
+                    <article class="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+                        <button onclick="openProjectModal('${work.id}')" class="relative block w-full h-48 md:h-56 overflow-hidden text-left bg-gray-100 border-b border-gray-100" aria-label="${work.title}の詳細を見る">
+                            <img src="${work.thumbnail || PLACEHOLDER_IMG}" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='${PLACEHOLDER_IMG}'">
+                            <span class="absolute top-4 left-4 bg-brand text-white rounded-full px-3 py-1.5 text-[10px] font-bold shadow-lg">FEATURED 0${work.featuredRank}</span>
+                        </button>
+                        <div class="p-5 md:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-3 mb-3"><h3 class="text-lg md:text-xl font-bold text-dark leading-tight">${work.title}</h3><span class="text-[10px] font-bold text-gray-400 bg-gray-100 px-2 py-1 rounded shrink-0">${work.date}</span></div>
+                            <p class="text-xs md:text-sm text-gray-600 leading-relaxed mb-5 flex-grow">${work.shortDesc}</p>
+                            <div class="grid grid-cols-3 gap-2 bg-gray-50 border border-gray-100 rounded-xl p-3 mb-5">${metrics}</div>
+                            <button onclick="openProjectModal('${work.id}')" class="self-start inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-gray-800 hover:text-brand transition-colors">詳細を見る <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </article>
+                `;
+            }).join('');
         }
 
         function renderWorks() {
             const container = document.getElementById('works-container');
             let html = '';
 
-            PORTFOLIO_DATA.works.forEach(work => {
+            PORTFOLIO_DATA.works.filter(work => !work.featuredRank).forEach(work => {
                 // タグの生成
                 let tagsHtml = work.tags.map(tagGroup => `
                     <div class="flex items-start gap-2">
@@ -657,15 +761,15 @@
                 // 右下のメインリンク（GitHub等）
                 let repoLinkHtml = '';
                 if (work.repoUrl) {
-                    repoLinkHtml = `<a href="${work.repoUrl}" target="_blank" class="text-gray-400 hover:text-dark transition-colors" title="Repository"><i class="fa-brands fa-github text-lg md:text-xl"></i></a>`;
+                    repoLinkHtml = `<a href="${work.repoUrl}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-dark transition-colors" aria-label="${work.title}のGitHubリポジトリ"><i class="fa-brands fa-github text-lg md:text-xl"></i></a>`;
                 } else if(work.links && work.links.length > 0) {
-                     repoLinkHtml = `<a href="${work.links[0].url}" target="_blank" class="text-gray-400 hover:text-dark transition-colors" title="Link"><i class="${work.links[0].icon} text-lg md:text-xl"></i></a>`;
+                     repoLinkHtml = `<a href="${work.links[0].url}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-dark transition-colors" aria-label="${work.title}の外部リンク"><i class="${work.links[0].icon} text-lg md:text-xl"></i></a>`;
                 }
 
                 html += `
                     <article class="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col scroll-mt-24">
                         <div class="h-40 md:h-48 w-full bg-gray-100 relative overflow-hidden border-b border-gray-100 cursor-pointer" onclick="openProjectModal('${work.id}')">
-                            <img src="${work.thumbnail}" alt="${work.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='${PLACEHOLDER_IMG}'">
+                            <img src="${work.thumbnail || PLACEHOLDER_IMG}" alt="${work.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='${PLACEHOLDER_IMG}'">
                         </div>
                         <div class="p-5 md:p-6 flex flex-col flex-grow">
                             <div class="flex justify-between items-start mb-4 gap-2">
@@ -700,6 +804,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderTimeline();
             renderSkills();
+            renderFeaturedWorks();
             renderWorks();
         });
 
@@ -707,14 +812,19 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('mobile-menu-icon');
+            const button = document.querySelector('[aria-controls="mobile-menu"]');
             if (menu.classList.contains('translate-x-full')) {
                 menu.classList.remove('translate-x-full');
                 icon.classList.replace('fa-bars', 'fa-xmark');
                 document.body.classList.add('overflow-hidden-mobile');
+                button.setAttribute('aria-expanded', 'true');
+                button.setAttribute('aria-label', 'メニューを閉じる');
             } else {
                 menu.classList.add('translate-x-full');
                 icon.classList.replace('fa-xmark', 'fa-bars');
                 document.body.classList.remove('overflow-hidden-mobile');
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-label', 'メニューを開く');
             }
         }
 
@@ -733,19 +843,41 @@
         });
 
         // Modal Logic
+        let lastFocusedElement = null;
+
         function openProjectModal(id) {
             const work = PORTFOLIO_DATA.works.find(w => w.id === id);
             if(!work) return;
+            lastFocusedElement = document.activeElement;
 
             document.getElementById('modal-title').textContent = work.title;
             document.getElementById('modal-header-title').textContent = work.title;
             document.getElementById('modal-date').textContent = work.date;
-            document.getElementById('modal-desc').textContent = work.longDesc;
+            const descEl = document.getElementById('modal-desc');
+            if (Array.isArray(work.sections)) {
+                descEl.innerHTML = work.sections.map(section => `
+                    <section class="mb-8">
+                        <h4 class="text-lg md:text-xl font-black text-dark mb-3">${section.title}</h4>
+                        <p>${section.body}</p>
+                    </section>
+                `).join('');
+            } else {
+                descEl.innerHTML = (work.longDesc || '').split('\n\n').map(paragraph => `<p class="mb-5">${paragraph}</p>`).join('');
+            }
             
             const imgEl = document.getElementById('modal-image');
-            imgEl.src = work.thumbnail;
+            imgEl.src = work.thumbnail || PLACEHOLDER_IMG;
             imgEl.alt = work.title;
             imgEl.onerror = function() { this.src = PLACEHOLDER_IMG; };
+
+            const metricsEl = document.getElementById('modal-metrics');
+            metricsEl.innerHTML = (work.metrics || []).map(metric => `
+                <div class="bg-white border border-slate-200 rounded-2xl p-4 md:p-5">
+                    <strong class="block text-xl md:text-2xl font-black text-dark mb-1">${metric.value}</strong>
+                    <span class="text-[11px] md:text-xs text-slate-500">${metric.label}</span>
+                </div>
+            `).join('');
+            metricsEl.classList.toggle('hidden', !(work.metrics || []).length);
 
             document.getElementById('modal-tags').innerHTML = (work.tags || []).map(tagGroup => `
                 <div class="flex items-start gap-3 md:gap-4">
@@ -758,10 +890,19 @@
 
             const links = Array.isArray(work.links) ? work.links : [];
             document.getElementById('modal-links').innerHTML = links.map(link => `
-                <a href="${link.url}" target="_blank" class="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-dark text-white text-xs md:text-sm font-semibold rounded-full hover:bg-brand transition-colors shadow-lg shadow-gray-200">
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-dark text-white text-xs md:text-sm font-semibold rounded-full hover:bg-brand transition-colors shadow-lg shadow-gray-200">
                     <i class="${link.icon} text-base md:text-lg"></i> ${link.text}
                 </a>
             `).join('');
+
+            const galleryEl = document.getElementById('modal-gallery');
+            galleryEl.innerHTML = (work.gallery || []).map(image => `
+                <figure class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <img src="${image.src}" alt="${image.alt}" class="w-full aspect-video object-contain bg-slate-100" onerror="this.src='${PLACEHOLDER_IMG}'">
+                    <figcaption class="p-4 text-xs md:text-sm text-slate-600 leading-relaxed">${image.caption}</figcaption>
+                </figure>
+            `).join('');
+            galleryEl.classList.toggle('hidden', !(work.gallery || []).length);
 
             const modal = document.getElementById('project-modal');
             modal.classList.remove('hidden');
@@ -769,6 +910,7 @@
             document.body.classList.add('overflow-hidden-mobile');
             modal.scrollTop = 0;
             setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            setTimeout(() => modal.querySelector('button').focus(), 20);
         }
 
         function closeProjectModal() {
@@ -778,8 +920,15 @@
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
                 document.body.classList.remove('overflow-hidden-mobile');
+                if (lastFocusedElement) lastFocusedElement.focus();
             }, 300);
         }
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && !document.getElementById('project-modal').classList.contains('hidden')) {
+                closeProjectModal();
+            }
+        });
     </script>
 </body>
 </html>
