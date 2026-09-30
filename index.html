@@ -3,268 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuri | AI × Software × Hardware Portfolio</title>
-    <meta name="description" content="大阪公立大学工業高等専門学校・知能情報コース Kuri のポートフォリオ。AI、Web、ハードウェアを横断し、現場の課題を動くプロトタイプにします。">
-    <meta name="theme-color" content="#2563EB">
-    <meta property="og:title" content="Kuri | AI × Software × Hardware Portfolio">
-    <meta property="og:description" content="AI、Web、ハードウェアを横断し、現場の課題を動くプロトタイプにする高専生エンジニア。">
+    <title>Kuri | 課題から考え、技術を横断して形にする</title>
+    <meta name="description" content="大阪公立大学工業高等専門学校・知能情報コース Kuri のポートフォリオ。AI、Web、Hardwareを横断した制作と、ヒアリング・課題整理・実装・検証の経験を紹介します。">
+    <meta name="theme-color" content="#101820">
+    <meta property="og:title" content="Kuri | 課題から考え、技術を横断して形にする">
+    <meta property="og:description" content="AI、Web、Hardwareを横断した制作と、課題整理から実装・検証までの経験。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kuri227.github.io/My-Portfolio/">
     <meta name="twitter:card" content="summary">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            DEFAULT: '#2563EB',
-                            dark: '#1D4ED8',
-                            light: '#EFF6FF'
-                        },
-                        dark: '#111827',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260929">
 </head>
-<body class="antialiased">
+<body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
 
     <!-- ==========================================
          Header & Navigation
          ========================================== -->
-    <header class="fixed w-full top-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-xl tracking-tight z-50">KURI.</a>
-            
-            <!-- Desktop Nav -->
-            <nav class="hidden md:block">
-                <ul class="flex space-x-8 text-sm font-medium text-gray-600">
-                    <li><a href="#about" class="hover:text-brand transition-colors">About</a></li>
-                    <li><a href="#works" class="hover:text-brand transition-colors">Featured</a></li>
-                    <li><a href="#skills" class="hover:text-brand transition-colors">Skills</a></li>
-                    <li><a href="#career" class="hover:text-brand transition-colors">Career</a></li>
-                    <li><a href="#archive" class="hover:text-brand transition-colors">All Works</a></li>
-                </ul>
-            </nav>
-            <a href="#contact" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-dark rounded-full hover:bg-gray-800 transition-colors">
-                Contact
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="#about" class="wordmark" aria-label="Kuri ポートフォリオの先頭へ">
+                <span>KURI</span><span class="wordmark__dot" aria-hidden="true"></span>
             </a>
 
-            <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 z-50 p-2" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
-                <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+            <nav class="desktop-nav" aria-label="主要ナビゲーション">
+                <a href="#works">代表作</a>
+                <a href="#experience">経験</a>
+                <a href="#skills">技術</a>
+                <a href="#archive">制作一覧</a>
+            </nav>
+            <a href="#contact" class="header-contact">お問い合わせ</a>
+
+            <button type="button" onclick="toggleMobileMenu()" class="menu-button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+                <i id="mobile-menu-icon" class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </div>
     </header>
 
     <!-- Mobile Navigation Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center md:hidden">
-        <ul class="flex flex-col space-y-8 text-2xl font-bold text-gray-800 text-center">
-            <li><a href="#about" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">About</a></li>
-            <li><a href="#works" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Featured</a></li>
-            <li><a href="#skills" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Skills</a></li>
-            <li><a href="#career" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">Career</a></li>
-            <li><a href="#archive" onclick="toggleMobileMenu()" class="hover:text-brand transition-colors block px-8 py-2">All Works</a></li>
-            <li><a href="#contact" onclick="toggleMobileMenu()" class="text-brand hover:text-brand-dark transition-colors block px-8 py-2 mt-4">Contact</a></li>
-        </ul>
-    </div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+        <a href="#works" onclick="toggleMobileMenu()">代表プロジェクト</a>
+        <a href="#experience" onclick="toggleMobileMenu()">経験・活動</a>
+        <a href="#skills" onclick="toggleMobileMenu()">技術経験</a>
+        <a href="#archive" onclick="toggleMobileMenu()">その他の制作物</a>
+        <a href="#contact" onclick="toggleMobileMenu()">お問い合わせ</a>
+    </nav>
 
     <!-- ==========================================
         Main Content
         ========================================== -->
-    <main>
-        <!-- About Section -->
-        <section id="about" class="relative min-h-screen flex flex-col justify-center items-center pt-20 pb-20 md:pt-24 md:pb-32 px-5 overflow-hidden bg-white border-b border-gray-100">
-            <!-- Background Decorations -->
-            <div class="absolute top-10 right-0 md:right-10 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-light/50 rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
-            <div class="absolute bottom-10 left-0 md:left-10 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gray-100/80 rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
-
-            <div class="max-w-4xl mx-auto w-full relative z-10 mt-8">
-                <div class="text-center mb-8 md:mb-10">
-                    <span class="inline-block py-1.5 px-4 rounded-full bg-brand-light text-brand text-xs font-bold tracking-widest uppercase mb-4">Portfolio & Profile</span>
-                    <h1 class="text-4xl md:text-6xl font-black text-dark tracking-tight mb-3 md:mb-4">Kuri</h1>
-                    <p class="text-base md:text-lg text-gray-500 font-medium">Engineering Student @ OMUCT</p>
+    <main id="main-content">
+        <section id="about" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <h1 id="hero-title"><span>課題から考え、</span><span>技術を横断して</span><span>形にする。</span></h1>
+                    <p class="hero-lede">大阪公立大学工業高等専門学校 知能情報コースで学んでいます。AIによる音声解析、Webアプリ、Unityとセンサーを組み合わせた作品を制作してきました。</p>
+                    <p class="hero-current">Kosen Tech Clubでは、カリキュラム修了後、執行代として受講学生のPull Requestレビューと進捗確認を担当しています。Go・React・TypeScript・SQL・Docker・CI/CDは、同カリキュラムで実践しました。</p>
+                    <div class="hero-actions">
+                        <a class="button button--primary" href="#works">代表プロジェクトを見る</a>
+                        <a class="button button--secondary" href="#experience">経験・活動を見る</a>
+                    </div>
+                    <dl class="profile-facts" aria-label="プロフィール概要">
+                        <div><dt>Education</dt><dd>知能情報コース / 2028年卒業予定</dd></div>
+                        <div><dt>Certification</dt><dd>JDLA Deep Learning for ENGINEER 2026#1</dd></div>
+                        <div><dt>Fields</dt><dd>AI / Web / Hardware</dd></div>
+                    </dl>
                 </div>
 
-                <div class="bg-white rounded-3xl p-6 md:p-12 border border-gray-100 shadow-2xl shadow-gray-200/50 relative">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand to-brand-light rounded-t-3xl"></div>
-                    <div class="text-gray-600 leading-relaxed text-sm md:text-lg mb-8 md:mb-10 space-y-4 text-center max-w-2xl mx-auto">
-                        <p>大阪公立大学工業高等専門学校 知能情報コースの4年生です。</p>
-                        <p>AIによる音声解析、Next.jsを用いたWebアプリケーション、Unityとセンサーを組み合わせた体験型作品など、ソフトウェアとハードウェアを横断して開発しています。</p>
-                        <p>技術を学ぶだけでなく、現場の課題を見つけ、実際に動くプロトタイプとして検証できるエンジニアを目指しています。</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-10">
-                        <div class="bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
-                            <i class="fa-solid fa-certificate text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
-                            <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">Certification</span>
-                            <span class="font-bold text-gray-800 text-base md:text-lg">E資格 2026#1</span>
-                        </div>
-                        <div class="bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
-                            <i class="fa-solid fa-graduation-cap text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
-                            <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">Education</span>
-                            <span class="font-bold text-gray-800 text-base md:text-lg">OMUCT</span>
-                            <span class="text-[10px] md:text-xs text-gray-500 mt-1 font-medium">知能情報コース (2028卒)</span>
-                        </div>
-                        <div class="bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100 flex flex-col items-center justify-center text-center">
-                            <i class="fa-solid fa-code text-xl md:text-2xl text-gray-400 mb-2 md:mb-3"></i>
-                            <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">Interests</span>
-                            <span class="font-bold text-gray-800 text-base md:text-lg">AI / Web / HW</span>
+                <figure class="hero-artifact">
+                    <div class="hero-artifact__frame">
+                        <img src="img/works/acous-prototype.png" alt="災害救助支援システムAcousの試作機" width="1200" height="800">
+                        <div class="artifact-path" aria-hidden="true">
+                            <span>Sound</span><i></i><span>AI</span><i></i><span>Notify</span>
                         </div>
                     </div>
-                    <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
-                        <a href="#works" class="w-full sm:w-auto px-8 py-3.5 bg-brand text-white text-center font-medium rounded-full hover:bg-brand-dark transition-all transform hover:-translate-y-1 shadow-lg shadow-brand/30">Featured Works</a>
-                        <a href="#career" class="w-full sm:w-auto px-8 py-3.5 bg-white text-dark text-center font-medium border border-gray-200 rounded-full hover:border-gray-400 hover:bg-gray-50 transition-all">Career History</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-400">
-                <span class="text-[9px] md:text-[10px] uppercase tracking-widest mb-1.5 md:mb-2 font-medium">Scroll</span>
-                <i class="fa-solid fa-arrow-down animate-bounce text-xs md:text-sm"></i>
+                    <figcaption>
+                        <span>Featured project</span>
+                        <strong>Acous — 災害救助支援システム</strong>
+                        <small>ノック音の検知から遠隔通知までを検討したDCON2026出展作品</small>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
         <!-- Featured Works Section -->
-        <section id="works" class="py-16 md:py-24 px-5 bg-white">
-            <div class="max-w-6xl mx-auto">
-                <div class="mb-8 md:mb-12">
-                    <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Featured Projects</h2>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-3">代表作品</h3>
+        <section id="works" class="section section--paper" aria-labelledby="works-title">
+            <div class="section-shell">
+                <div class="section-heading section-heading--split">
+                    <h2 id="works-title">代表プロジェクト</h2>
+                    <p>課題、担当範囲、技術上の判断が分かる3件を選びました。詳細では、成果だけでなく制約や検証条件も記載しています。</p>
                 </div>
-                <div id="featured-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <div id="featured-container" class="featured-grid"></div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-16 md:py-24 px-5 bg-gray-50 border-y border-gray-200">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-8 md:mb-12">
-                    <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Tech Stack</h2>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-3">Skills</h3>
-                    <p class="text-sm text-gray-600">技術を使用した作品もあわせて確認できます。</p>
+        <section id="experience" class="section section--ink" aria-labelledby="experience-title">
+            <div class="section-shell">
+                <div class="section-heading section-heading--split">
+                    <h2 id="experience-title">経験・活動</h2>
+                    <p>開発経験、学習支援、企画・提案の経験を区別して掲載しています。企業インターンでは開発を担当していません。</p>
                 </div>
-                <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"></div>
+                <div class="experience-list">
+                    <article class="experience-item">
+                        <div class="experience-item__meta"><span>Community</span><time>現在</time></div>
+                        <div>
+                            <h3>Kosen Tech Club — 執行代</h3>
+                            <p>専用カリキュラムを修了後、受講する学生のPull Requestレビュー、進捗確認、学習支援を担当しています。</p>
+                            <a href="https://kosen-tech-club.midascapital.jp/" target="_blank" rel="noopener noreferrer">Kosen Tech Club公式サイトを見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                    <article class="experience-item">
+                        <div class="experience-item__meta"><span>Internship</span><time>2026</time></div>
+                        <div>
+                            <h3>EC領域の企業インターン</h3>
+                            <p>ECサイトに関連する業務について、現状業務のヒアリング、課題整理、解決案の提案・発表までを経験しました。開発は担当していません。</p>
+                        </div>
+                    </article>
+                    <article class="experience-item">
+                        <div class="experience-item__meta"><span>Internship</span><time>2026</time></div>
+                        <div>
+                            <h3>業務システム領域の企業インターン</h3>
+                            <p>現行システムの利用者へのヒアリング、課題整理、解決案の提案・発表までを経験しました。開発は担当していません。</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- Career Section -->
-        <section id="career" class="py-16 md:py-24 px-5">
-            <div class="max-w-4xl mx-auto">
-                <div class="mb-8 md:mb-12">
-                    <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Career & Experience</h2>
-                    <h3 class="text-2xl md:text-3xl font-bold">Timeline</h3>
+        <section id="skills" class="section section--sand" aria-labelledby="skills-title">
+            <div class="section-shell">
+                <div class="section-heading section-heading--split">
+                    <h2 id="skills-title">技術経験</h2>
+                    <p>制作物で使用した技術と、KTCカリキュラムで手を動かした技術を分けています。習熟度の自己評価ではなく、用途と根拠を示します。</p>
                 </div>
-                
-                <!-- Timeline Container (Rendered by JS) -->
-                <div id="timeline-container" class="space-y-12 md:space-y-16"></div>
+                <div class="skill-key" aria-label="技術経験の分類">
+                    <span><i class="skill-key__dot skill-key__dot--project"></i>制作物で使用</span>
+                    <span><i class="skill-key__dot skill-key__dot--practice"></i>カリキュラムで実践</span>
+                    <span><i class="skill-key__dot skill-key__dot--support"></i>レビュー・支援</span>
+                </div>
+                <div id="skills-container" class="skills-list"></div>
+            </div>
+        </section>
+
+        <section id="career" class="section section--paper" aria-labelledby="timeline-title">
+            <div class="section-shell section-shell--narrow">
+                <details class="history-disclosure">
+                    <summary><span id="timeline-title">これまでの活動履歴</span><small>2023–2026の制作・学習・展示を開く</small></summary>
+                    <div id="timeline-container" class="timeline-list"></div>
+                </details>
             </div>
         </section>
 
         <!-- All Works Section -->
-        <section id="archive" class="py-16 md:py-24 px-5 bg-white border-t border-gray-200">
-            <div class="max-w-6xl mx-auto">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 md:mb-12 gap-4">
-                    <div>
-                        <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-2">Project Archive</h2>
-                        <h3 class="text-2xl md:text-3xl font-bold">そのほかの制作物</h3>
-                    </div>
+        <section id="archive" class="section section--paper archive-section" aria-labelledby="archive-title">
+            <div class="section-shell">
+                <div class="section-heading section-heading--split">
+                    <h2 id="archive-title">その他の制作物</h2>
+                    <p>学習や制作の過程で作ったWeb、デスクトップ、ゲームの記録です。</p>
                 </div>
-
-                <!-- Works Container (Rendered by JS) -->
-                <div id="works-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <div id="works-container" class="archive-grid"></div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 md:py-24 px-5 bg-gray-50 border-t border-gray-200">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-xs md:text-sm font-bold text-brand uppercase tracking-widest mb-4 md:mb-6">Contact</h2>
-                <p class="text-gray-600 text-sm md:text-lg mb-8 md:mb-12 max-w-xl mx-auto leading-relaxed">
-                    制作物や活動に関するお問い合わせ、カジュアルな面談など、お気軽にご連絡ください。<br class="hidden md:block" />新しいチャレンジや出会いをいつでも歓迎しています。
-                </p>
-                
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
-                    <div class="w-full sm:w-auto flex flex-col items-center bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-gray-600">
-                            <i class="fa-solid fa-envelope text-lg md:text-xl"></i>
-                        </div>
-                        <span class="text-[9px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Email</span>
-                        <div class="font-mono text-base md:text-lg tracking-wider text-dark select-all font-semibold">
-                            rg23136w@st.omu.ac.jp
-                        </div>
-                    </div>
-                    
-                    <a href="https://github.com/kuri227" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex flex-col items-center bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow group">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3 md:mb-4 text-gray-600 group-hover:bg-dark group-hover:text-white transition-colors">
-                            <i class="fa-brands fa-github text-lg md:text-xl"></i>
-                        </div>
-                        <span class="text-[9px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">GitHub</span>
-                        <div class="font-mono text-base md:text-lg tracking-wider text-dark font-semibold group-hover:text-brand transition-colors">
-                            @kuri227
-                        </div>
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="section-shell contact-layout">
+                <div>
+                    <h2 id="contact-title"><span>制作・活動について</span><span>ご相談ください。</span></h2>
+                    <p>制作物や活動へのご質問、インターンシップ・面談、学生エンジニア向けイベントのご相談は、メールでご連絡ください。公開しているコードはGitHubから確認できます。</p>
+                </div>
+                <div class="contact-actions">
+                    <a class="contact-link contact-link--primary" href="mailto:rg23136w@st.omu.ac.jp">
+                        <span>メールを送る</span><strong>rg23136w@st.omu.ac.jp</strong><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a class="contact-link" href="https://github.com/kuri227" target="_blank" rel="noopener noreferrer">
+                        <span>公開コードを見る</span><strong>@kuri227</strong><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 py-6 border-t border-gray-800 text-center">
-        <p class="text-gray-500 text-xs md:text-sm">&copy; 2026 Kuri. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 Kuri</p>
+        <a href="#about">ページの先頭へ <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
     </footer>
 
 
     <!-- ==========================================
          Project Detail Modal (Empty Container)
          ========================================== -->
-    <div id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[100] bg-white hidden flex-col overflow-y-auto opacity-0 transition-opacity duration-300">
-        <div class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 md:px-5 py-3 md:py-4 z-10 flex items-center justify-between">
-            <button onclick="closeProjectModal()" class="flex items-center gap-2 text-gray-600 hover:text-brand font-semibold transition-colors group px-2 py-1 text-sm md:text-base" aria-label="作品一覧に戻る">
-                <i class="fa-solid fa-arrow-left transform group-hover:-translate-x-1 transition-transform"></i> 
-                Back<span class="hidden sm:inline"> to Works</span>
-            </button>
-            <span id="modal-header-title" class="font-bold text-gray-800 text-sm hidden md:block"></span>
-            <div class="w-20 md:w-24"></div>
-        </div>
-
-        <div class="max-w-4xl mx-auto w-full px-5 py-6 md:py-10 flex-grow">
-            <div class="rounded-2xl overflow-hidden bg-gray-50 mb-6 md:mb-10 border border-gray-200 shadow-sm flex items-center justify-center min-h-[200px] md:min-h-[300px]">
-                <img id="modal-image" src="" alt="" class="w-full h-auto max-h-[40vh] md:max-h-[60vh] object-contain">
-            </div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-start mb-6 md:mb-8 gap-4 md:gap-6">
-                <div>
-                    <h2 id="modal-title" class="text-2xl sm:text-3xl md:text-4xl font-black text-dark mb-2 md:mb-3"></h2>
-                    <span id="modal-date" class="text-[10px] md:text-xs font-bold text-gray-500 bg-gray-100 px-2 md:px-3 py-1 md:py-1.5 rounded-md inline-block tracking-wider"></span>
+    <dialog id="project-modal" class="project-dialog" aria-labelledby="modal-title">
+        <article class="project-dialog__panel">
+            <header class="project-dialog__header">
+                <button type="button" onclick="closeProjectModal()" class="dialog-close" aria-label="プロジェクト詳細を閉じる">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>一覧に戻る</span>
+                </button>
+                <span id="modal-header-title" aria-hidden="true"></span>
+            </header>
+            <div class="project-dialog__content">
+                <img id="modal-image" src="img/works/acous-prototype.png" alt="" width="1200" height="800">
+                <div class="project-dialog__intro">
+                    <div><span id="modal-date"></span><h2 id="modal-title"></h2></div>
+                    <div id="modal-links" class="project-dialog__links"></div>
                 </div>
-                <div id="modal-links" class="flex flex-col sm:flex-row flex-wrap gap-2 md:gap-3 w-full md:w-auto"></div>
+                <div id="modal-metrics" class="project-metrics"></div>
+                <div id="modal-tags" class="project-tags"></div>
+                <div id="modal-desc" class="project-copy"></div>
+                <div id="modal-gallery" class="project-gallery"></div>
             </div>
-
-            <div id="modal-metrics" class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 md:mb-8"></div>
-            <div id="modal-tags" class="mb-8 md:mb-12 space-y-3 md:space-y-4 py-4 md:py-6 border-y border-gray-200"></div>
-
-            <div class="max-w-3xl pb-10">
-                <h3 class="text-base md:text-lg font-bold text-dark flex items-center gap-2 mb-4 md:mb-6">
-                    <i class="fa-solid fa-align-left text-brand"></i> About the Project
-                </h3>
-                <div id="modal-desc" class="project-copy text-sm md:text-base text-gray-600 leading-relaxed md:leading-loose"></div>
-            </div>
-            <div id="modal-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-5 pb-14"></div>
-        </div>
-    </div>
+        </article>
+    </dialog>
 
 
     <!-- ==========================================
@@ -282,8 +236,17 @@
                     year: "2026",
                     events: [
                         {
-                            month: "9月", title: "サマーインターン2社参加予定",
-                            desc: "SIer企業2社に5dayでのインターンシップの参加予定。<br>実務経験を通して、エンジニアとしてのスキルを磨くこと、上流工程の経験を積むことを目的としています。",
+                            month: "09月", title: "EC領域の企業インターン",
+                            desc: "ECサイトに関連する現状業務のヒアリング、課題整理、解決案の提案・発表までを経験。開発は担当していません。",
+                        },
+                        {
+                            month: "09月", title: "業務システム領域の企業インターン",
+                            desc: "現行システムの利用者へのヒアリング、課題整理、解決案の提案・発表までを経験。開発は担当していません。",
+                        },
+                        {
+                            month: "活動中", title: "Kosen Tech Club 執行代",
+                            desc: "カリキュラム修了後、受講する学生のPull Requestレビュー、進捗確認、学習支援を担当。",
+                            externalLinks: [{ text: "Kosen Tech Club 公式サイト", url: "https://kosen-tech-club.midascapital.jp/" }]
                         },
                         {
                             month: "07月", title: "2026年 大規模言語モデル講座 1 受講中",
@@ -390,30 +353,48 @@
             // --- 2. Skills Data ---
             skills: [
                 {
-                    category: "AI & Data",
+                    category: "AI・データ",
                     icon: "fa-solid fa-wave-square",
                     items: [
-                        { name: "Python / PyTorch", note: "Attention CRNNの設計、音声前処理、実機推論まで実装。", workIds: ["dcon", "annotator"] },
-                        { name: "Audio ML", note: "log-mel特徴量、マルチラベル分類、データ拡張と評価。", workIds: ["dcon"] },
-                        { name: "PySide6", note: "データセット作成を支えるGUIツールを開発。", workIds: ["annotator", "image-viewer"] }
+                        { name: "Python / PyTorch", note: "音声前処理、Attention CRNNの実装、学習・検証、Raspberry Pi上での推論に使用。", level: "project", workIds: ["dcon"] },
+                        { name: "音声解析", note: "log-mel特徴量、マルチラベル分類、データ拡張、F1スコアによる評価を経験。", level: "project", workIds: ["dcon"] },
+                        { name: "PySide6", note: "音声・画像の分類作業を行うアノテーションツールと画像ビューワーを制作。", level: "project", workIds: ["annotator", "image-viewer"] }
                     ]
                 },
                 {
-                    category: "Web & Software",
+                    category: "Web・ソフトウェア制作",
                     icon: "fa-solid fa-code",
                     items: [
-                        { name: "Next.js / React / TypeScript", note: "API連携、認証、DBを含むWebアプリを構築。", workIds: ["task-manager", "blog", "todo"] },
-                        { name: "JavaScript", note: "外部APIを用いた情報取得とデータ処理を実装。", workIds: ["allergy-info"] },
-                        { name: "Git / GitHub", note: "個人・チーム開発でのバージョン管理と成果公開。", workIds: ["dcon", "shooting", "slate-quest"] }
+                        { name: "Next.js / React / TypeScript", note: "API連携、認証、データベースを含むWebアプリや、状態管理を扱うUIの制作に使用。", level: "project", workIds: ["task-manager", "blog", "todo"] },
+                        { name: "JavaScript", note: "外部APIを利用した情報取得とデータ処理に使用。", level: "project", workIds: ["allergy-info"] },
+                        { name: "Git / GitHub", note: "個人・チーム制作でのバージョン管理とPull Request運用に使用。", level: "project", workIds: ["dcon", "shooting", "slate-quest"] }
                     ]
                 },
                 {
-                    category: "Hardware & Experience",
+                    category: "Web Engineering Practice",
+                    icon: "fa-solid fa-server",
+                    items: [
+                        { name: "HTML / CSS / JavaScript / TypeScript / React", note: "Kosen Tech Clubのカリキュラムで、フロントエンドの基礎からReactまでを実装。", level: "practice", workIds: [] },
+                        { name: "Go / HTTP API", note: "GoによるAPI開発と、フロントエンドからのHTTP通信をカリキュラムで実践。", level: "practice", workIds: [] },
+                        { name: "SQL / Docker", note: "SQLによるデータ操作と、Dockerを使った開発環境をカリキュラムで実践。", level: "practice", workIds: [] },
+                        { name: "CI / CD", note: "テストやデプロイを自動化する開発フローをカリキュラムで学習。", level: "practice", workIds: [] }
+                    ]
+                },
+                {
+                    category: "Hardware・体験制作",
                     icon: "fa-solid fa-microchip",
                     items: [
-                        { name: "Unity / C#", note: "センサー入力を遊びへ変換する体感型ゲームを制作。", workIds: ["shooting"] },
-                        { name: "M5StickC / Arduino", note: "加速度・ボタン入力とUnityをシリアル通信で接続。", workIds: ["shooting"] },
-                        { name: "Raspberry Pi / Edge AI", note: "16kHz音声の前処理・推論・通知を実機へ統合。", workIds: ["dcon"] }
+                        { name: "Unity / C#", note: "センサー入力を使う体感型シューティングのゲーム側実装に使用。", level: "project", workIds: ["shooting"] },
+                        { name: "M5StickC / Arduino", note: "加速度・ボタン入力を取得し、Unityとシリアル通信で接続。", level: "project", workIds: ["shooting"] },
+                        { name: "Raspberry Pi / Edge AI", note: "音声の前処理・推論・通知処理を試作機へ統合。", level: "project", workIds: ["dcon"] }
+                    ]
+                },
+                {
+                    category: "レビュー・学習支援",
+                    icon: "fa-solid fa-people-group",
+                    items: [
+                        { name: "Pull Requestレビュー", note: "Kosen Tech Clubの執行代として、受講学生のPull Requestを確認。", level: "support", workIds: [] },
+                        { name: "進捗確認・学習支援", note: "カリキュラムを進める学生の状況を確認し、学習を支援。", level: "support", workIds: [] }
                     ]
                 }
             ],
@@ -427,8 +408,11 @@
                     date: "2026.05",
                     thumbnail: "img/works/acous-prototype.png",
                     shortDesc: "倒壊建物内のノック音をAIで検知し、救助本部へ遠隔通知するDCON2026出展作品。",
+                    problem: "倒壊建物内にいる要救助者の手がかりを、外部から得る方法を検討。",
+                    roleSummary: "AIモデル開発 / データ作成 / システム設計・技術検討",
+                    decision: "消防職員へのヒアリングと専門教員への相談を設計検討へ反映。",
                     tags: [
-                        { label: "Role", items: ["AI Lead", "Team Dev"] },
+                        { label: "Role", items: ["AI開発", "システム設計", "ヒアリング"] },
                         { label: "Tech", items: ["PyTorch", "Attention CRNN", "Raspberry Pi"] },
                         { label: "Event", items: ["DCON2026"] }
                     ],
@@ -443,6 +427,7 @@
                         { title: "担当範囲", body: "モデル構成の検討と実装、音声データの収集・切り出し・加工・ミキシング、マルチラベルのアノテーション、学習処理の調整、学習後の検証まで、AI部分をほぼ一貫して担当しました。Raspberry Pi 4への搭載はチームメンバー1名と協力して進めました。" },
                         { title: "モデル設計", body: "16kHz・1.5秒の音声を100〜4,000Hzでフィルタリングし、64次元log-melスペクトログラムへ変換。3段のCNNで局所特徴を抽出し、双方向GRUで時間変化を解析、Attention Poolingで短時間に現れるノック音へ重みを付けます。victim・environment・rescuerの3クラスを同時に扱うマルチラベル分類としました。" },
                         { title: "データ作成の工夫", body: "実際の倒壊現場を網羅した音声を用意できないことが最大の課題でした。材質や強さを変えたノック音、工事音などの環境音を収集し、音量比を変えて合成。生成データは自動採用せず、実際に聞いて採否を判断しました。ピッチ・速度変更、ノイズ付加、クラス重み付けも行い、限られたデータから条件の違いを増やしました。" },
+                        { title: "現場・専門家との検討", body: "消防職員へのヒアリングを行い、現場のニーズと技術側の考えのずれを確認しながら設計を見直しました。チーム内だけでは判断が難しい通信とAIの課題については、それぞれを専門とする教員へ自ら相談しました。コンテストのメンターとは、導入方法やビジネスモデルについても検討しました。" },
                         { title: "成果と評価条件", body: "約90チームから本選会場へ進む30チームに選出され、ポスター展示で約100人へ説明しました。学習条件に比較的近いテストデータではF1スコア約0.90を記録しています。ただし、未知の災害現場や第三者による独立評価を示す値ではありません。消防での実演では必要性への評価を得た一方、誤検知も発生し、実用化には収音範囲・実環境データ・通信信頼性の検証が必要だと分かりました。" }
                     ],
                     gallery: [
@@ -473,7 +458,6 @@
 
                 {
                     id:"annotator",
-                    featuredRank: 3,
                     title: "分類タスクアノテーションツール",
                     date: "2026.06",
                     thumbnail: "img/works/annotator.png",
@@ -495,10 +479,14 @@
                 },
                 {
                     id: "blog",
+                    featuredRank: 2,
                     title: "TechFeed - 技術知識共有プラットフォーム",
                     date: "2026.01",
                     thumbnail: "img/works/blog-app.png", // 拡張しやすいようimg/worksディレクトリに統一
                     shortDesc: "TypeScriptとNext.jsを組み合わせて構築したブログアプリ。",
+                    problem: "技術知識を投稿・共有するWebアプリを、認証やデータ管理を含めて構築。",
+                    roleSummary: "個人開発 / UI・認証・データベース",
+                    decision: "Next.js App Routerを中心に、投稿・管理・画像・OGP取得を一つのアプリへ統合。",
                     tags: [
                         { label: "Type", items: ["Solo Dev"] },
                         { label: "Tech", items: ["Next.js", "TS"] }
@@ -564,11 +552,14 @@
                 },
                 {
                     id: "shooting",
-                    featuredRank: 2,
+                    featuredRank: 3,
                     title: "体感型シューティング",
                     date: "2026.04",
                     thumbnail: "img/works/shooting-game.png",
                     shortDesc: "自作コントローラー（M5StickC）とUnityを連携させた、幅広い世代に楽しんでもらうことを意識したゲーム作品。",
+                    problem: "センサーを使った入力を、展示で遊べる体験型ゲームへつなげる。",
+                    roleSummary: "Unity・マイコン連携 / 入力データ処理",
+                    decision: "展示のたびに操作感と体験導線を調整。",
                     tags: [
                         { label: "Type", items: ["Team Dev"] },
                         { label: "Tech", items: ["Unity", "M5StickC"] },
@@ -646,52 +637,35 @@
 
         function renderTimeline() {
             const container = document.getElementById('timeline-container');
+            if (!container) return;
             let html = '';
 
             PORTFOLIO_DATA.timeline.forEach(yearData => {
                 let eventsHtml = yearData.events.map(ev => {
                     const buttons = Array.isArray(ev.buttons) ? ev.buttons : [];
                     const externalLinks = Array.isArray(ev.externalLinks) ? ev.externalLinks : [];
-
-                    // 説明文
-                    let descHtml = ev.desc ? `<p class="text-xs md:text-sm text-gray-600 leading-relaxed ${buttons.length || externalLinks.length ? 'mb-3' : ''}">${ev.desc}</p>` : '';
-                    
-                    // ボタン類（モーダルを開くボタン ＆ 外部リンク）
-                    let actionsHtml = '';
-                    if (buttons.length > 0 || externalLinks.length > 0) {
-                        actionsHtml = '<div class="flex flex-wrap gap-2">';
-                        buttons.forEach(btn => {
-                            actionsHtml += `<button onclick="openProjectModal('${btn.targetId}')" class="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-semibold text-brand bg-brand-light/70 border border-brand/20 px-3 py-1.5 rounded-full hover:bg-brand hover:text-white transition-all shadow-sm"><i class="fa-regular fa-window-restore"></i> ${btn.text.replace('詳細', '詳細を見る')}</button>`;
-                        });
-                        externalLinks.forEach(link => {
-                            actionsHtml += `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-semibold text-gray-700 bg-white border border-gray-200 px-3 py-1.5 rounded-full hover:border-gray-400 hover:text-dark transition-all shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square opacity-70"></i> ${link.text}</a>`;
-                        });
-                        actionsHtml += '</div>';
-                    }
+                    const actionsHtml = [
+                        ...buttons.map(btn => `<button type="button" onclick="openProjectModal('${btn.targetId}')">${btn.text.replace(/詳細.*?[（(]?/, 'プロジェクト詳細：').replace(/[）)]$/, '')}</button>`),
+                        ...externalLinks.map(link => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`)
+                    ].join('');
 
                     return `
-                        <div class="py-5 md:py-6 flex flex-col md:flex-row gap-1 md:gap-6 hover:bg-gray-50 transition-colors -mx-4 px-4 rounded-xl group">
-                            <div class="md:w-16 shrink-0 pt-0.5">
-                                <span class="text-sm font-bold text-${ev.title.includes('卒業') ? 'brand' : 'gray-500'} tracking-wider">${ev.month}</span>
+                        <article class="timeline-item">
+                            <time>${ev.month}</time>
+                            <div>
+                                <h4>${ev.title}</h4>
+                                ${ev.desc ? `<p>${ev.desc}</p>` : ''}
+                                ${actionsHtml ? `<div class="timeline-actions">${actionsHtml}</div>` : ''}
                             </div>
-                            <div class="flex-grow">
-                                <h4 class="text-base md:text-lg font-bold text-dark ${ev.desc || actionsHtml ? 'mb-1' : ''} group-hover:text-brand transition-colors">${ev.title}</h4>
-                                ${descHtml}
-                                ${actionsHtml}
-                            </div>
-                        </div>
+                        </article>
                     `;
                 }).join('');
 
                 html += `
-                    <div class="flex flex-col md:flex-row gap-1 md:gap-8">
-                        <div class="md:w-32 shrink-0">
-                            <div class="text-4xl md:text-6xl font-black text-gray-200 tracking-tighter md:sticky md:top-24">${yearData.year}</div>
-                        </div>
-                        <div class="flex-grow divide-y divide-gray-100 border-t-2 border-gray-200 pt-2 mt-1 md:mt-0">
-                            ${eventsHtml}
-                        </div>
-                    </div>
+                    <section class="timeline-year" aria-labelledby="timeline-${yearData.year}">
+                        <h3 id="timeline-${yearData.year}">${yearData.year}</h3>
+                        <div>${eventsHtml}</div>
+                    </section>
                 `;
             });
             container.innerHTML = html;
@@ -699,23 +673,24 @@
 
         function renderSkills() {
             const container = document.getElementById('skills-container');
+            if (!container) return;
             container.innerHTML = PORTFOLIO_DATA.skills.map(category => {
                 const itemsHtml = category.items.map(item => {
                     const evidence = (item.workIds || []).map(id => {
                         const work = PORTFOLIO_DATA.works.find(candidate => candidate.id === id);
-                        return work ? `<button onclick="openProjectModal('${id}')" class="skill-evidence">${work.title}<i class="fa-solid fa-arrow-up-right-from-square"></i></button>` : '';
+                        return work ? `<button type="button" onclick="openProjectModal('${id}')" class="skill-evidence">使用例：${work.title}<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>` : '';
                     }).join('');
                     return `
-                        <li class="py-4 border-t border-gray-100 first:border-t-0 first:pt-0 last:pb-0">
-                            <h5 class="font-semibold text-sm text-dark mb-1">${item.name}</h5>
-                            <p class="text-xs text-gray-500 leading-relaxed mb-2.5">${item.note}</p>
-                            <div class="flex flex-wrap gap-2">${evidence}</div>
+                        <li class="skill-row skill-row--${item.level || 'project'}">
+                            <div class="skill-row__title"><i aria-hidden="true"></i><h4>${item.name}</h4></div>
+                            <p>${item.note}</p>
+                            ${evidence ? `<div class="skill-evidence-list">${evidence}</div>` : ''}
                         </li>
                     `;
                 }).join('');
                 return `
-                    <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 shadow-sm">
-                        <h3 class="text-base md:text-lg font-semibold border-b border-gray-200 pb-3 mb-5 flex items-center gap-2"><i class="${category.icon} text-gray-400"></i>${category.category}</h3>
+                    <article class="skill-group">
+                        <h3><i class="${category.icon}" aria-hidden="true"></i>${category.category}</h3>
                         <ul>${itemsHtml}</ul>
                     </article>
                 `;
@@ -724,20 +699,26 @@
 
         function renderFeaturedWorks() {
             const container = document.getElementById('featured-container');
+            if (!container) return;
             const featured = PORTFOLIO_DATA.works.filter(work => work.featuredRank).sort((a, b) => a.featuredRank - b.featuredRank);
             container.innerHTML = featured.map(work => {
-                const metrics = (work.metrics || []).map(metric => `<div class="text-center"><strong class="block text-sm md:text-base text-dark">${metric.value}</strong><span class="text-[9px] md:text-[10px] text-gray-500">${metric.label}</span></div>`).join('');
+                const metrics = (work.metrics || []).map(metric => `<div><dt>${metric.label}</dt><dd>${metric.value}</dd></div>`).join('');
                 return `
-                    <article class="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
-                        <button onclick="openProjectModal('${work.id}')" class="relative block w-full h-48 md:h-56 overflow-hidden text-left bg-gray-100 border-b border-gray-100" aria-label="${work.title}の詳細を見る">
-                            <img src="${work.thumbnail || PLACEHOLDER_IMG}" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='${PLACEHOLDER_IMG}'">
-                            <span class="absolute top-4 left-4 bg-brand text-white rounded-full px-3 py-1.5 text-[10px] font-bold shadow-lg">FEATURED 0${work.featuredRank}</span>
+                    <article class="featured-project ${work.featuredRank === 1 ? 'featured-project--lead' : ''}">
+                        <button type="button" onclick="openProjectModal('${work.id}')" class="featured-project__image" aria-label="${work.title}の詳細を見る">
+                            <img src="${work.thumbnail || PLACEHOLDER_IMG}" alt="" width="1200" height="800" loading="${work.featuredRank === 1 ? 'eager' : 'lazy'}" onerror="this.src='${PLACEHOLDER_IMG}'">
                         </button>
-                        <div class="p-5 md:p-6 flex flex-col flex-grow">
-                            <div class="flex items-start justify-between gap-3 mb-3"><h3 class="text-lg md:text-xl font-bold text-dark leading-tight">${work.title}</h3><span class="text-[10px] font-bold text-gray-400 bg-gray-100 px-2 py-1 rounded shrink-0">${work.date}</span></div>
-                            <p class="text-xs md:text-sm text-gray-600 leading-relaxed mb-5 flex-grow">${work.shortDesc}</p>
-                            <div class="grid grid-cols-3 gap-2 bg-gray-50 border border-gray-100 rounded-xl p-3 mb-5">${metrics}</div>
-                            <button onclick="openProjectModal('${work.id}')" class="self-start inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-gray-800 hover:text-brand transition-colors">詳細を見る <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        <div class="featured-project__body">
+                            <div class="featured-project__index"><span>Project ${String(work.featuredRank).padStart(2, '0')}</span><time>${work.date}</time></div>
+                            <h3>${work.title}</h3>
+                            <p class="featured-project__summary">${work.shortDesc}</p>
+                            <dl class="project-brief">
+                                <div><dt>課題</dt><dd>${work.problem || work.shortDesc}</dd></div>
+                                <div><dt>担当</dt><dd>${work.roleSummary || '制作・実装'}</dd></div>
+                                <div><dt>判断</dt><dd>${work.decision || '実装を通して技術と使い方を検証'}</dd></div>
+                            </dl>
+                            ${metrics ? `<dl class="featured-project__metrics">${metrics}</dl>` : ''}
+                            <button type="button" onclick="openProjectModal('${work.id}')" class="text-link">課題・担当・結果を見る <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
                     </article>
                 `;
@@ -746,49 +727,30 @@
 
         function renderWorks() {
             const container = document.getElementById('works-container');
+            if (!container) return;
             let html = '';
 
             PORTFOLIO_DATA.works.filter(work => !work.featuredRank).forEach(work => {
-                // タグの生成
-                let tagsHtml = work.tags.map(tagGroup => `
-                    <div class="flex items-start gap-2">
-                        <span class="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest w-10 md:w-12 shrink-0 pt-0.5">${tagGroup.label}</span>
-                        <div class="flex flex-wrap gap-1.5">
-                            ${tagGroup.items.map(item => `<span class="px-2 py-0.5 border border-gray-200 bg-gray-50 text-gray-600 text-[9px] md:text-[10px] font-bold rounded">${item}</span>`).join('')}
-                        </div>
-                    </div>
-                `).join('');
-
-                // 右下のメインリンク（GitHub等）
+                const tagsHtml = work.tags.flatMap(tagGroup => tagGroup.items).slice(0, 4).map(item => `<span>${item}</span>`).join('');
                 let repoLinkHtml = '';
                 if (work.repoUrl) {
-                    repoLinkHtml = `<a href="${work.repoUrl}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-dark transition-colors" aria-label="${work.title}のGitHubリポジトリ"><i class="fa-brands fa-github text-lg md:text-xl"></i></a>`;
+                    repoLinkHtml = `<a href="${work.repoUrl}" target="_blank" rel="noopener noreferrer" aria-label="${work.title}のGitHubリポジトリ"><i class="fa-brands fa-github" aria-hidden="true"></i></a>`;
                 } else if(work.links && work.links.length > 0) {
-                     repoLinkHtml = `<a href="${work.links[0].url}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-dark transition-colors" aria-label="${work.title}の外部リンク"><i class="${work.links[0].icon} text-lg md:text-xl"></i></a>`;
+                     repoLinkHtml = `<a href="${work.links[0].url}" target="_blank" rel="noopener noreferrer" aria-label="${work.title}の外部リンク"><i class="${work.links[0].icon}" aria-hidden="true"></i></a>`;
                 }
 
                 html += `
-                    <article class="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col scroll-mt-24">
-                        <div class="h-40 md:h-48 w-full bg-gray-100 relative overflow-hidden border-b border-gray-100 cursor-pointer" onclick="openProjectModal('${work.id}')">
-                            <img src="${work.thumbnail || PLACEHOLDER_IMG}" alt="${work.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='${PLACEHOLDER_IMG}'">
-                        </div>
-                        <div class="p-5 md:p-6 flex flex-col flex-grow">
-                            <div class="flex justify-between items-start mb-4 gap-2">
-                                <h4 class="font-bold text-lg md:text-xl text-dark leading-tight">${work.title}</h4>
-                                <span class="text-[10px] md:text-[11px] font-bold text-gray-400 bg-gray-100 px-2 py-1 rounded shrink-0 mt-0.5">${work.date}</span>
-                            </div>
-                            <p class="text-gray-600 text-xs md:text-sm mb-6 flex-grow">${work.shortDesc}</p>
-                            <div class="mb-5 space-y-2.5 pt-4 border-t border-gray-100/80">
-                                ${tagsHtml}
-                            </div>
-                            <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
-                                <a href="#" onclick="openProjectModal('${work.id}'); return false;" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-gray-800 hover:text-brand transition-colors">
-                                    <span>詳細を見る</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] md:text-xs"></i>
-                                </a>
-                                <div class="flex gap-3">
-                                    ${repoLinkHtml}
-                                </div>
+                    <article class="archive-project">
+                        <button type="button" class="archive-project__image" onclick="openProjectModal('${work.id}')" aria-label="${work.title}の詳細を見る">
+                            <img src="${work.thumbnail || PLACEHOLDER_IMG}" alt="" width="800" height="520" loading="lazy" onerror="this.src='${PLACEHOLDER_IMG}'">
+                        </button>
+                        <div class="archive-project__body">
+                            <div class="archive-project__heading"><h3>${work.title}</h3><time>${work.date}</time></div>
+                            <p>${work.shortDesc}</p>
+                            <div class="archive-project__tags">${tagsHtml}</div>
+                            <div class="archive-project__actions">
+                                <button type="button" onclick="openProjectModal('${work.id}')">詳細を見る <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                ${repoLinkHtml}
                             </div>
                         </div>
                     </article>
@@ -807,6 +769,22 @@
             renderSkills();
             renderFeaturedWorks();
             renderWorks();
+
+            const projectId = window.location.hash.startsWith('#project-') ? window.location.hash.replace('#project-', '') : null;
+            if (projectId) openProjectModal(projectId, false);
+
+            const observedSections = document.querySelectorAll('main > section[id]');
+            const navLinks = document.querySelectorAll('.desktop-nav a');
+            const observer = new IntersectionObserver(entries => {
+                const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+                if (!visible) return;
+                navLinks.forEach(link => {
+                    const isCurrent = link.getAttribute('href') === `#${visible.target.id}`;
+                    if (isCurrent) link.setAttribute('aria-current', 'location');
+                    else link.removeAttribute('aria-current');
+                });
+            }, { rootMargin: '-25% 0px -60%', threshold: [0.05, 0.3] });
+            observedSections.forEach(section => observer.observe(section));
         });
 
         // Mobile Menu Toggle
@@ -814,18 +792,23 @@
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('mobile-menu-icon');
             const button = document.querySelector('[aria-controls="mobile-menu"]');
-            if (menu.classList.contains('translate-x-full')) {
-                menu.classList.remove('translate-x-full');
+            const isOpen = button.getAttribute('aria-expanded') === 'true';
+            if (!isOpen) {
+                menu.hidden = false;
+                requestAnimationFrame(() => menu.classList.add('is-open'));
                 icon.classList.replace('fa-bars', 'fa-xmark');
                 document.body.classList.add('overflow-hidden-mobile');
                 button.setAttribute('aria-expanded', 'true');
                 button.setAttribute('aria-label', 'メニューを閉じる');
+                menu.querySelector('a').focus();
             } else {
-                menu.classList.add('translate-x-full');
+                menu.classList.remove('is-open');
                 icon.classList.replace('fa-xmark', 'fa-bars');
                 document.body.classList.remove('overflow-hidden-mobile');
                 button.setAttribute('aria-expanded', 'false');
                 button.setAttribute('aria-label', 'メニューを開く');
+                window.setTimeout(() => { menu.hidden = true; }, 180);
+                button.focus();
             }
         }
 
@@ -838,18 +821,21 @@
                 if (targetElement) {
                     e.preventDefault();
                     const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 64;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+                    window.scrollTo({ top: offsetPosition, behavior });
                 }
             });
         });
 
         // Modal Logic
         let lastFocusedElement = null;
+        let previousHash = '';
 
-        function openProjectModal(id) {
+        function openProjectModal(id, updateHash = true) {
             const work = PORTFOLIO_DATA.works.find(w => w.id === id);
             if(!work) return;
             lastFocusedElement = document.activeElement;
+            previousHash = window.location.hash.startsWith('#project-') ? '' : window.location.hash;
 
             document.getElementById('modal-title').textContent = work.title;
             document.getElementById('modal-header-title').textContent = work.title;
@@ -857,13 +843,13 @@
             const descEl = document.getElementById('modal-desc');
             if (Array.isArray(work.sections)) {
                 descEl.innerHTML = work.sections.map(section => `
-                    <section class="mb-8">
-                        <h4 class="text-lg md:text-xl font-black text-dark mb-3">${section.title}</h4>
+                    <section>
+                        <h3>${section.title}</h3>
                         <p>${section.body}</p>
                     </section>
                 `).join('');
             } else {
-                descEl.innerHTML = (work.longDesc || '').split('\n\n').map(paragraph => `<p class="mb-5">${paragraph}</p>`).join('');
+                descEl.innerHTML = (work.longDesc || '').split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
             }
             
             const imgEl = document.getElementById('modal-image');
@@ -873,61 +859,68 @@
 
             const metricsEl = document.getElementById('modal-metrics');
             metricsEl.innerHTML = (work.metrics || []).map(metric => `
-                <div class="bg-white border border-slate-200 rounded-2xl p-4 md:p-5">
-                    <strong class="block text-xl md:text-2xl font-black text-dark mb-1">${metric.value}</strong>
-                    <span class="text-[11px] md:text-xs text-slate-500">${metric.label}</span>
-                </div>
+                <div><dt>${metric.label}</dt><dd>${metric.value}</dd></div>
             `).join('');
-            metricsEl.classList.toggle('hidden', !(work.metrics || []).length);
+            metricsEl.hidden = !(work.metrics || []).length;
 
             document.getElementById('modal-tags').innerHTML = (work.tags || []).map(tagGroup => `
-                <div class="flex items-start gap-3 md:gap-4">
-                    <span class="text-[9px] md:text-[10.5px] font-bold text-gray-400 uppercase tracking-widest w-10 md:w-12 shrink-0 pt-1">${tagGroup.label}</span>
-                    <div class="flex flex-wrap gap-1.5 md:gap-2">
-                        ${(tagGroup.items || []).map(item => `<span class="px-2 md:px-3 py-1 border border-gray-200 bg-gray-50 text-gray-700 text-[10px] md:text-xs font-bold rounded-md">${item}</span>`).join('')}
+                <div>
+                    <strong>${tagGroup.label}</strong>
+                    <div>
+                        ${(tagGroup.items || []).map(item => `<span>${item}</span>`).join('')}
                     </div>
                 </div>
             `).join('');
 
             const links = Array.isArray(work.links) ? work.links : [];
             document.getElementById('modal-links').innerHTML = links.map(link => `
-                <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-dark text-white text-xs md:text-sm font-semibold rounded-full hover:bg-brand transition-colors shadow-lg shadow-gray-200">
-                    <i class="${link.icon} text-base md:text-lg"></i> ${link.text}
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer">
+                    <i class="${link.icon}" aria-hidden="true"></i> ${link.text}
                 </a>
             `).join('');
 
             const galleryEl = document.getElementById('modal-gallery');
             galleryEl.innerHTML = (work.gallery || []).map(image => `
-                <figure class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                    <img src="${image.src}" alt="${image.alt}" class="w-full aspect-video object-contain bg-slate-100" onerror="this.src='${PLACEHOLDER_IMG}'">
-                    <figcaption class="p-4 text-xs md:text-sm text-slate-600 leading-relaxed">${image.caption}</figcaption>
+                <figure>
+                    <img src="${image.src}" alt="${image.alt}" loading="lazy" onerror="this.src='${PLACEHOLDER_IMG}'">
+                    <figcaption>${image.caption}</figcaption>
                 </figure>
             `).join('');
-            galleryEl.classList.toggle('hidden', !(work.gallery || []).length);
+            galleryEl.hidden = !(work.gallery || []).length;
 
             const modal = document.getElementById('project-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
             document.body.classList.add('overflow-hidden-mobile');
-            modal.scrollTop = 0;
-            setTimeout(() => modal.classList.remove('opacity-0'), 10);
-            setTimeout(() => modal.querySelector('button').focus(), 20);
+            if (updateHash) history.replaceState(null, '', `#project-${id}`);
+            if (!modal.open) modal.showModal();
+            modal.querySelector('.project-dialog__panel').scrollTop = 0;
+            modal.querySelector('.dialog-close').focus();
         }
 
         function closeProjectModal() {
             const modal = document.getElementById('project-modal');
-            modal.classList.add('opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                document.body.classList.remove('overflow-hidden-mobile');
-                if (lastFocusedElement) lastFocusedElement.focus();
-            }, 300);
+            if (modal.open) modal.close();
         }
 
+        const projectModal = document.getElementById('project-modal');
+        projectModal.addEventListener('cancel', event => {
+            event.preventDefault();
+            closeProjectModal();
+        });
+        projectModal.addEventListener('close', () => {
+            document.body.classList.remove('overflow-hidden-mobile');
+            if (window.location.hash.startsWith('#project-')) {
+                history.replaceState(null, '', `${window.location.pathname}${window.location.search}${previousHash}`);
+            }
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') lastFocusedElement.focus();
+        });
+        projectModal.addEventListener('click', event => {
+            if (event.target === projectModal) closeProjectModal();
+        });
+
         document.addEventListener('keydown', event => {
-            if (event.key === 'Escape' && !document.getElementById('project-modal').classList.contains('hidden')) {
-                closeProjectModal();
+            if (event.key === 'Escape') {
+                const menuButton = document.querySelector('[aria-controls="mobile-menu"]');
+                if (menuButton.getAttribute('aria-expanded') === 'true') toggleMobileMenu();
             }
         });
     </script>
