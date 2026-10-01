@@ -73,7 +73,8 @@
                     <h1 id="hero-title">Kuri</h1>
                     <p class="profile-role">Web開発とAIに関心を持つ高専生です。</p>
                     <p class="hero-lede">大阪公立大学工業高等専門学校に2023年入学。知能情報コースで学び、2028年卒業予定です。</p>
-                    <p class="hero-current">Kosen Tech Clubでは、カリキュラム修了後、執行代として受講学生のPull Requestレビューや進捗確認など、学習のサポートを担当しています。カリキュラムを通じて触れたGoに、現在強い関心を持っています。</p>
+                    <p class="hero-current">Web開発カリキュラムを修了し、現在は運営側として、受講学生のPull Requestレビューや進捗確認などの学習支援を担当しています。カリキュラムで触れたGoに、現在強い関心を持っています。</p>
+                    <a class="profile-activity-link" href="#ktc-activity">学習支援の活動を見る <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
                     <div class="hero-actions">
                         <a class="button button--primary" href="#works">制作物を見る</a>
                         <a class="button button--secondary" href="https://github.com/kuri227" target="_blank" rel="noopener noreferrer">GitHubを見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
@@ -114,14 +115,14 @@
             <div class="section-shell">
                 <div class="section-heading section-heading--split">
                     <h2 id="experience-title">経験・活動</h2>
-                    <p>開発経験、学習支援、企画・提案の経験を区別して掲載しています。企業インターンでは開発を担当していません。</p>
+                    <p>学習支援、企業インターン、コンテスト・展示の経験を区別して掲載しています。企業インターンでは開発を担当していません。</p>
                 </div>
                 <div class="experience-list">
-                    <article class="experience-item">
+                    <article id="ktc-activity" class="experience-item">
                         <div class="experience-item__meta"><span>Community</span><time>現在</time></div>
                         <div>
                             <h3>Kosen Tech Club — 執行代</h3>
-                            <p>専用カリキュラムを修了後、受講する学生のPull Requestレビュー、進捗確認、学習支援を担当しています。</p>
+                            <p>Web開発を学ぶ高専生向けカリキュラムの運営に参画しています。自身もカリキュラムを修了し、執行代として受講学生のPull Requestレビュー、進捗確認、学習支援を担当しています。</p>
                             <a href="https://kosen-tech-club.midascapital.jp/" target="_blank" rel="noopener noreferrer">Kosen Tech Club公式サイトを見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                         </div>
                     </article>
@@ -137,6 +138,38 @@
                         <div>
                             <h3>業務システム領域の企業インターン</h3>
                             <p>現行システムの利用者へのヒアリング、課題整理、解決案の提案・発表までを経験しました。開発は担当していません。</p>
+                        </div>
+                    </article>
+                    <article class="experience-item experience-item--highlights">
+                        <div class="experience-item__meta"><span>Contest / Exhibition</span><time>2025–2026</time></div>
+                        <div>
+                            <h3>コンテスト・展示</h3>
+                            <ul class="experience-event-list">
+                                <li>
+                                    <time datetime="2026-05">2026.05</time>
+                                    <div>
+                                        <h4>DCON2026 特別展示</h4>
+                                        <p>災害救助支援システム「Acous」で約90チーム中30チームに選出され、本選会場で約100人へ説明しました。</p>
+                                        <button type="button" onclick="openProjectModal('dcon')">Acousの詳細を見る</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <time datetime="2026-04">2026.04</time>
+                                    <div>
+                                        <h4>M5Stack Japan Tour 2026 Spring Osaka</h4>
+                                        <p>M5StickCを使った体感型シューティングを改良し、作品展示と体験対応を行いました。</p>
+                                        <button type="button" onclick="openProjectModal('shooting')">体感型シューティングの詳細を見る</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <time datetime="2025-01">2025.01</time>
+                                    <div>
+                                        <h4>Hack U 大阪公大高専 2024</h4>
+                                        <p>Unityとセンサーを搭載した自作ハードウェアを組み合わせたシューティングゲームを展示しました。</p>
+                                        <a href="https://hacku.yahoo.co.jp/omuct2024/" target="_blank" rel="noopener noreferrer">Hack U公式ページを見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </article>
                 </div>
@@ -828,6 +861,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
+                    history.replaceState(null, '', `${window.location.pathname}${window.location.search}${targetId}`);
                     const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 64;
                     const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
                     window.scrollTo({ top: offsetPosition, behavior });
