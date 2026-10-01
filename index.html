@@ -178,14 +178,12 @@
 
         <section id="skills" class="section section--sand" aria-labelledby="skills-title">
             <div class="section-shell">
-                <div class="section-heading section-heading--split">
+                <div class="section-heading">
                     <h2 id="skills-title">技術経験</h2>
-                    <p>制作物で使用した技術と、KTCカリキュラムで手を動かした技術を分けています。習熟度の自己評価ではなく、用途と根拠を示します。</p>
                 </div>
                 <div class="skill-key" aria-label="技術経験の分類">
                     <span><i class="skill-key__dot skill-key__dot--project"></i>制作物で使用</span>
                     <span><i class="skill-key__dot skill-key__dot--practice"></i>カリキュラムで実践</span>
-                    <span><i class="skill-key__dot skill-key__dot--support"></i>レビュー・支援</span>
                 </div>
                 <div id="skills-container" class="skills-list"></div>
             </div>
@@ -403,22 +401,23 @@
                     ]
                 },
                 {
-                    category: "Web・ソフトウェア制作",
+                    category: "Web技術",
                     icon: "fa-solid fa-code",
                     items: [
-                        { name: "Next.js / React / TypeScript", note: "API連携、認証、データベースを含むWebアプリや、状態管理を扱うUIの制作に使用。", level: "project", workIds: ["task-manager", "blog", "todo"] },
-                        { name: "JavaScript", note: "外部APIを利用した情報取得とデータ処理に使用。", level: "project", workIds: ["allergy-info"] },
-                        { name: "Git / GitHub", note: "個人・チーム制作でのバージョン管理とPull Request運用に使用。", level: "project", workIds: ["dcon", "shooting", "slate-quest"] }
+                        { name: "React / TypeScript / Next.js", note: "認証やデータベースを含むWebアプリの制作に使用。ReactとTypeScriptはWeb開発カリキュラムでも実装。", level: "project", workIds: ["task-manager", "blog", "todo"] },
+                        { name: "HTML / CSS / JavaScript", note: "Web開発カリキュラムで基礎から実装し、JavaScriptは外部APIを利用する制作にも使用。", level: "project", workIds: ["allergy-info"] },
+                        { name: "Go / HTTP API", note: "Web開発カリキュラムで、GoによるAPI開発とフロントエンドからのHTTP通信を実践。", level: "practice", workIds: [] },
+                        { name: "SQL", note: "Web開発カリキュラムで、SQLによるデータ操作を実践。", level: "practice", workIds: [] }
                     ]
                 },
                 {
-                    category: "Web Engineering Practice",
-                    icon: "fa-solid fa-server",
+                    category: "開発環境・ツール",
+                    icon: "fa-solid fa-screwdriver-wrench",
                     items: [
-                        { name: "HTML / CSS / JavaScript / TypeScript / React", note: "Kosen Tech Clubのカリキュラムで、フロントエンドの基礎からReactまでを実装。", level: "practice", workIds: [] },
-                        { name: "Go / HTTP API", note: "GoによるAPI開発と、フロントエンドからのHTTP通信をカリキュラムで実践。", level: "practice", workIds: [] },
-                        { name: "SQL / Docker", note: "SQLによるデータ操作と、Dockerを使った開発環境をカリキュラムで実践。", level: "practice", workIds: [] },
-                        { name: "CI / CD", note: "テストやデプロイを自動化する開発フローをカリキュラムで学習。", level: "practice", workIds: [] }
+                        { name: "Git / GitHub", note: "個人・チーム制作でのバージョン管理とPull Request運用に使用。", level: "project", workIds: ["dcon", "shooting", "slate-quest"] },
+                        { name: "Docker", note: "Web開発カリキュラムで、開発環境の構築と実行に使用。", level: "practice", workIds: [] },
+                        { name: "Visual Studio Code", note: "普段のコーディングに使用しているエディタ。", level: "project", workIds: [] },
+                        { name: "CI / CD", note: "Web開発カリキュラムで、テストやデプロイを自動化する開発フローを実践。", level: "practice", workIds: [] }
                     ]
                 },
                 {
@@ -428,14 +427,6 @@
                         { name: "Unity / C#", note: "センサー入力を使う体感型シューティングのゲーム側実装に使用。", level: "project", workIds: ["shooting"] },
                         { name: "M5StickC / Arduino", note: "加速度・ボタン入力を取得し、Unityとシリアル通信で接続。", level: "project", workIds: ["shooting"] },
                         { name: "Raspberry Pi / Edge AI", note: "音声の前処理・推論・通知処理を試作機へ統合。", level: "project", workIds: ["dcon"] }
-                    ]
-                },
-                {
-                    category: "レビュー・学習支援",
-                    icon: "fa-solid fa-people-group",
-                    items: [
-                        { name: "Pull Requestレビュー", note: "Kosen Tech Clubの執行代として、受講学生のPull Requestを確認。", level: "support", workIds: [] },
-                        { name: "進捗確認・学習支援", note: "カリキュラムを進める学生の状況を確認し、学習を支援。", level: "support", workIds: [] }
                     ]
                 }
             ],
@@ -853,7 +844,79 @@
             }
         }
 
-        // Smooth Scroll
+        // Smooth Scroll and destination feedback
+        let anchorHighlightTimer = null;
+        let anchorScrollCleanup = null;
+
+        function indicateAnchorTarget(targetElement) {
+            const highlightElement = targetElement.querySelector('h1, h2, h3') || targetElement;
+            const previousHighlight = document.querySelector('.anchor-highlight');
+
+            if (previousHighlight) {
+                previousHighlight.classList.remove('anchor-highlight');
+                if (previousHighlight.dataset.temporaryTabindex === 'true') {
+                    previousHighlight.removeAttribute('tabindex');
+                    delete previousHighlight.dataset.temporaryTabindex;
+                }
+            }
+
+            if (!highlightElement.hasAttribute('tabindex')) {
+                highlightElement.setAttribute('tabindex', '-1');
+                highlightElement.dataset.temporaryTabindex = 'true';
+            }
+
+            highlightElement.classList.remove('anchor-highlight');
+            void highlightElement.offsetWidth;
+            highlightElement.classList.add('anchor-highlight');
+            highlightElement.focus({ preventScroll: true });
+
+            window.clearTimeout(anchorHighlightTimer);
+            anchorHighlightTimer = window.setTimeout(() => {
+                highlightElement.classList.remove('anchor-highlight');
+                if (highlightElement.dataset.temporaryTabindex === 'true') {
+                    highlightElement.removeAttribute('tabindex');
+                    delete highlightElement.dataset.temporaryTabindex;
+                }
+            }, 1500);
+        }
+
+        function indicateAnchorWhenScrollSettles(targetElement, behavior) {
+            if (anchorScrollCleanup) anchorScrollCleanup();
+
+            if (behavior === 'auto') {
+                window.requestAnimationFrame(() => indicateAnchorTarget(targetElement));
+                return;
+            }
+
+            let settleTimer = null;
+            let fallbackTimer = null;
+            let finished = false;
+
+            const cleanup = () => {
+                window.removeEventListener('scroll', onScroll);
+                window.clearTimeout(settleTimer);
+                window.clearTimeout(fallbackTimer);
+                if (anchorScrollCleanup === cleanup) anchorScrollCleanup = null;
+            };
+
+            const finish = () => {
+                if (finished) return;
+                finished = true;
+                cleanup();
+                indicateAnchorTarget(targetElement);
+            };
+
+            const onScroll = () => {
+                window.clearTimeout(settleTimer);
+                settleTimer = window.setTimeout(finish, 160);
+            };
+
+            anchorScrollCleanup = cleanup;
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+            fallbackTimer = window.setTimeout(finish, 3500);
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
@@ -865,6 +928,7 @@
                     const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 64;
                     const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
                     window.scrollTo({ top: offsetPosition, behavior });
+                    indicateAnchorWhenScrollSettles(targetElement, behavior);
                 }
             });
         });

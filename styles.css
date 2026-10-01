@@ -469,8 +469,6 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
 .skill-row__title > i { width: 9px; height: 9px; border-radius: 50%; background: var(--project); }
 .skill-key__dot--practice,
 .skill-row--practice .skill-row__title > i { background: var(--practice); }
-.skill-key__dot--support,
-.skill-row--support .skill-row__title > i { background: var(--support); }
 .skills-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 56px; }
 .skill-group { min-width: 0; }
 .skill-group > h3 { margin: 0 0 14px; padding-block-end: 14px; display: flex; align-items: center; gap: 11px; border-bottom: 2px solid var(--ink); font-size: 1.06rem; }
@@ -498,6 +496,42 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
     cursor: pointer;
 }
 .skill-evidence:hover { border-color: var(--blue); color: var(--blue); background: var(--white); }
+
+/* Same-page links briefly mark the referenced heading after scrolling. */
+.anchor-highlight {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    max-width: 100%;
+    border-radius: 6px;
+    outline: none;
+    --anchor-ring: rgba(21, 91, 215, 0.78);
+    --anchor-glow: rgba(21, 91, 215, 0.16);
+}
+
+.section--ink .anchor-highlight,
+.contact-section .anchor-highlight {
+    --anchor-ring: rgba(244, 200, 74, 0.92);
+    --anchor-glow: rgba(244, 200, 74, 0.18);
+}
+
+.anchor-highlight::after {
+    content: '';
+    position: absolute;
+    inset: -9px -13px;
+    z-index: 2;
+    border: 2px solid var(--anchor-ring);
+    border-radius: 10px;
+    box-shadow: 0 0 0 7px var(--anchor-glow);
+    pointer-events: none;
+    animation: anchor-reference 1.2s var(--ease) both;
+}
+
+@keyframes anchor-reference {
+    0% { opacity: 0; transform: scale(0.97); }
+    24%, 68% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.015); }
+}
 
 .history-disclosure { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
 .history-disclosure summary { min-height: 88px; padding-block: 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; list-style: none; }
@@ -726,6 +760,18 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
+
+    .anchor-highlight::after {
+        animation-name: anchor-reference-reduced !important;
+        animation-duration: 1.2s !important;
+        animation-timing-function: linear !important;
+        transform: none !important;
+    }
+}
+
+@keyframes anchor-reference-reduced {
+    0%, 100% { opacity: 0; }
+    12%, 82% { opacity: 1; }
 }
 
 @media (forced-colors: active) {
