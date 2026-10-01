@@ -36,6 +36,7 @@
                 <a href="#works">代表作</a>
                 <a href="#experience">経験</a>
                 <a href="#skills">技術</a>
+                <a href="#qualifications">資格</a>
                 <a href="#archive">制作一覧</a>
             </nav>
             <a href="#contact" class="header-contact">お問い合わせ</a>
@@ -52,6 +53,7 @@
         <a href="#works" onclick="toggleMobileMenu()">代表プロジェクト</a>
         <a href="#experience" onclick="toggleMobileMenu()">経験・活動</a>
         <a href="#skills" onclick="toggleMobileMenu()">技術経験</a>
+        <a href="#qualifications" onclick="toggleMobileMenu()">資格</a>
         <a href="#archive" onclick="toggleMobileMenu()">その他の制作物</a>
         <a href="#contact" onclick="toggleMobileMenu()">お問い合わせ</a>
     </nav>
@@ -66,21 +68,21 @@
                     <div class="profile-portrait">
                         <img src="img/profile-kuri.png" alt="Kuriのプロフィール写真" width="1534" height="1025" fetchpriority="high">
                     </div>
-                    <figcaption><strong>Kuri</strong><i aria-hidden="true"></i><span>2023年入学 → 2028年卒業予定</span></figcaption>
+                    <figcaption><strong>Kuri</strong><i aria-hidden="true"></i><span>2023年度入学 → 2028年卒業予定</span></figcaption>
                 </figure>
 
                 <div class="hero-copy">
                     <h1 id="hero-title">Kuri</h1>
                     <p class="profile-role">Web開発とAIに関心を持つ高専生です。</p>
-                    <p class="hero-lede">大阪公立大学工業高等専門学校に2023年入学。知能情報コースで学び、2028年卒業予定です。</p>
-                    <p class="hero-current">Web開発カリキュラムを修了し、現在は運営側として、受講学生のPull Requestレビューや進捗確認などの学習支援を担当しています。カリキュラムで触れたGoに、現在強い関心を持っています。</p>
+                    <p class="hero-lede">大阪公立大学工業高等専門学校に2023年度入学。知能情報コースで、プログラミングに加え、ハードウェアやネットワークまで幅広く学んでいます。2028年に高専本科を卒業予定で、卒業後は就職を希望しています。</p>
+                    <p class="hero-current"><a href="https://midascapital.jp/" target="_blank" rel="noopener noreferrer">MIDAS CAPITAL</a>と<a href="https://techno-semi.com/" target="_blank" rel="noopener noreferrer">高専テクノゼミ</a>が共同で立ち上げた高専生向けエンジニアコミュニティ「<a href="https://kosen-tech-club.midascapital.jp/" target="_blank" rel="noopener noreferrer">Kosen Tech Club</a>」に0期生として参加しています。Web開発カリキュラム修了後、現在は執行代として、受講する高専生のPull Requestレビューや進捗確認などの学習支援を担当しています。カリキュラムで触れたGoに強い関心があり、学習を続けています。</p>
                     <a class="profile-activity-link" href="#ktc-activity">学習支援の活動を見る <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
                     <div class="hero-actions">
                         <a class="button button--primary" href="#works">制作物を見る</a>
                         <a class="button button--secondary" href="https://github.com/kuri227" target="_blank" rel="noopener noreferrer">GitHubを見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                     </div>
                     <dl class="profile-facts" aria-label="プロフィール概要">
-                        <div><dt>在籍</dt><dd>2023年入学<br>2028年卒業予定</dd></div>
+                        <div><dt>在籍</dt><dd>2023年度入学<br>2028年卒業予定</dd></div>
                         <div><dt>コース</dt><dd>知能情報コース</dd></div>
                         <div><dt>関心領域</dt><dd>Web（Frontend / Backend）<br>AI</dd></div>
                     </dl>
@@ -103,9 +105,8 @@
         <!-- Featured Works Section -->
         <section id="works" class="section section--paper" aria-labelledby="works-title">
             <div class="section-shell">
-                <div class="section-heading section-heading--split">
+                <div class="section-heading">
                     <h2 id="works-title">代表プロジェクト</h2>
-                    <p>課題、担当範囲、技術上の判断が分かる3件を選びました。詳細では、成果だけでなく制約や検証条件も記載しています。</p>
                 </div>
                 <div id="featured-container" class="featured-grid"></div>
             </div>
@@ -113,15 +114,14 @@
 
         <section id="experience" class="section section--ink" aria-labelledby="experience-title">
             <div class="section-shell">
-                <div class="section-heading section-heading--split">
+                <div class="section-heading">
                     <h2 id="experience-title">経験・活動</h2>
-                    <p>学習支援、企業インターン、コンテスト・展示の経験を区別して掲載しています。企業インターンでは開発を担当していません。</p>
                 </div>
                 <div class="experience-list">
                     <article id="ktc-activity" class="experience-item">
                         <div class="experience-item__meta"><span>Community</span><time>現在</time></div>
                         <div>
-                            <h3>Kosen Tech Club — 執行代</h3>
+                            <h3>Kosen Tech Club — 執行代（0期生）</h3>
                             <p>Web開発を学ぶ高専生向けカリキュラムの運営に参画しています。自身もカリキュラムを修了し、執行代として受講学生のPull Requestレビュー、進捗確認、学習支援を担当しています。</p>
                             <a href="https://kosen-tech-club.midascapital.jp/" target="_blank" rel="noopener noreferrer">Kosen Tech Club公式サイトを見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                         </div>
@@ -189,7 +189,49 @@
             </div>
         </section>
 
-        <section id="career" class="section section--paper" aria-labelledby="timeline-title">
+        <section id="qualifications" class="section section--paper credentials-section" aria-labelledby="qualifications-title">
+            <div class="section-shell">
+                <div class="section-heading">
+                    <h2 id="qualifications-title">資格</h2>
+                </div>
+                <div class="credentials-layout">
+                    <section class="credential-group" aria-labelledby="earned-credentials-title">
+                        <h3 id="earned-credentials-title">取得済み</h3>
+                        <article class="credential-item">
+                            <div>
+                                <time datetime="2026-02">2026.02 合格</time>
+                                <h4>JDLA Deep Learning for ENGINEER 2026 #1</h4>
+                                <p>E資格。ディープラーニングの理論を理解し、適切な手法を選択して実装するための知識・技能を認定する資格です。</p>
+                            </div>
+                            <a href="https://www.jdla.org/certificate/engineer/" target="_blank" rel="noopener noreferrer">E資格の公式情報を見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </article>
+                    </section>
+                    <section class="credential-group" aria-labelledby="studying-credentials-title">
+                        <h3 id="studying-credentials-title">学習中</h3>
+                        <div class="credential-list">
+                            <article class="credential-item">
+                                <div>
+                                    <span>取得を目指して学習中</span>
+                                    <h4>G検定（JDLA Deep Learning for GENERAL）</h4>
+                                    <p>AI・ディープラーニングの基礎と活用方法を体系的に学んでいます。</p>
+                                </div>
+                                <a href="https://www.jdla.org/certificate/general/" target="_blank" rel="noopener noreferrer">G検定の公式情報を見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                            </article>
+                            <article class="credential-item">
+                                <div>
+                                    <span>取得を目指して学習中</span>
+                                    <h4>基本情報技術者試験（FE）</h4>
+                                    <p>ITエンジニアに必要な基礎知識・技能を学んでいます。</p>
+                                </div>
+                                <a href="https://www.ipa.go.jp/shiken/kubun/fe.html" target="_blank" rel="noopener noreferrer">基本情報技術者試験の公式情報を見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section id="career" class="section section--sand" aria-labelledby="timeline-title">
             <div class="section-shell section-shell--narrow">
                 <details class="history-disclosure">
                     <summary><span id="timeline-title">これまでの活動履歴</span><small>2023–2026の制作・学習・展示を開く</small></summary>
@@ -276,6 +318,11 @@
                     year: "2026",
                     events: [
                         {
+                            month: "活動中", title: "Kosen Tech Club 執行代",
+                            desc: "カリキュラム修了後、受講する学生のPull Requestレビュー、進捗確認、学習支援を担当。",
+                            externalLinks: [{ text: "Kosen Tech Club 公式サイト", url: "https://kosen-tech-club.midascapital.jp/" }]
+                        },
+                        {
                             month: "09月", title: "EC領域の企業インターン",
                             desc: "ECサイトに関連する現状業務のヒアリング、課題整理、解決案の提案・発表までを経験。開発は担当していません。",
                         },
@@ -284,13 +331,8 @@
                             desc: "現行システムの利用者へのヒアリング、課題整理、解決案の提案・発表までを経験。開発は担当していません。",
                         },
                         {
-                            month: "活動中", title: "Kosen Tech Club 執行代",
-                            desc: "カリキュラム修了後、受講する学生のPull Requestレビュー、進捗確認、学習支援を担当。",
-                            externalLinks: [{ text: "Kosen Tech Club 公式サイト", url: "https://kosen-tech-club.midascapital.jp/" }]
-                        },
-                        {
-                            month: "07月", title: "2026年 大規模言語モデル講座 1 受講中",
-                            desc: "大規模言語モデル（LLM）の仕組みと最新動向を学ぶ講座を受講中。<br>LLMの基礎理論を理解し、実装スキルを習得することを目的としています。",
+                            month: "07月", title: "2026年 大規模言語モデル講座 1 修了",
+                            desc: "大規模言語モデル（LLM）の仕組みと最新動向を学ぶ講座を修了しました。",
                             externalLinks: [{ text: "大規模言語モデル1 公式サイト", url: "https://weblab.t.u-tokyo.ac.jp/lecture/course-list/large-language-model/" }]
                         },
                         {
@@ -319,7 +361,7 @@
                             buttons: [], externalLinks: []
                         },
 
-                        { month: "02月", title: "E資格 2026#1 合格", desc: "DeepLearningの基礎を理解し、実装能力を習得。 Deep Learningコンテストでの実装に活用。", buttons: [], 
+                        { month: "02月", title: "JDLA Deep Learning for ENGINEER 2026 #1 合格", desc: "E資格に合格し、ディープラーニングの理論と実装に関する知識を身につけました。", buttons: [],
                         externalLinks: [{ text: "E資格 公式サイト", url: "https://www.jdla.org/certificate/engineer/" }] },
                         { month: "01月", title: "TechFeed 開発 (Next.js + TypeScript)", desc: "Next.jsとTypeScriptを使用して、エンジニアやプログラミング学習者を対象とした技術知識共有プラットフォームを作成しました。<br>vercelでホスティングしており、現在も運用を続けています。", 
                             buttons: [{ text: "詳細 (TechFeed)", targetId: "blog" }], externalLinks: [] 

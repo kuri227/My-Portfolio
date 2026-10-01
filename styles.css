@@ -255,6 +255,13 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
     font-size: 1rem;
 }
 .hero-current { margin-block-start: 12px; font-size: 0.92rem; }
+.hero-current a {
+    color: var(--blue-dark);
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+.hero-current a:hover { color: var(--blue); }
 .profile-activity-link {
     min-height: 44px;
     width: fit-content;
@@ -511,6 +518,42 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
 }
 .skill-evidence:hover { border-color: var(--blue); color: var(--blue); background: var(--white); }
 
+.credentials-section { padding-block: clamp(76px, 9vw, 116px); }
+.credentials-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: clamp(44px, 7vw, 84px);
+    border-top: 2px solid var(--ink);
+}
+.credential-group { min-width: 0; padding-block-start: 28px; }
+.credential-group > h3 { margin: 0 0 20px; color: #5b6670; font-size: 0.76rem; letter-spacing: 0.08em; }
+.credential-list { border-top: 1px solid var(--line); }
+.credential-item {
+    padding-block: 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+}
+.credential-group > .credential-item { border-top: 1px solid var(--line); }
+.credential-item time,
+.credential-item span { color: var(--blue-dark); font-size: 0.7rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.credential-item h4 { margin: 8px 0 0; font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 1.4; }
+.credential-item p { max-width: 62ch; margin: 8px 0 0; color: #5a6570; font-size: 0.8rem; }
+.credential-item a {
+    min-height: 44px;
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue-dark);
+    font-size: 0.74rem;
+    font-weight: 800;
+    text-underline-offset: 4px;
+    white-space: nowrap;
+}
+
 /* Same-page links briefly mark the referenced heading after scrolling. */
 .anchor-highlight {
     position: relative;
@@ -668,7 +711,7 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
         grid-template-columns: minmax(360px, 0.76fr) minmax(0, 1.24fr);
         gap: 72px;
     }
-    .profile-visual { min-height: 430px; }
+    .profile-visual { min-height: 502px; }
     .hero-copy h1 {
         font-size: 4.2rem;
         line-height: 1;
@@ -720,7 +763,8 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
     .desktop-nav, .header-contact { display: none; }
     .menu-button { display: grid; }
     .hero-layout { grid-template-columns: 1fr; }
-    .profile-visual { width: min(420px, 72vw); min-height: 420px; justify-self: center; }
+    .profile-visual { width: min(420px, 72vw); min-height: 470px; justify-self: center; }
+    .credentials-layout { grid-template-columns: 1fr; gap: 40px; }
     .section-heading--split, .contact-layout { grid-template-columns: 1fr; align-items: start; }
     .section-heading--split { gap: 24px; }
     .featured-project--lead { grid-template-columns: 1fr; }
@@ -732,7 +776,7 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
     :root { --header-height: 64px; }
     .site-header__inner { width: min(100% - 28px, 1180px); }
     .hero-section { padding: 28px 16px 72px; }
-    .profile-visual { width: min(100%, 310px); min-height: 318px; }
+    .profile-visual { width: min(100%, 310px); min-height: 368px; }
     .profile-visual::before { width: min(82%, 252px); translate: 12px -12px; }
     .profile-visual::after { inset-block-start: 28px; inset-inline-end: 22px; width: 14px; border-width: 5px; }
     .profile-portrait { width: min(78%, 240px); }
@@ -746,6 +790,7 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
     .profile-facts div { display: grid; grid-template-columns: 104px 1fr; gap: 12px; }
     .profile-facts dd { margin: 0; }
     .profile-notes { grid-template-columns: 1fr; gap: 34px; margin-block-start: 46px; padding-block-start: 24px; }
+    .credential-item { grid-template-columns: 1fr; align-items: start; gap: 12px; }
     .section { padding-inline: 16px; }
     .section-heading h2 { font-size: clamp(2.15rem, 12vw, 3.4rem); }
     .featured-grid, .skills-list { grid-template-columns: 1fr; }
