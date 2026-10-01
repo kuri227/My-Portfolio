@@ -2,14 +2,14 @@
 <html lang="ja" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuri | 課題から考え、技術を横断して形にする</title>
-    <meta name="description" content="大阪公立大学工業高等専門学校・知能情報コース Kuri のポートフォリオ。AI、Web、Hardwareを横断した制作と、ヒアリング・課題整理・実装・検証の経験を紹介します。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Kuri | Web・AIを学ぶ高専生のポートフォリオ</title>
+    <meta name="description" content="大阪公立大学工業高等専門学校・知能情報コースでWebとAIを学ぶKuriのポートフォリオ。制作物、Kosen Tech Clubでの学習支援、インターンでの課題整理・提案経験を紹介します。">
     <meta name="theme-color" content="#101820">
-    <meta property="og:title" content="Kuri | 課題から考え、技術を横断して形にする">
-    <meta property="og:description" content="AI、Web、Hardwareを横断した制作と、課題整理から実装・検証までの経験。">
+    <meta property="og:title" content="Kuri | Web・AIを学ぶ高専生のポートフォリオ">
+    <meta property="og:description" content="Web・AIの学習、制作物、Kosen Tech Clubでの学習支援、課題整理・提案の経験を紹介します。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kuri227.github.io/My-Portfolio/">
+    <meta property="og:url" content="https://kuri-portfolio.pages.dev/">
     <meta name="twitter:card" content="summary">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=20260929">
+    <link rel="stylesheet" href="styles.css?v=20261001">
 </head>
 <body>
     <a class="skip-link" href="#main-content">本文へ移動</a>
@@ -32,6 +32,7 @@
             </a>
 
             <nav class="desktop-nav" aria-label="主要ナビゲーション">
+                <a href="#about">プロフィール</a>
                 <a href="#works">代表作</a>
                 <a href="#experience">経験</a>
                 <a href="#skills">技術</a>
@@ -47,6 +48,7 @@
 
     <!-- Mobile Navigation Overlay -->
     <nav id="mobile-menu" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+        <a href="#about" onclick="toggleMobileMenu()">プロフィール</a>
         <a href="#works" onclick="toggleMobileMenu()">代表プロジェクト</a>
         <a href="#experience" onclick="toggleMobileMenu()">経験・活動</a>
         <a href="#skills" onclick="toggleMobileMenu()">技術経験</a>
@@ -60,34 +62,40 @@
     <main id="main-content">
         <section id="about" class="hero-section" aria-labelledby="hero-title">
             <div class="hero-layout">
+                <figure class="profile-visual">
+                    <div class="profile-portrait">
+                        <img src="img/profile-kuri.png" alt="Kuriのプロフィール写真" width="1534" height="1025" fetchpriority="high">
+                    </div>
+                    <figcaption><strong>Kuri</strong><i aria-hidden="true"></i><span>23s → 28卒</span></figcaption>
+                </figure>
+
                 <div class="hero-copy">
-                    <h1 id="hero-title"><span>課題から考え、</span><span>技術を横断して</span><span>形にする。</span></h1>
-                    <p class="hero-lede">大阪公立大学工業高等専門学校 知能情報コースで学んでいます。AIによる音声解析、Webアプリ、Unityとセンサーを組み合わせた作品を制作してきました。</p>
-                    <p class="hero-current">Kosen Tech Clubでは、カリキュラム修了後、執行代として受講学生のPull Requestレビューと進捗確認を担当しています。Go・React・TypeScript・SQL・Docker・CI/CDは、同カリキュラムで実践しました。</p>
+                    <h1 id="hero-title">Kuri</h1>
+                    <p class="profile-role">Web開発とAIに関心を持つ高専生です。</p>
+                    <p class="hero-lede">大阪公立大学工業高等専門学校に2023年入学。知能情報コースで学び、2028年卒業予定です。</p>
+                    <p class="hero-current">Kosen Tech Clubでは、カリキュラム修了後、執行代として受講学生のPull Requestレビューや進捗確認など、学習のサポートを担当しています。カリキュラムを通じて触れたGoに、現在強い関心を持っています。</p>
                     <div class="hero-actions">
-                        <a class="button button--primary" href="#works">代表プロジェクトを見る</a>
-                        <a class="button button--secondary" href="#experience">経験・活動を見る</a>
+                        <a class="button button--primary" href="#works">制作物を見る</a>
+                        <a class="button button--secondary" href="https://github.com/kuri227" target="_blank" rel="noopener noreferrer">GitHubを見る <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                     </div>
                     <dl class="profile-facts" aria-label="プロフィール概要">
-                        <div><dt>Education</dt><dd>知能情報コース / 2028年卒業予定</dd></div>
-                        <div><dt>Certification</dt><dd>JDLA Deep Learning for ENGINEER 2026#1</dd></div>
-                        <div><dt>Fields</dt><dd>AI / Web / Hardware</dd></div>
+                        <div><dt>在籍</dt><dd>2023年入学<br>2028年卒業予定</dd></div>
+                        <div><dt>コース</dt><dd>知能情報コース</dd></div>
+                        <div><dt>関心領域</dt><dd>Web（Frontend / Backend）<br>AI</dd></div>
                     </dl>
                 </div>
+            </div>
 
-                <figure class="hero-artifact">
-                    <div class="hero-artifact__frame">
-                        <img src="img/works/acous-prototype.png" alt="災害救助支援システムAcousの試作機" width="1200" height="800">
-                        <div class="artifact-path" aria-hidden="true">
-                            <span>Sound</span><i></i><span>AI</span><i></i><span>Notify</span>
-                        </div>
-                    </div>
-                    <figcaption>
-                        <span>Featured project</span>
-                        <strong>Acous — 災害救助支援システム</strong>
-                        <small>ノック音の検知から遠隔通知までを検討したDCON2026出展作品</small>
-                    </figcaption>
-                </figure>
+            <div class="profile-notes">
+                <article>
+                    <h2>制作で大切にしていること</h2>
+                    <p>身の回りで感じた課題や、過去のプロダクト開発中に気づいた課題を出発点に、解決につながるプロダクトを考えています。自分のスキルアップにつながる方法や技術を選び、手を動かしながら開発することを大切にしています。</p>
+                </article>
+                <article>
+                    <h2>目指している仕事・インターン</h2>
+                    <p>課題整理など開発工程の上流から関われるシステムエンジニアを志望しています。幅広い業界・業種の課題に向き合えるSIerや、現場と近い距離で課題解決に関われる社内SEの仕事にも関心があります。</p>
+                    <p>現在は、フロントエンドまたはバックエンドのWeb開発に就業型で関わり、実務に即した開発経験とスキルを身につけられるインターンシップを探しています。</p>
+                </article>
             </div>
         </section>
 

@@ -1,9 +1,9 @@
 # Kuri's Portfolio
 
-ポートフォリオURL：https://kuri227.github.io/My-Portfolio/
+ポートフォリオURL：https://kuri-portfolio.pages.dev/
 
 **Kuri** のポートフォリオサイトです。  
-AI、Webアプリケーション、ハードウェア領域を横断したこれまでの制作物や、チーム開発での経験、スキルセットをまとめています。
+Web・AIの学習、制作物、Kosen Tech Clubでの学習支援、インターンでの課題整理・提案経験をまとめています。
 
 ---
 
