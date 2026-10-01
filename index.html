@@ -246,7 +246,7 @@
                 <span id="modal-header-title" aria-hidden="true"></span>
             </header>
             <div class="project-dialog__content">
-                <img id="modal-image" src="img/works/acous-prototype.png" alt="" width="1200" height="800">
+                <img id="modal-image" src="img/works/acous-demo-system.webp" alt="" width="1600" height="902">
                 <div class="project-dialog__intro">
                     <div><span id="modal-date"></span><h2 id="modal-title"></h2></div>
                     <div id="modal-links" class="project-dialog__links"></div>
@@ -254,6 +254,7 @@
                 <div id="modal-metrics" class="project-metrics"></div>
                 <div id="modal-tags" class="project-tags"></div>
                 <div id="modal-desc" class="project-copy"></div>
+                <h3 id="modal-gallery-title" class="project-gallery__heading" hidden></h3>
                 <div id="modal-gallery" class="project-gallery"></div>
             </div>
         </article>
@@ -438,7 +439,9 @@
                     featuredRank: 1,
                     title: "Acous — 災害救助支援システム",
                     date: "2026.05",
-                    thumbnail: "img/works/acous-prototype.png",
+                    thumbnail: "img/works/acous-demo-system.webp",
+                    thumbnailAlt: "机上に設置したAcous収音部と、リアルタイム検知画面を表示したノートPC",
+                    imageLabel: "収音部＋リアルタイム検知画面",
                     shortDesc: "倒壊建物内のノック音をAIで検知し、救助本部へ遠隔通知するDCON2026出展作品。",
                     problem: "倒壊建物内にいる要救助者の手がかりを、外部から得る方法を検討。",
                     roleSummary: "AIモデル開発 / データ作成 / システム設計・技術検討",
@@ -460,11 +463,17 @@
                         { title: "モデル設計", body: "16kHz・1.5秒の音声を100〜4,000Hzでフィルタリングし、64次元log-melスペクトログラムへ変換。3段のCNNで局所特徴を抽出し、双方向GRUで時間変化を解析、Attention Poolingで短時間に現れるノック音へ重みを付けます。victim・environment・rescuerの3クラスを同時に扱うマルチラベル分類としました。" },
                         { title: "データ作成の工夫", body: "実際の倒壊現場を網羅した音声を用意できないことが最大の課題でした。材質や強さを変えたノック音、工事音などの環境音を収集し、音量比を変えて合成。生成データは自動採用せず、実際に聞いて採否を判断しました。ピッチ・速度変更、ノイズ付加、クラス重み付けも行い、限られたデータから条件の違いを増やしました。" },
                         { title: "現場・専門家との検討", body: "消防職員へのヒアリングを行い、現場のニーズと技術側の考えのずれを確認しながら設計を見直しました。チーム内だけでは判断が難しい通信とAIの課題については、それぞれを専門とする教員へ自ら相談しました。コンテストのメンターとは、導入方法やビジネスモデルについても検討しました。" },
+                        { title: "試作と発表", body: "試作では、マイクとマイコンで収集・整形した音声をノートPCへ送り、AI解析結果を確認画面に表示する構成を検証しました。DCON2026の特別展示では、ポスターと実機を用いて来場者へ仕組みや検証結果を説明しました。" },
                         { title: "成果と評価条件", body: "約90チームから本選会場へ進む30チームに選出され、ポスター展示で約100人へ説明しました。学習条件に比較的近いテストデータではF1スコア約0.90を記録しています。ただし、未知の災害現場や第三者による独立評価を示す値ではありません。消防での実演では必要性への評価を得た一方、誤検知も発生し、実用化には収音範囲・実環境データ・通信信頼性の検証が必要だと分かりました。" }
                     ],
+                    galleryTitle: "試作と発表の記録",
+                    galleryStyle: "story",
                     gallery: [
-                        { src: "img/works/acous-ai-flow.png", alt: "AcousのAI音声解析フロー", caption: "前処理、CNN、GRU、クラス別確率出力までの処理フロー（チームvenv DCON2026説明資料）" },
-                        { src: "img/works/acous-hardware.png", alt: "Acous収音部の三本足構造とサイズ", caption: "不安定な場所への設置を想定した約10cm四方・116gの収音部（チームvenv DCON2026説明資料）" }
+                        { src: "img/works/acous-dcon-exhibition.webp", width: 768, height: 1024, alt: "DCON2026特別展示のポスター前に立つチームvenvのメンバー3人", caption: "DCON2026特別展示。ポスターと実機を使い、Acousの仕組みと検証結果を来場者へ説明しました。", layout: "portrait" },
+                        { src: "img/works/acous-system-flow.webp", width: 1480, height: 588, alt: "マイクで収集した音をマイコンからノートPCへ送り、AI解析結果を確認画面に表示するAcousの構成図", caption: "マイクで収音し、マイコンで整形・転送、ノートPC上のAIで解析して確認画面へ表示する構成。" },
+                        { src: "img/works/acous-device-anatomy.webp", width: 1446, height: 507, alt: "Acous収音部のマイコン、マイク、三角形の土台の位置を示した説明図", caption: "マイク、マイコン、3Dプリントした土台を一体化した収音部。" },
+                        { src: "img/works/acous-ai-flow.png", width: 1440, height: 810, alt: "AcousのAI音声解析フロー", caption: "前処理、CNN、GRU、クラス別確率出力までの処理フロー（チームvenv DCON2026説明資料）。", layout: "full" },
+                        { src: "img/works/acous-enclosure-design.webp", width: 1406, height: 623, alt: "三本足で安定設置できる構造と、10センチ四方・116グラムの筐体仕様を示した説明図", caption: "不安定な場所でも置ける三本足構造と、小型・軽量化を検討した筐体。", layout: "full" }
                     ],
                     links: [
                         { text: "AI開発アーカイブ", url: "https://github.com/kuri227/venv_DCON2026", icon: "fa-brands fa-github" },
@@ -739,6 +748,7 @@
                     <article class="featured-project ${work.featuredRank === 1 ? 'featured-project--lead' : ''}">
                         <button type="button" onclick="openProjectModal('${work.id}')" class="featured-project__image" aria-label="${work.title}の詳細を見る">
                             <img src="${work.thumbnail || PLACEHOLDER_IMG}" alt="" width="1200" height="800" loading="${work.featuredRank === 1 ? 'eager' : 'lazy'}" onerror="this.src='${PLACEHOLDER_IMG}'">
+                            ${work.imageLabel ? `<span class="featured-project__image-label" aria-hidden="true">${work.imageLabel}</span>` : ''}
                         </button>
                         <div class="featured-project__body">
                             <div class="featured-project__index"><span>Project ${String(work.featuredRank).padStart(2, '0')}</span><time>${work.date}</time></div>
@@ -960,7 +970,7 @@
             
             const imgEl = document.getElementById('modal-image');
             imgEl.src = work.thumbnail || PLACEHOLDER_IMG;
-            imgEl.alt = work.title;
+            imgEl.alt = work.thumbnailAlt || work.title;
             imgEl.onerror = function() { this.src = PLACEHOLDER_IMG; };
 
             const metricsEl = document.getElementById('modal-metrics');
@@ -986,15 +996,20 @@
             `).join('');
 
             const galleryEl = document.getElementById('modal-gallery');
+            const galleryTitleEl = document.getElementById('modal-gallery-title');
+            galleryTitleEl.textContent = work.galleryTitle || '';
+            galleryTitleEl.hidden = !work.galleryTitle;
+            galleryEl.className = `project-gallery${work.galleryStyle ? ` project-gallery--${work.galleryStyle}` : ''}`;
             galleryEl.innerHTML = (work.gallery || []).map(image => `
-                <figure>
-                    <img src="${image.src}" alt="${image.alt}" loading="lazy" onerror="this.src='${PLACEHOLDER_IMG}'">
+                <figure class="${image.layout ? `project-gallery__item--${image.layout}` : ''}">
+                    <img src="${image.src}" alt="${image.alt}" ${image.width && image.height ? `width="${image.width}" height="${image.height}"` : ''} loading="lazy" decoding="async" onerror="this.src='${PLACEHOLDER_IMG}'">
                     <figcaption>${image.caption}</figcaption>
                 </figure>
             `).join('');
             galleryEl.hidden = !(work.gallery || []).length;
 
             const modal = document.getElementById('project-modal');
+            modal.dataset.projectId = work.id;
             document.body.classList.add('overflow-hidden-mobile');
             if (updateHash) history.replaceState(null, '', `#project-${id}`);
             if (!modal.open) modal.showModal();

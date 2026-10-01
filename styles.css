@@ -370,6 +370,7 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
     border-color: #b9c6d1;
 }
 .featured-project__image {
+    position: relative;
     min-height: 280px;
     padding: 0;
     border: 0;
@@ -385,6 +386,19 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
     transition: filter 180ms var(--ease);
 }
 .featured-project__image:hover img { filter: saturate(0.8) contrast(1.04); }
+.featured-project__image-label {
+    position: absolute;
+    inset-inline-start: 18px;
+    inset-block-end: 18px;
+    padding: 8px 11px;
+    border-radius: 8px;
+    background: rgba(16, 24, 32, 0.9);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+.featured-project--lead .featured-project__image img { object-position: 32% center; }
 .featured-project__body { min-width: 0; padding: clamp(26px, 4vw, 48px); display: flex; flex-direction: column; }
 .featured-project__index { display: flex; justify-content: space-between; gap: 20px; color: #6a7580; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .featured-project--lead .featured-project__index { color: #536575; }
@@ -607,6 +621,7 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
 .dialog-close { min-height: 44px; padding: 0; display: inline-flex; align-items: center; gap: 10px; border: 0; background: transparent; color: var(--ink); font-size: 0.82rem; font-weight: 800; cursor: pointer; }
 .project-dialog__content { padding: clamp(22px, 5vw, 58px); }
 .project-dialog__content > #modal-image { width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; background: var(--paper-deep); }
+.project-dialog[data-project-id="dcon"] .project-dialog__content > #modal-image { height: auto; max-height: none; aspect-ratio: 16 / 9; object-fit: cover; }
 .project-dialog__intro { margin-block-start: 34px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 30px; }
 #modal-date { color: var(--blue); font-size: 0.72rem; font-weight: 800; font-variant-numeric: tabular-nums; }
 #modal-title { max-width: 20ch; margin: 8px 0 0; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -0.03em; }
@@ -626,10 +641,18 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
 .project-copy h3 { margin: 0 0 10px; font-size: 1.18rem; }
 .project-copy p { margin: 0; color: #46515c; }
 .project-copy > p + p { margin-block-start: 20px; }
+.project-gallery__heading { margin: 64px 0 20px; font-size: clamp(1.5rem, 3vw, 2.25rem); letter-spacing: -0.025em; }
 .project-gallery { margin-block-start: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.project-gallery__heading:not([hidden]) + .project-gallery { margin-block-start: 0; }
 .project-gallery figure { margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .project-gallery img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: var(--paper-deep); }
 .project-gallery figcaption { padding: 14px; color: #5c6671; font-size: 0.72rem; }
+.project-gallery--story { grid-template-columns: minmax(230px, 0.7fr) minmax(0, 1.3fr); gap: 18px; align-items: stretch; }
+.project-gallery--story figure { display: grid; grid-template-rows: auto minmax(60px, auto); background: var(--white); }
+.project-gallery--story img { height: auto; aspect-ratio: auto; }
+.project-gallery--story .project-gallery__item--portrait { grid-row: span 2; grid-template-rows: minmax(0, 1fr) auto; }
+.project-gallery--story .project-gallery__item--portrait img { height: 100%; min-height: 0; object-fit: cover; }
+.project-gallery--story .project-gallery__item--full { grid-column: 1 / -1; }
 
 /* Large-screen density: keep the visual hierarchy while showing more context at once. */
 @media (min-width: 1200px) {
@@ -750,6 +773,9 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
     .project-dialog__links { justify-content: flex-start; }
     .project-dialog__links a { flex: 1 1 auto; justify-content: center; }
     .project-gallery { grid-template-columns: 1fr; }
+    .project-gallery--story .project-gallery__item--portrait,
+    .project-gallery--story .project-gallery__item--full { grid-column: auto; grid-row: auto; }
+    .project-gallery--story .project-gallery__item--portrait img { height: auto; aspect-ratio: 3 / 4; }
 }
 
 @media (prefers-reduced-motion: reduce) {
