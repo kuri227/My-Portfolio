@@ -653,6 +653,8 @@ summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
 .project-gallery--story .project-gallery__item--portrait { grid-row: span 2; grid-template-rows: minmax(0, 1fr) auto; }
 .project-gallery--story .project-gallery__item--portrait img { height: 100%; min-height: 0; object-fit: cover; }
 .project-gallery--story .project-gallery__item--full { grid-column: 1 / -1; }
+.project-gallery--single { grid-template-columns: minmax(0, 1fr); }
+.project-gallery--single img { height: auto; aspect-ratio: auto; }
 
 /* Large-screen density: keep the visual hierarchy while showing more context at once. */
 @media (min-width: 1200px) {
